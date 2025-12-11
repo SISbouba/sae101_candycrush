@@ -12,12 +12,9 @@ typedef struct {
     unsigned ord;
 } maPosition; // une position dans la girlle
 
-//Bonbons
-const unsigned KCandies = 5;
+// Déclaration des constantes
+const unsigned KCandies (5);
 const unsigned KImpossible (0);
-// unsigned KNbCandies (0);
-
-//Couleurs
 const unsigned KReset   (0);
 const unsigned KNoir    (30);
 const unsigned KRouge   (31);
@@ -27,12 +24,38 @@ const unsigned KBleu    (34);
 const unsigned KMAgenta (35);
 const unsigned KCyan    (36);
 
+// Déclaration des signatures
+void clearScreen();
+void couleur(const unsigned & coul);
+void couleur_KNbCandies(const unsigned & candy);
+
+
+
 void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }
 
 void clearScreen () {
     cout << "\033[H\033[2J";
+}
+
+
+
+void couleur_KNbCandies(const unsigned & candy){
+    switch (candy) {
+    case 1:
+        couleur(KRouge+10);
+        break;
+    case 2:
+        couleur(KVert+10);
+        break;
+    case 3:
+        couleur(KBleu+10);
+        break;
+    case 4:
+        couleur(KJaune+10);
+        break;
+    }
 }
 
 void initGrid (mat & grid, const size_t & size)
@@ -50,15 +73,20 @@ void initGrid (mat & grid, const size_t & size)
 void  displayGrid (const mat & grid)
 {
     clearScreen();
-    for (size_t i = 0; i < grid.size(); ++i) {
-        cout << "| ";
-        for (size_t j = 0; j < grid[i].size(); ++j) {
-            if (grid[i][j] >= 1 && grid[i][j] <= KCandies) {
-                cout << grid[i][j] << " " ;
+    for (const line & i : grid) {
+        for (const unsigned & j : i) {
+            if(j >= 1 && j <= KCandies){
+                couleur_KNbCandies(j);
+                cout << j << " ";
+            }
+            else {
+                couleur_KNbCandies(j);
+                cout << ' ';
             }
         }
-        cout << " |" <<endl;
+        cout << endl;
     }
+    couleur(KReset);
 }
 
 
@@ -168,15 +196,15 @@ int main()
     maPosition pos ;
     unsigned howMany;
 
-    if(atLeastThreeInAColumn(grid, pos, howMany)){
-        removalInColumn(grid,pos,howMany);
-        displayGrid(grid);
-    }
+    // if(atLeastThreeInAColumn(grid, pos, howMany)){
+    //     removalInColumn(grid,pos,howMany);
+    //     displayGrid(grid);
+    // }
 
-    if(atLeastThreeInARow(grid, pos, howMany)){
-        removalInRow(grid, pos, howMany);
-        displayGrid(grid);
-    }
+    // if(atLeastThreeInARow(grid, pos, howMany)){
+    //     removalInRow(grid, pos, howMany);
+    //     displayGrid(grid);
+    // }
 
     return 0;
 }
