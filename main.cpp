@@ -1,8 +1,6 @@
 #include <iostream>
-#include "ressources/gridmanagement.h"
 #include "ressources/game.h"
-#include "ressources/params.h"
-#include "ressources/type.h"
+#include "ressources/gridmanagement.h"
 
 using namespace std;
 
@@ -12,7 +10,7 @@ int main()
     size_t taille = 8;
     initGrid(grid, taille);
 
-    //gameLoop(grid);
+    gameLoop(grid);
     displayGrid(grid);
     cout << "----------------" << endl;
     MakeAMove(grid, {3,4}, 'z');

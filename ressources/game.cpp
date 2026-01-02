@@ -111,3 +111,29 @@ void removalInRow (mat & grid, const maPosition & pos, unsigned  howMany){
         grid[row][i] = KImpossible;
     }
 }
+
+void gameLoop(mat & grid){
+    unsigned int score = 0;
+    maPosition pos;
+    unsigned howMany;
+
+    bool foundMatch = true;
+
+    while (foundMatch) {
+        foundMatch = false;
+
+        while (atLeastThreeInAColumn(grid, pos, howMany)) {
+            removalInColumn(grid, pos, howMany);
+            updateScore(score, howMany);
+            foundMatch = true;
+        }
+
+        while (atLeastThreeInARow(grid, pos, howMany)) {
+            removalInRow(grid, pos, howMany);
+            updateScore(score, howMany);
+            foundMatch = true;
+        }
+    }
+
+    // displayScore(score);
+}

@@ -89,6 +89,7 @@ void displayGridWithChanges (const mat & grid, const maPosition & PosStart, cons
     couleur(KReset);
 }
 
+
 void gridSwap (mat & Grid, const maPosition & PosStart, const maPosition & PosEnd)
 {
     swap(Grid[PosStart.abs][PosStart.ord], Grid[PosEnd.abs][PosEnd.ord]);
