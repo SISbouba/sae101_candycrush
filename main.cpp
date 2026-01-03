@@ -9,7 +9,6 @@
 
 #include "ressources/game.h"
 #include "ressources/gridmanagement.h"
-#include "ressources/score.h"
 #include "ressources/type.h"
 
 using namespace std;
@@ -18,7 +17,7 @@ using namespace std;
 
 int main()
 {
-    testGame();
-    //game();
+    //testGame();
+    game();
     return 0;
 }

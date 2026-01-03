@@ -136,7 +136,7 @@ void gridSwap (mat & Grid, const maPosition & PosStart, const maPosition & PosEn
 }
 
 // Applique la gravité sur la grille
-void gravitéGrid(mat& grid) {
+void gravité(mat& grid) {
     size_t taille = grid.size();
     
     for (size_t col = 0; col < taille; col = col + 1) {

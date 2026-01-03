@@ -15,11 +15,8 @@ bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany)
 void gridSwap (mat & grid, const maPosition & pos1, const maPosition & pos2);
 void removalInRow (mat & grid, const maPosition & pos, unsigned  howMany);
 void removalInColumn (mat & grid, const maPosition & pos, unsigned  howMany);
+void afficherMode(Gamemode mode);
 void testGame ();
 void game ();
-// void removeCandiesInAColumn (mat & grid, const maPosition & pos, const unsigned & howMany);
-// void removeCandiesInARow (mat & grid, const maPosition & pos, const unsigned & howMany);
-// void applyGravity (mat & grid);
-// void fillTheGrid (mat & grid);
 
 #endif // GAME_H

@@ -47,6 +47,6 @@ const unsigned KCyan (36);
 // Constantes pour le score
 const unsigned KScorePerCandy= 10;
 const unsigned KComboMultiplier = 2;
-const unsigned KTargetScore = 500;
+const unsigned KTargetScore = 1000;
 
 #endif // TYPE_H
