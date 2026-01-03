@@ -1,11 +1,21 @@
+/*
+    *@file : game.cpp
+    *@author : DURAN Kelvin - SISE Aboubakar
+    *@brief : Fonctions de gestion du jeu.
+*/
+
 #include <iostream>
 #include <vector>
 #include <time.h>
+#include <cstdlib>
+#include <chrono>
 
 #include "game.h"
 #include "gridmanagement.h"
 #include "score.h"
-#include "params.h"
+
+using namespace std;
+using namespace std::chrono;
 
 void MakeAMove (mat & Grid, const maPosition & Pos, char Direction)
 {
@@ -33,7 +43,7 @@ void MakeAMove (mat & Grid, const maPosition & Pos, char Direction)
 }
 
 
-
+// Vérifie s'il y a au moins trois bonbons alignés verticalement
 bool atLeastThreeInAColumn (const mat & grid, maPosition & pos, unsigned & howMany){
     size_t taille = grid.size();
 
@@ -51,7 +61,7 @@ bool atLeastThreeInAColumn (const mat & grid, maPosition & pos, unsigned & howMa
     return false;
 }
 
-
+// Vérifie s'il y a au moins trois bonbons alignés horizontalement
 bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany){
     size_t taille = grid.size();
 
@@ -69,7 +79,7 @@ bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany)
     return false;
 }
 
-
+// Supprime les bonbons atLeastThreeInAColumn
 void removalInColumn (mat & grid, const maPosition & pos, unsigned  howMany){
     size_t col = pos.abs;
     size_t row = pos.ord;
@@ -83,6 +93,8 @@ void removalInColumn (mat & grid, const maPosition & pos, unsigned  howMany){
         grid[i][col] = KImpossible;
     }
 }
+
+// Supprime les bonbons atLeastThreeInARow
 void removalInRow (mat & grid, const maPosition & pos, unsigned  howMany){
     size_t col = pos.abs;
     size_t row = pos.ord;
@@ -97,6 +109,35 @@ void removalInRow (mat & grid, const maPosition & pos, unsigned  howMany){
     }
 }
 
+void afficherMode(Gamemode mode){
+    mat grid;
+    size_t taille = 8;
+    unsigned score = 0;
+    unsigned combo = 1;
+    
+    initGrid(grid, taille);
+    auto startTime = steady_clock::now();
+    switch (mode)
+    {
+    case MODE_SCORE:
+        cout << "Mode de jeu: SCORE " << endl;
+        cout << "Objectif: " << KTargetScore << " points en 120s" << endl;
+        break;
+    case MODE_CLEAR:
+        cout << "Mode de jeu: CLEAR " << endl;
+        cout << "Objectif: Vider la grille le plus vite possible." << endl;
+        break;
+    case MODE_1v1:
+        cout << "Mode de jeu: 1v1 " << endl;
+        cout << "Objectif: Obtenir le plus de points possible avant la fin du temps imparti." << endl;
+        break;
+    default:
+        break;
+    }
+}
+
+
+
 void testGame(){
     mat grid;
     size_t taille = 8;
@@ -107,9 +148,50 @@ void testGame(){
     initGrid(grid, taille);
 
     cout << "Grille initiale :" << endl;
-    displayGrid(grid);
+    displayGrid(grid, 0, 0, 120, MODE_1v1);
     MakeAMove(grid, {3,3}, 'd');
     cout << "Après le déplacement :" << endl;
-    displayGridWithChanges(grid, {3,3}, {3,4});
+    //displayGridWithChanges(grid, {3,3}, {3,4});
+    displayGrid(grid, 0, 0, 120, MODE_1v1);
+}
 
+
+void game(){
+    size_t taille;
+    int choix;
+
+    cout << "Bienvenue dans Number Crush" << endl;
+
+    cout << "Veuillez choisir votre mode de jeu :" << endl;
+    cout << "1. Mode Score" << endl;
+    cout << "2. Mode Clear" << endl;
+    cout << "3. Mode 1v1" << endl;
+    cout << "4. Quitter" << endl;
+
+    cout << "Votre choix : ";
+    cin >> choix;
+    
+    switch (choix)
+    {
+    case 1:
+        //afficherMode(MODE_SCORE);
+        return;
+    case 2:
+        //afficherMode(MODE_CLEAR);
+        return;
+    case 3:
+        //afficherMode(MODE_1v1);
+        return;
+    case 4:
+        couleur(KCyan);
+        cout << "Merci d'avoir joué ! Au revoir !" << endl;
+        couleur(KReset);
+        exit(0);
+    default:
+        couleur(KRouge);
+        cout << "Mode de jeu invalide, veuillez recommencer en appuyant sur Entrée." << endl;
+        couleur(KReset);
+        cin.get();
+        return;
+    }
 }

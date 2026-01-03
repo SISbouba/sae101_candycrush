@@ -16,6 +16,7 @@ void gridSwap (mat & grid, const maPosition & pos1, const maPosition & pos2);
 void removalInRow (mat & grid, const maPosition & pos, unsigned  howMany);
 void removalInColumn (mat & grid, const maPosition & pos, unsigned  howMany);
 void testGame ();
+void game ();
 // void removeCandiesInAColumn (mat & grid, const maPosition & pos, const unsigned & howMany);
 // void removeCandiesInARow (mat & grid, const maPosition & pos, const unsigned & howMany);
 // void applyGravity (mat & grid);

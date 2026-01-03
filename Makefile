@@ -1,16 +1,22 @@
-NAME = compile
+# Nom de l'exécutable
+EXE = compile
 
-CC = g++
+# Compilateur
+CCPP = g++
 
+# Liste des fichiers à supprimer lors du nettoyage
 RM_LIST = *.o *.out *~ 
 
+# Règles de compilation : construction de l'exécutable
 all: 
-	$(CC) -o $(NAME) *.cpp ressources/*.cpp
+	$(CCPP) -o $(EXE) *.cpp ressources/*.cpp
 
+# Nettoyage de fichiers temporaires et de l'exécutable
 clean:
 	$(RM) $(RM_LIST)
 
+# Nettoyage complet
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(EXE)
 
 re : fclean all
