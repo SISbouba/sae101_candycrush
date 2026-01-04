@@ -45,7 +45,7 @@ void MakeAMove (mat & grid, const maPosition & Pos, char Direction)
     }
 }
 
-// Vérifie si le mouvement est valide
+// Vérifie si le mouvement est valide pour éviter les débordements
 bool isValidMove(const mat& grid, const maPosition& Pos, char Direction) {
     size_t Sgrid = grid.size();
     switch (tolower(Direction)) {
@@ -169,7 +169,7 @@ bool traitementDeAlignement(mat& grid, unsigned& score, unsigned& combo, Gamemod
         score += howMany * KScorePerCandy * combo;
         combo++;
         
-        // Appliquer la gravité en mode CLEAR avant de remplir
+        // Appliquer la gravité en mode CLEAR
         if (mode == MODE_CLEAR) {
             gravité(grid);
         }
@@ -229,8 +229,10 @@ void afficherMode(Gamemode mode){
 
                 displayGrid(grid, score, combo, tempsRestant, mode);
 
+                couleur(KCyan);
                 cout << "Entrez la position (ligne colonne) et la direction (z/q/s/d) ou 'x' pour quitter:" << endl;
                 cout << "Exemple: 3 4 d" << endl;
+                couleur(KReset);
                 
                 string input;
                 getline(cin, input);
@@ -242,11 +244,11 @@ void afficherMode(Gamemode mode){
 
                 // Analyse l'entrée utilisateur
                 if (sscanf(input.c_str(), "%u %u %c", &row, &col, &direction) == 3) { // Vérifie que trois valeurs ont été lues
-                    if (row < taille && col < taille) {
+                    if (row < taille && col < taille) { // Vérifie que les indices sont dans les limites de la grille
                         maPosition pos = {row, col};
                         
                         if (isValidMove(grid, pos, direction)) {
-                            maPosition target = getTargetPosition(pos, direction);
+                            maPosition target = getTargetPosition(pos, direction); // Obtient la position cible
                             gridSwap(grid, pos, target);
                             
                             if (traitementDeAlignement(grid, score, combo, mode)) {
@@ -272,11 +274,9 @@ void afficherMode(Gamemode mode){
             break;
 
         case MODE_CLEAR:
-            while (true)
-            {
+            while (true){
                 auto tempsActuel = steady_clock::now();
                 int tempsPasser = duration_cast<seconds>(tempsActuel - startTime).count();
-                int tempsRestant = tempsLimite - tempsPasser;
 
                 // Affiche le message de fin si le temps est écoulé
                 if (isGridEmpty(grid) ) {
@@ -287,28 +287,21 @@ void afficherMode(Gamemode mode){
                     cout << "Temps écoulé: " << tempsPasser << " secondes" << endl;
                     cout << "Score final: " << score << " points" << endl;
                     cout << "Combo maximum: x" << combo << endl;
-                    couleur(KReset);
                     break;
                 }
 
-                if (tempsRestant == 0 && !isGridEmpty(grid)) {
-                    clearScreen();
-                    couleur(KRouge);
-                    cout << "ÉCHEC! La grille n'est pas vide." << endl;
-                    couleur(KReset);
-                    cout << "Bonbons restants: " << compterBonbonRestants(grid) << " bonbons" << endl;
-                    cout << "Score final: " << score << " points" << endl;
-                    break;
-                }
-
+                // Affiche l'interface du jeu et l'information de la partie en cours
                 displayGrid(grid, score, combo, tempsPasser, mode);
 
+                couleur(KCyan);
                 cout << "Entrez la position (ligne colonne) et la direction (z/q/s/d) ou 'x' pour quitter:" << endl;
                 cout << "Exemple: 3 4 d" << endl;
+                couleur(KReset);
                 
                 string input;
                 getline(cin, input);
 
+                // Sort de la boucle si l'utilisateur entre 'x'
                 if (input == "x" || input == "X") break;
                     
                 unsigned row, col;
@@ -335,7 +328,7 @@ void afficherMode(Gamemode mode){
                                 couleur(KReset);
                             }
                             
-                            this_thread::sleep_for(milliseconds(1000));
+                            this_thread::sleep_for(milliseconds(1000)); // Pause pour permettre au joueur de voir le résultat
                         } else {
                             cout << "Mouvement invalide." << endl;
                             this_thread::sleep_for(milliseconds(1000));
@@ -352,10 +345,14 @@ void afficherMode(Gamemode mode){
 
         default:
             couleur(KRouge);
-            cout << "Mode de jeu invalide." << endl;
+            cout << "Mode de jeu invalide, veuillez réessayer en appuyant sur Entrée." << endl;
             couleur(KReset);
             break;
     }
+
+    cout << "\nAppuyez sur Entrée pour continuer..." << endl;
+    cin.ignore();
+    cin.get();
 }
 
 void game(){
@@ -386,7 +383,7 @@ void game(){
     case 3:
         afficherMode(MODE_1v1);
         break;
-    case 4:
+    case 4: // Quitter le jeu
         couleur(KCyan);
         cout << "Merci d'avoir joué ! Au revoir !" << endl;
         couleur(KReset);
@@ -394,9 +391,8 @@ void game(){
         break;
     default:
         couleur(KRouge);
-        cout << "Mode de jeu invalide, veuillez recommencer en appuyant sur Entrée." << endl;
+        cout << "Mode de jeu invalide, veuillez recommencer." << endl;
         couleur(KReset);
-        cin.get();
         break;
     }
 }

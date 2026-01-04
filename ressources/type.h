@@ -25,13 +25,6 @@ typedef enum {
     MODE_1v1
 } Gamemode;
 
-// struct CMyParamV2{
-//     char KeyUp;// = ('z')
-//     char KeyDown;// = ('s')
-//     char KeyLeft;// = ('q')
-//     char KeyRight;// = ('d')
-// };
-
 // Déclaration des constantes
 //Couleurs pour l'affichage 
 const unsigned KImpossible (0); // valeur représentant une case vide*

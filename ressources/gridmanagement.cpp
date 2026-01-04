@@ -10,14 +10,17 @@
 
 using namespace std;
 
+// Fonction fait du TP10 R101 par Alain Casali
 void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }
 
+// Fonction fait du TP10 R101 par Alain Casali
 void clearScreen () {
     cout << "\033[H\033[2J";
 }
 
+// Fonction fait du TP10 R101 par Alain Casali
 void couleur_KNbCandies(const unsigned & candy){
     switch (candy) {
     case 1:
@@ -35,6 +38,7 @@ void couleur_KNbCandies(const unsigned & candy){
     }
 }
 
+// Fonction fait du TP10 R101 par Alain Casali
 void initGrid (mat & grid, const size_t & size)
 {
     srand(time(NULL));
@@ -47,7 +51,6 @@ void initGrid (mat & grid, const size_t & size)
             unsigned bonbon;
 
             // Boucle jusqu'à obtenir une valeur valide
-            
             do {
                 estValide = true;
                 bonbon = 1 + rand() % (KCandies - 1);
@@ -107,16 +110,12 @@ void  displayGrid (const mat & grid, unsigned score, unsigned combo, int timeVal
     for (size_t i = 0; i < grid.size(); ++i) {
         cout << i <<" | ";
         for (const unsigned & j : grid[i]) {
-            if(j >= 1 && j <= KCandies){
+            if(j >= 0 && j <= KCandies){
                 couleur_KNbCandies(j);
-                cout << j << " ";
+                cout << grid[i][j] << " ";
             }
-            else {
-                couleur_KNbCandies(j);
-                cout << ' ';
-            }
+            couleur(KReset);
         }
-        couleur(KReset);
         cout << "|" << endl;
     }
     cout << endl;
@@ -175,16 +174,17 @@ void gravité(mat& grid) {
     }
 }
 
-// Remplit les cases vides de la grille avec de nouveaux bonbons (Seulement pour le mode score)
+// Remplit les cases vides de la grille avec de nouveaux bonbons (Seulement pour le MODE_SCORE)
 void remplirGrid(mat& grid, Gamemode mode) {
     if (mode == MODE_SCORE) {
         size_t taille = grid.size();
         srand(time(NULL));
         
+        // Parcourt chaque case de la grille
         for (size_t col = 0; col < taille; col = col + 1) {
             for (size_t row = 0; row < taille; row = row + 1) {
-                if (grid[row][col] == KImpossible) {
-                    // Générer un nouveau bonbon aléatoire
+                // Si la cas est vide on génére un nouveau bonbon aléatoire
+                if (grid[row][col] == KImpossible) { 
                     grid[row][col] = 1 + rand() % (KCandies - 1);
                 }
             }
