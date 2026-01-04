@@ -172,9 +172,11 @@ bool traitementDeAlignement(mat& grid, unsigned& score, unsigned& combo, Gamemod
         // Appliquer la gravité en mode CLEAR
         if (mode == MODE_CLEAR) {
             gravité(grid);
-        }
+        } //else if (mode == MODE_SCORE ) {
+            // Remplit la grille
+            //remplirGrid(grid, mode);
+        //}
         
-        // Remplit la grille
         remplirGrid(grid, mode);
     }
     
@@ -339,8 +341,9 @@ void afficherMode(Gamemode mode){
             break;
 
         case MODE_1v1:
-            cout << "Mode de jeu: 1v1 " << endl;
-            cout << "Objectif: Obtenir le plus de points possible avant la fin du temps imparti." << endl;
+            couleur(KCyan);
+            cout << "Mode de jeu 1v1 en cours de développement. Veuillez réessayer plus tard." << endl;
+            couleur(KReset);     
             break;
 
         default:
@@ -349,7 +352,7 @@ void afficherMode(Gamemode mode){
             couleur(KReset);
             break;
     }
-
+    
     cout << "\nAppuyez sur Entrée pour continuer..." << endl;
     cin.ignore();
     cin.get();
@@ -393,6 +396,7 @@ void game(){
         couleur(KRouge);
         cout << "Mode de jeu invalide, veuillez recommencer." << endl;
         couleur(KReset);
+        cin.get();
         break;
     }
 }

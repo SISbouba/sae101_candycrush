@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SAE1.01 - Number Crush:  Fichier source de ressources/type.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SAE1.01 - Number Crush<span id="projectnumber">&#160;v1.0</span>
+   </div>
+   <div id="projectbrief">Jeu de type Candy Crush développé en C++ dans le cadre de la SAE1.01</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.16.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('type_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">type.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="type_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">    *@file : type.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">    *@author : DURAN Kelvin - SISE Aboubakar</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">    *@brief : Définition des types utilisés dans le jeu.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef TYPE_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define TYPE_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="type_8h.html#a4933e286520b3b8b86b2b7f27fd1959c">   15</a></span><span class="keyword">typedef</span> vector &lt;unsigned&gt; <a class="code hl_typedef" href="type_8h.html#a4933e286520b3b8b86b2b7f27fd1959c">line</a>; <span class="comment">// un type représentant une ligne de la grille</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">   16</a></span><span class="keyword">typedef</span> vector &lt;line&gt; <a class="code hl_typedef" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a>; <span class="comment">// un type représentant la grille</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structmaPosition.html">   17</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">   18</a></span>    <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">   19</a></span>    <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>} <a class="code hl_struct" href="structmaPosition.html">maPosition</a>;<span class="comment">// une position dans la girlle</span></div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20e">   22</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8">   23</a></span>    <a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8">MODE_SCORE</a>,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32">   24</a></span>    <a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32">MODE_CLEAR</a>,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731">   25</a></span>    <a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731">MODE_1v1</a></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>} <a class="code hl_enumeration" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20e">Gamemode</a>;</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// Déclaration des constantes</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//Couleurs pour l&#39;affichage </span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="type_8h.html#a18efe58b5b918621584c2029144b1756">   30</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="type_8h.html#a18efe58b5b918621584c2029144b1756">KImpossible</a> (0); <span class="comment">// valeur représentant une case vide*</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">   31</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>   (0);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="type_8h.html#a39caa9d62340bfd0c4e990db6f0052a0">   32</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="type_8h.html#a39caa9d62340bfd0c4e990db6f0052a0">KCandies</a> (5);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">   33</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a>   (31);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5">   34</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5">KVert</a>    (32);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="type_8h.html#a1b010b9694f3acc35b02b0a667d99094">   35</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="type_8h.html#a1b010b9694f3acc35b02b0a667d99094">KJaune</a>   (33);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="type_8h.html#a587a099b5228e39c74a525cb4ac5d786">   36</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="type_8h.html#a587a099b5228e39c74a525cb4ac5d786">KBleu</a>    (34);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="type_8h.html#a1295d80e3fdb251b7969f86740392db4">   37</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="type_8h.html#a1295d80e3fdb251b7969f86740392db4">KMAgenta</a> (35);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">   38</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a> (36);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// Constantes pour le score</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="type_8h.html#ae0df0d456a1a5ea08c34f0334f742d60">   41</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="type_8h.html#ae0df0d456a1a5ea08c34f0334f742d60">KScorePerCandy</a>= 10;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="type_8h.html#a0991f790fddf3ef60566f278fc89cf85">   42</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="type_8h.html#a0991f790fddf3ef60566f278fc89cf85">KComboMultiplier</a> = 2;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="type_8h.html#a4c057195b415fb14abcbba4a9be17ecb">   43</a></span><span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="type_8h.html#a4c057195b415fb14abcbba4a9be17ecb">KTargetScore</a> = 1000;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif </span><span class="comment">// TYPE_H</span></div>
+<div class="ttc" id="astructmaPosition_html"><div class="ttname"><a href="structmaPosition.html">maPosition</a></div><div class="ttdef"><b>Definition</b> <a href="#l00017">type.h:17</a></div></div>
+<div class="ttc" id="astructmaPosition_html_aaad1e041af6f40c349fe42b854ae28d8"><div class="ttname"><a href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">maPosition::ord</a></div><div class="ttdeci">unsigned ord</div><div class="ttdef"><b>Definition</b> <a href="#l00019">type.h:19</a></div></div>
+<div class="ttc" id="astructmaPosition_html_ac4b111f78b8dec96d06bab1de1d6e03b"><div class="ttname"><a href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">maPosition::abs</a></div><div class="ttdeci">unsigned abs</div><div class="ttdef"><b>Definition</b> <a href="#l00018">type.h:18</a></div></div>
+<div class="ttc" id="atype_8h_html_a0991f790fddf3ef60566f278fc89cf85"><div class="ttname"><a href="type_8h.html#a0991f790fddf3ef60566f278fc89cf85">KComboMultiplier</a></div><div class="ttdeci">const unsigned KComboMultiplier</div><div class="ttdef"><b>Definition</b> <a href="#l00042">type.h:42</a></div></div>
+<div class="ttc" id="atype_8h_html_a1295d80e3fdb251b7969f86740392db4"><div class="ttname"><a href="type_8h.html#a1295d80e3fdb251b7969f86740392db4">KMAgenta</a></div><div class="ttdeci">const unsigned KMAgenta(35)</div></div>
+<div class="ttc" id="atype_8h_html_a18efe58b5b918621584c2029144b1756"><div class="ttname"><a href="type_8h.html#a18efe58b5b918621584c2029144b1756">KImpossible</a></div><div class="ttdeci">const unsigned KImpossible(0)</div></div>
+<div class="ttc" id="atype_8h_html_a1b010b9694f3acc35b02b0a667d99094"><div class="ttname"><a href="type_8h.html#a1b010b9694f3acc35b02b0a667d99094">KJaune</a></div><div class="ttdeci">const unsigned KJaune(33)</div></div>
+<div class="ttc" id="atype_8h_html_a1c76e2d1f523d33155289c2ea84dd20e"><div class="ttname"><a href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20e">Gamemode</a></div><div class="ttdeci">Gamemode</div><div class="ttdef"><b>Definition</b> <a href="#l00022">type.h:22</a></div></div>
+<div class="ttc" id="atype_8h_html_a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8"><div class="ttname"><a href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8">MODE_SCORE</a></div><div class="ttdeci">@ MODE_SCORE</div><div class="ttdef"><b>Definition</b> <a href="#l00023">type.h:23</a></div></div>
+<div class="ttc" id="atype_8h_html_a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731"><div class="ttname"><a href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731">MODE_1v1</a></div><div class="ttdeci">@ MODE_1v1</div><div class="ttdef"><b>Definition</b> <a href="#l00025">type.h:25</a></div></div>
+<div class="ttc" id="atype_8h_html_a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32"><div class="ttname"><a href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32">MODE_CLEAR</a></div><div class="ttdeci">@ MODE_CLEAR</div><div class="ttdef"><b>Definition</b> <a href="#l00024">type.h:24</a></div></div>
+<div class="ttc" id="atype_8h_html_a39caa9d62340bfd0c4e990db6f0052a0"><div class="ttname"><a href="type_8h.html#a39caa9d62340bfd0c4e990db6f0052a0">KCandies</a></div><div class="ttdeci">const unsigned KCandies(5)</div></div>
+<div class="ttc" id="atype_8h_html_a4933e286520b3b8b86b2b7f27fd1959c"><div class="ttname"><a href="type_8h.html#a4933e286520b3b8b86b2b7f27fd1959c">line</a></div><div class="ttdeci">vector&lt; unsigned &gt; line</div><div class="ttdef"><b>Definition</b> <a href="#l00015">type.h:15</a></div></div>
+<div class="ttc" id="atype_8h_html_a4c057195b415fb14abcbba4a9be17ecb"><div class="ttname"><a href="type_8h.html#a4c057195b415fb14abcbba4a9be17ecb">KTargetScore</a></div><div class="ttdeci">const unsigned KTargetScore</div><div class="ttdef"><b>Definition</b> <a href="#l00043">type.h:43</a></div></div>
+<div class="ttc" id="atype_8h_html_a587a099b5228e39c74a525cb4ac5d786"><div class="ttname"><a href="type_8h.html#a587a099b5228e39c74a525cb4ac5d786">KBleu</a></div><div class="ttdeci">const unsigned KBleu(34)</div></div>
+<div class="ttc" id="atype_8h_html_a63a18a31ab7815ab0d4eb5c133e5d1a5"><div class="ttname"><a href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a></div><div class="ttdeci">const unsigned KReset(0)</div></div>
+<div class="ttc" id="atype_8h_html_a72260f87613d24d0cd1e7c8f646ca5f5"><div class="ttname"><a href="type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5">KVert</a></div><div class="ttdeci">const unsigned KVert(32)</div></div>
+<div class="ttc" id="atype_8h_html_a87aab004c1c22814beb8db1ddaa9f628"><div class="ttname"><a href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a></div><div class="ttdeci">const unsigned KRouge(31)</div></div>
+<div class="ttc" id="atype_8h_html_ae0df0d456a1a5ea08c34f0334f742d60"><div class="ttname"><a href="type_8h.html#ae0df0d456a1a5ea08c34f0334f742d60">KScorePerCandy</a></div><div class="ttdeci">const unsigned KScorePerCandy</div><div class="ttdef"><b>Definition</b> <a href="#l00041">type.h:41</a></div></div>
+<div class="ttc" id="atype_8h_html_aed31d4db92c112edda1291acad69dd00"><div class="ttname"><a href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a></div><div class="ttdeci">const unsigned KCyan(36)</div></div>
+<div class="ttc" id="atype_8h_html_aee710f500ed8d179390ae3862af69d24"><div class="ttname"><a href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a></div><div class="ttdeci">vector&lt; line &gt; mat</div><div class="ttdef"><b>Definition</b> <a href="#l00016">type.h:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_b310993d99a62c4e6da0db86d59823c0.html">ressources</a></li><li class="navelem"><a href="type_8h.html">type.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.0 </li>
+  </ul>
+</div>
+</body>
+</html>

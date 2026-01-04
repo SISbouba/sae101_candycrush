@@ -10,17 +10,14 @@
 
 using namespace std;
 
-// Fonction fait du TP10 R101 par Alain Casali
 void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }
 
-// Fonction fait du TP10 R101 par Alain Casali
 void clearScreen () {
     cout << "\033[H\033[2J";
 }
 
-// Fonction fait du TP10 R101 par Alain Casali
 void couleur_KNbCandies(const unsigned & candy){
     switch (candy) {
     case 1:
@@ -38,7 +35,6 @@ void couleur_KNbCandies(const unsigned & candy){
     }
 }
 
-// Fonction fait du TP10 R101 par Alain Casali
 void initGrid (mat & grid, const size_t & size)
 {
     srand(time(NULL));
@@ -70,6 +66,7 @@ void initGrid (mat & grid, const size_t & size)
 }
 
 // Affichage de la grille
+// Affichage de la grille
 void  displayGrid (const mat & grid, unsigned score, unsigned combo, int timeValue, Gamemode mode)
 {
     clearScreen();
@@ -93,29 +90,35 @@ void  displayGrid (const mat & grid, unsigned score, unsigned combo, int timeVal
         case MODE_1v1:
             couleur(KCyan);
             cout << "Mode de jeu: 1v1 " << endl;
-            cout << "Score Joueur 1: " << score << " | Combo: x" << combo << " | Temps: " << timeValue << "s" << endl;
-            cout << "Score Joueur 2: " << score << " | Combo: x" << combo << " | Temps: " << timeValue << "s" << endl;
+            cout << "Score Joueur 1: " << score << " | Combo: x" << combo << endl;
+            cout << "Score Joueur 2: " << score << " | Combo: x" << combo << endl;
+            cout << "Temps restant: " << timeValue << "s" << endl;
             cout << "Objectif: Avoir le score le plus élevé en 120s" << endl;
             couleur(KReset);
             break;
     }
 
 
+    // Affichage de la grille
     cout << "    ";
-    for (size_t k = 0; k < grid[0].size(); ++k) {
-        cout << k << " ";
+    for (size_t line = 0; line < grid.size(); ++line) {
+        cout << line << " ";
     }
     cout << endl;
 
     for (size_t i = 0; i < grid.size(); ++i) {
-        cout << i <<" | ";
+        cout << i << " | ";
         for (const unsigned & j : grid[i]) {
-            if(j >= 0 && j <= KCandies){
+            if(j >= 1 && j <= KCandies){
                 couleur_KNbCandies(j);
-                cout << grid[i][j] << " ";
+                cout << j << " ";
             }
-            couleur(KReset);
+            else {
+                couleur_KNbCandies(j);
+                cout << ' ';
+            }
         }
+        couleur(KReset);
         cout << "|" << endl;
     }
     cout << endl;
@@ -174,17 +177,16 @@ void gravité(mat& grid) {
     }
 }
 
-// Remplit les cases vides de la grille avec de nouveaux bonbons (Seulement pour le MODE_SCORE)
+// Remplit les cases vides de la grille avec de nouveaux bonbons (Seulement pour le mode score)
 void remplirGrid(mat& grid, Gamemode mode) {
     if (mode == MODE_SCORE) {
         size_t taille = grid.size();
         srand(time(NULL));
         
-        // Parcourt chaque case de la grille
         for (size_t col = 0; col < taille; col = col + 1) {
             for (size_t row = 0; row < taille; row = row + 1) {
-                // Si la cas est vide on génére un nouveau bonbon aléatoire
-                if (grid[row][col] == KImpossible) { 
+                if (grid[row][col] == KImpossible) {
+                    // Générer un nouveau bonbon aléatoire
                     grid[row][col] = 1 + rand() % (KCandies - 1);
                 }
             }
