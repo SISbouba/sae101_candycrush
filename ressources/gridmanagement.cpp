@@ -35,20 +35,6 @@ void couleur_KNbCandies(const unsigned & candy){
     }
 }
 
-// Compte le nombre de bonbons restants dans la grille (Seulement pour le mode Clear)
-unsigned compterBonbonRestants(const mat& grid) {
-    unsigned compteur = 0;
-    for (size_t i = 0; i < grid.size(); ++i) {
-        for (size_t j = 0; j < grid[i].size(); ++j) {
-            if (grid[i][j] != KImpossible) {
-                compteur = compteur + 1;
-            }
-        }
-    }
-    return compteur;
-}
-
-
 void initGrid (mat & grid, const size_t & size)
 {
     srand(time(NULL));
@@ -100,6 +86,7 @@ void  displayGrid (const mat & grid, unsigned score, unsigned combo, int timeVal
             cout << "Objectif: Vider la grille le plus vite possible." << endl;
             couleur(KReset);
             break;
+            
         case MODE_1v1:
             couleur(KCyan);
             cout << "Mode de jeu: 1v1 " << endl;
@@ -135,7 +122,32 @@ void gridSwap (mat & Grid, const maPosition & PosStart, const maPosition & PosEn
     swap(Grid[PosStart.abs][PosStart.ord], Grid[PosEnd.abs][PosEnd.ord]);
 }
 
-// Applique la gravité sur la grille
+// Compte le nombre de bonbons restants dans la grille (Seulement pour le mode Clear)
+unsigned compterBonbonRestants(const mat& grid) {
+    unsigned compteur = 0;
+    for (size_t i = 0; i < grid.size(); ++i) {
+        for (size_t j = 0; j < grid[i].size(); ++j) {
+            if (grid[i][j] != KImpossible) {
+                compteur = compteur + 1;
+            }
+        }
+    }
+    return compteur;
+}
+
+// Vérifie si la grille est vide (Seulement pour le mode Clear)
+bool isGridEmpty(const mat& grid) {
+    for (size_t i = 0; i < grid.size(); ++i) {
+        for (size_t j = 0; j < grid[i].size(); ++j) {
+            if (grid[i][j] != KImpossible) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+// Applique la gravité sur la grille (Seulement pour le mode Clear)
 void gravité(mat& grid) {
     size_t taille = grid.size();
     

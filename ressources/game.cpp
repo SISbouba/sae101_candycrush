@@ -194,7 +194,6 @@ void afficherMode(Gamemode mode){
 
     switch (mode) {
         case MODE_SCORE:
-
             while(true){
                 auto tempsActuel = steady_clock::now();
                 int tempsPasser = duration_cast<seconds>(tempsActuel - startTime).count();
@@ -228,7 +227,7 @@ void afficherMode(Gamemode mode){
                     break;
                 }
 
-                displayGrid(grid, score, combo, tempsRestant, MODE_SCORE);
+                displayGrid(grid, score, combo, tempsRestant, mode);
 
                 cout << "Entrez la position (ligne colonne) et la direction (z/q/s/d) ou 'x' pour quitter:" << endl;
                 cout << "Exemple: 3 4 d" << endl;
@@ -272,17 +271,84 @@ void afficherMode(Gamemode mode){
             }
             break;
 
-        case MODE_CLEAR: {
-            cout << "Mode de jeu: CLEAR " << endl;
-            cout << "Objectif: Vider la grille le plus vite possible." << endl;
-            break;
-        }
+        case MODE_CLEAR:
+            while (true)
+            {
+                auto tempsActuel = steady_clock::now();
+                int tempsPasser = duration_cast<seconds>(tempsActuel - startTime).count();
+                int tempsRestant = tempsLimite - tempsPasser;
 
-        case MODE_1v1: {
+                // Affiche le message de fin si le temps est écoulé
+                if (isGridEmpty(grid) ) {
+                    clearScreen();
+                    couleur(KVert);
+                    cout << "VICTOIRE! La grille est vide." << endl;
+                    couleur(KCyan);
+                    cout << "Temps écoulé: " << tempsPasser << " secondes" << endl;
+                    cout << "Score final: " << score << " points" << endl;
+                    cout << "Combo maximum: x" << combo << endl;
+                    couleur(KReset);
+                    break;
+                }
+
+                if (tempsRestant == 0 && !isGridEmpty(grid)) {
+                    clearScreen();
+                    couleur(KRouge);
+                    cout << "ÉCHEC! La grille n'est pas vide." << endl;
+                    couleur(KReset);
+                    cout << "Bonbons restants: " << compterBonbonRestants(grid) << " bonbons" << endl;
+                    cout << "Score final: " << score << " points" << endl;
+                    break;
+                }
+
+                displayGrid(grid, score, combo, tempsPasser, mode);
+
+                cout << "Entrez la position (ligne colonne) et la direction (z/q/s/d) ou 'x' pour quitter:" << endl;
+                cout << "Exemple: 3 4 d" << endl;
+                
+                string input;
+                getline(cin, input);
+
+                if (input == "x" || input == "X") break;
+                    
+                unsigned row, col;
+                char direction;
+
+                // Analyse l'entrée utilisateur
+                if (sscanf(input.c_str(), "%u %u %c", &row, &col, &direction) == 3) { // Vérifie que trois valeurs ont été lues
+                    if (row < taille && col < taille) {
+                        maPosition pos = {row, col};
+                        
+                        if (isValidMove(grid, pos, direction)) {
+                            maPosition target = getTargetPosition(pos, direction);
+                            gridSwap(grid, pos, target);
+                            
+                            if (traitementDeAlignement(grid, score, combo, mode)) {
+                                couleur(KJaune);
+                                cout << "Bon coup! Combo x" << combo << endl;
+                                couleur(KReset);
+                            } else {
+                                gridSwap(grid, pos, target);
+                                combo = 1;
+                                couleur(KRouge);
+                                cout << "Aucune combinaison trouvée. Mouvement annulé." << endl;
+                                couleur(KReset);
+                            }
+                            
+                            this_thread::sleep_for(milliseconds(1000));
+                        } else {
+                            cout << "Mouvement invalide." << endl;
+                            this_thread::sleep_for(milliseconds(1000));
+                        }
+                    }
+                }
+            }
+            break;
+
+        case MODE_1v1:
             cout << "Mode de jeu: 1v1 " << endl;
             cout << "Objectif: Obtenir le plus de points possible avant la fin du temps imparti." << endl;
             break;
-        }
 
         default:
             couleur(KRouge);
@@ -317,6 +383,7 @@ void game(){
     size_t taille;
     int choix;
 
+    couleur(KCyan);
     cout << "Bienvenue dans Number Crush" << endl;
 
     cout << "Veuillez choisir votre mode de jeu :" << endl;
@@ -326,6 +393,7 @@ void game(){
     cout << "4. Quitter" << endl;
 
     cout << "Votre choix : ";
+    couleur(KReset);
     cin >> choix;
 
     // Affiche la sélection choisie
