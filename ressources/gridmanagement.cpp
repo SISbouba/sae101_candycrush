@@ -1,8 +1,11 @@
-/*
-    *@file : gridmanagement.cpp
-    *@author : DURAN Kelvin - SISE Aboubakar
-    *@brief : Fonctions de gestion de la grille de jeu.
-*/
+/**
+ * @file gridmanagement.cpp
+ * @author DURAN Kalvin - SISE Aboubakar
+ * @brief Fonctions de gestion de la grille de jeu.
+ * @details 
+ * Ce fichier contient les définitions des fonctions utilisées pour gérer la grille de jeu, y compris l'affichage,
+ * l'initialisation, la gravité, et le remplissage de la grille.
+ */
 
 #include <iostream>
 #include "gridmanagement.h"
@@ -10,14 +13,17 @@
 
 using namespace std;
 
+//! Change la couleur du texte dans la console
 void couleur (const unsigned & coul) {
     cout << "\033[" << coul <<"m";
 }
 
+//! Efface l'écran
 void clearScreen () {
     cout << "\033[H\033[2J";
 }
 
+//! Change la couleur en fonction du type de bonbon
 void couleur_KNbCandies(const unsigned & candy){
     switch (candy) {
     case 1:
@@ -35,6 +41,15 @@ void couleur_KNbCandies(const unsigned & candy){
     }
 }
 
+/**
+ * @brief Initialisation de la grille
+ * 
+ * @param grid 
+ * @param size
+ * @details
+ * Initialise une grille de taille spécifiée avec des valeurs aléatoires représentant différents types de bonbons.
+ * Évite les alignements initiaux de trois bonbons identiques.
+ */
 void initGrid (mat & grid, const size_t & size)
 {
     srand(time(NULL));
@@ -46,8 +61,7 @@ void initGrid (mat & grid, const size_t & size)
             bool estValide;
             unsigned bonbon;
 
-            // Boucle jusqu'à obtenir une valeur valide
-            
+            //! Boucle jusqu'à obtenir une valeur valide
             do {
                 estValide = true;
                 bonbon = 1 + rand() % (KCandies - 1);
@@ -66,7 +80,18 @@ void initGrid (mat & grid, const size_t & size)
     }
 }
 
-// Affichage de la grille
+/**
+ * @brief Affichage de la grille
+ * 
+ * @param grid 
+ * @param score 
+ * @param combo 
+ * @param timeValue 
+ * @param mode
+ * @details
+ * Affiche la grille de jeu dans la console avec des informations supplémentaires telles que le score, le combo,
+ * le temps restant et le mode de jeu.
+ */
 void  displayGrid (const mat & grid, unsigned score, unsigned combo, int timeValue, Gamemode mode)
 {
     clearScreen();
@@ -87,25 +112,25 @@ void  displayGrid (const mat & grid, unsigned score, unsigned combo, int timeVal
             couleur(KReset);
             break;
             
-        case MODE_1v1:
-            couleur(KCyan);
-            cout << "Mode de jeu: 1v1 " << endl;
-            cout << "Score Joueur 1: " << score << " | Combo: x" << combo << " | Temps: " << timeValue << "s" << endl;
-            cout << "Score Joueur 2: " << score << " | Combo: x" << combo << " | Temps: " << timeValue << "s" << endl;
-            cout << "Objectif: Avoir le score le plus élevé en 120s" << endl;
-            couleur(KReset);
-            break;
+        // case MODE_1v1:
+        //     couleur(KCyan);
+        //     cout << "Mode de jeu: 1v1 " << endl;
+        //     cout << "Score Joueur 1: " << score << " | Combo: x" << combo << endl;
+        //     cout << "Score Joueur 2: " << score << " | Combo: x" << combo << endl;
+        //     cout << "Temps restant: " << timeValue << "s" << endl;
+        //     cout << "Objectif: Avoir le score le plus élevé en 120s" << endl;
+        //     couleur(KReset);
+        //     break;
     }
 
-
     cout << "    ";
-    for (size_t k = 0; k < grid[0].size(); ++k) {
-        cout << k << " ";
+    for (size_t line = 0; line < grid.size(); ++line) {
+        cout << line << " ";
     }
     cout << endl;
 
     for (size_t i = 0; i < grid.size(); ++i) {
-        cout << i <<" | ";
+        cout << i << " | ";
         for (const unsigned & j : grid[i]) {
             if(j >= 1 && j <= KCandies){
                 couleur_KNbCandies(j);
@@ -122,13 +147,28 @@ void  displayGrid (const mat & grid, unsigned score, unsigned combo, int timeVal
     cout << endl;
 }
 
-//Déplacement des éléments de la grille
+/**
+ * @brief Déplacement des éléments de la grille
+ * 
+ * @param Grid 
+ * @param PosStart 
+ * @param PosEnd 
+ * @details
+ * Échange les éléments à deux positions spécifiées dans la grille.
+ */
 void gridSwap (mat & Grid, const maPosition & PosStart, const maPosition & PosEnd)
 {
     swap(Grid[PosStart.abs][PosStart.ord], Grid[PosEnd.abs][PosEnd.ord]);
 }
 
-// Compte le nombre de bonbons restants dans la grille (Seulement pour le mode Clear)
+/**
+ * @brief Compte le nombre de bonbons restants dans la grille
+ * 
+ * @param grid 
+ * @return unsigned 
+ * @details
+ * Parcourt la grille et compte le nombre de cases qui ne sont pas vides (différentes de KImpossible).
+ */
 unsigned compterBonbonRestants(const mat& grid) {
     unsigned compteur = 0;
     for (size_t i = 0; i < grid.size(); ++i) {
@@ -141,7 +181,15 @@ unsigned compterBonbonRestants(const mat& grid) {
     return compteur;
 }
 
-// Vérifie si la grille est vide (Seulement pour le mode Clear)
+/**
+ * @brief Vérifie si la grille est vide
+ * 
+ * @param grid 
+ * @return true 
+ * @return false
+ * @details
+ * Parcourt la grille pour vérifier si toutes les cases sont vides (égales à KImpossible). 
+ */
 bool isGridEmpty(const mat& grid) {
     for (size_t i = 0; i < grid.size(); ++i) {
         for (size_t j = 0; j < grid[i].size(); ++j) {
@@ -153,7 +201,11 @@ bool isGridEmpty(const mat& grid) {
     return true;
 }
 
-// Applique la gravité sur la grille (Seulement pour le mode Clear)
+/**
+ * @brief Applique la gravité sur la grille
+ * @details *
+ * Parcourt chaque colonne de la grille et fait "tomber" les bonbons vers le bas pour remplir les cases vides (KImpossible).
+ */
 void gravité(mat& grid) {
     size_t taille = grid.size();
     
@@ -175,7 +227,14 @@ void gravité(mat& grid) {
     }
 }
 
-// Remplit les cases vides de la grille avec de nouveaux bonbons (Seulement pour le mode score)
+/**
+ * @brief Remplit les cases vides de la grille avec de nouveaux bonbons
+ * 
+ * @param grid 
+ * @param mode 
+ * @details
+ * Parcourt la grille et remplit les cases vides (KImpossible) avec de nouveaux bonbons aléatoires uniquement si le mode de jeu est MODE_SCORE.
+ */
 void remplirGrid(mat& grid, Gamemode mode) {
     if (mode == MODE_SCORE) {
         size_t taille = grid.size();

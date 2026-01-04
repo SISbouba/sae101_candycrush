@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SAE1.01 - Number Crush:  Fichier source de ressources/game.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SAE1.01 - Number Crush<span id="projectnumber">&#160;v1.0</span>
+   </div>
+   <div id="projectbrief">Jeu de type Candy Crush développé en C++ dans le cadre de la SAE1.01</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.16.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('game_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">game.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="game_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef GAME_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define GAME_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="type_8h.html">type.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;cctype&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#ab9912a35fe0df6e2fe3c8be4e1f2a9d5">MakeAMove</a> (<a class="code hl_typedef" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp; Grid, <span class="keyword">const</span> <a class="code hl_struct" href="structmaPosition.html">maPosition</a> &amp; Pos, <span class="keywordtype">char</span> Direction);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">bool</span> <a class="code hl_function" href="game_8h.html#a79b6bb8e70fdd93bb802cf05062ea916">isValidMove</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a>&amp; grid, <span class="keyword">const</span> <a class="code hl_struct" href="structmaPosition.html">maPosition</a>&amp; Pos, <span class="keywordtype">char</span> Direction);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><a class="code hl_struct" href="structmaPosition.html">maPosition</a> <a class="code hl_function" href="game_8h.html#a8669fff22fbca6892cb6c466a191f6d6">getTargetPosition</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmaPosition.html">maPosition</a>&amp; Pos, <span class="keywordtype">char</span> Direction);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">bool</span> <a class="code hl_function" href="game_8h.html#aee7483c5715afce5b8d044329f2d9fdb">atLeastThreeInAColumn</a> (<span class="keyword">const</span> <a class="code hl_typedef" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp; grid, <a class="code hl_struct" href="structmaPosition.html">maPosition</a> &amp; pos, <span class="keywordtype">unsigned</span> &amp; howMany);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">bool</span> <a class="code hl_function" href="game_8h.html#a592d3742cedb5bd0462cc8ebe9e79131">atLeastThreeInARow</a> (<span class="keyword">const</span> <a class="code hl_typedef" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp; grid, <a class="code hl_struct" href="structmaPosition.html">maPosition</a> &amp; pos, <span class="keywordtype">unsigned</span> &amp; howMany);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a> (<a class="code hl_typedef" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp; grid, <span class="keyword">const</span> <a class="code hl_struct" href="structmaPosition.html">maPosition</a> &amp; pos1, <span class="keyword">const</span> <a class="code hl_struct" href="structmaPosition.html">maPosition</a> &amp; pos2);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a4e37bf8b2ef1042c1631bf9d394ebd0d">removalInRow</a> (<a class="code hl_typedef" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp; grid, <span class="keyword">const</span> <a class="code hl_struct" href="structmaPosition.html">maPosition</a> &amp; pos, <span class="keywordtype">unsigned</span>  howMany);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a4ad87ec3a96e07ac5000e8e4e38ece6f">removalInColumn</a> (<a class="code hl_typedef" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a> &amp; grid, <span class="keyword">const</span> <a class="code hl_struct" href="structmaPosition.html">maPosition</a> &amp; pos, <span class="keywordtype">unsigned</span>  howMany);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">bool</span> <a class="code hl_function" href="game_8h.html#ac4d2c94940df3370829dd22547c466d9">traitementDeAlignement</a>(<a class="code hl_typedef" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a>&amp; grid, <span class="keywordtype">unsigned</span>&amp; score, <span class="keywordtype">unsigned</span>&amp; combo, <a class="code hl_enumeration" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20e">Gamemode</a> mode);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a182a58b52ccee7022e49c19d33f888dd">afficherMode</a>(<a class="code hl_enumeration" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20e">Gamemode</a> mode);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a9f1c87c7296779c4c895ca2b13ad2e3e">game</a> ();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif </span><span class="comment">// GAME_H</span></div>
+<div class="ttc" id="agame_8h_html_a182a58b52ccee7022e49c19d33f888dd"><div class="ttname"><a href="game_8h.html#a182a58b52ccee7022e49c19d33f888dd">afficherMode</a></div><div class="ttdeci">void afficherMode(Gamemode mode)</div><div class="ttdoc">Fonction d&#39;affichage du mode de jeu.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00236">game.cpp:236</a></div></div>
+<div class="ttc" id="agame_8h_html_a4ad87ec3a96e07ac5000e8e4e38ece6f"><div class="ttname"><a href="game_8h.html#a4ad87ec3a96e07ac5000e8e4e38ece6f">removalInColumn</a></div><div class="ttdeci">void removalInColumn(mat &amp;grid, const maPosition &amp;pos, unsigned howMany)</div><div class="ttdoc">Supprime les bonbons atLeastThreeInAColumn.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00152">game.cpp:152</a></div></div>
+<div class="ttc" id="agame_8h_html_a4e37bf8b2ef1042c1631bf9d394ebd0d"><div class="ttname"><a href="game_8h.html#a4e37bf8b2ef1042c1631bf9d394ebd0d">removalInRow</a></div><div class="ttdeci">void removalInRow(mat &amp;grid, const maPosition &amp;pos, unsigned howMany)</div><div class="ttdoc">Supprime les bonbons atLeastThreeInARow.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00173">game.cpp:173</a></div></div>
+<div class="ttc" id="agame_8h_html_a592d3742cedb5bd0462cc8ebe9e79131"><div class="ttname"><a href="game_8h.html#a592d3742cedb5bd0462cc8ebe9e79131">atLeastThreeInARow</a></div><div class="ttdeci">bool atLeastThreeInARow(const mat &amp;grid, maPosition &amp;pos, unsigned &amp;howMany)</div><div class="ttdoc">Vérifie s&#39;il y a au moins trois bonbons alignés horizontalement.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00128">game.cpp:128</a></div></div>
+<div class="ttc" id="agame_8h_html_a61cffd07a54e944fdae77b6d61b22133"><div class="ttname"><a href="game_8h.html#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a></div><div class="ttdeci">void gridSwap(mat &amp;grid, const maPosition &amp;pos1, const maPosition &amp;pos2)</div><div class="ttdoc">Déplacement des éléments de la grille.</div><div class="ttdef"><b>Definition</b> <a href="gridmanagement_8cpp_source.html#l00159">gridmanagement.cpp:159</a></div></div>
+<div class="ttc" id="agame_8h_html_a79b6bb8e70fdd93bb802cf05062ea916"><div class="ttname"><a href="game_8h.html#a79b6bb8e70fdd93bb802cf05062ea916">isValidMove</a></div><div class="ttdeci">bool isValidMove(const mat &amp;grid, const maPosition &amp;Pos, char Direction)</div><div class="ttdoc">Vérifie si le mouvement est valide pour éviter les débordements.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00051">game.cpp:51</a></div></div>
+<div class="ttc" id="agame_8h_html_a8669fff22fbca6892cb6c466a191f6d6"><div class="ttname"><a href="game_8h.html#a8669fff22fbca6892cb6c466a191f6d6">getTargetPosition</a></div><div class="ttdeci">maPosition getTargetPosition(const maPosition &amp;Pos, char Direction)</div><div class="ttdoc">Obtient la position cible en fonction de la direction.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00074">game.cpp:74</a></div></div>
+<div class="ttc" id="agame_8h_html_a9f1c87c7296779c4c895ca2b13ad2e3e"><div class="ttname"><a href="game_8h.html#a9f1c87c7296779c4c895ca2b13ad2e3e">game</a></div><div class="ttdeci">void game()</div><div class="ttdoc">Fonction principale du jeu.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00417">game.cpp:417</a></div></div>
+<div class="ttc" id="agame_8h_html_ab9912a35fe0df6e2fe3c8be4e1f2a9d5"><div class="ttname"><a href="game_8h.html#ab9912a35fe0df6e2fe3c8be4e1f2a9d5">MakeAMove</a></div><div class="ttdeci">void MakeAMove(mat &amp;Grid, const maPosition &amp;Pos, char Direction)</div><div class="ttdoc">Déclaration des fonctions de gestion du jeu.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00025">game.cpp:25</a></div></div>
+<div class="ttc" id="agame_8h_html_ac4d2c94940df3370829dd22547c466d9"><div class="ttname"><a href="game_8h.html#ac4d2c94940df3370829dd22547c466d9">traitementDeAlignement</a></div><div class="ttdeci">bool traitementDeAlignement(mat &amp;grid, unsigned &amp;score, unsigned &amp;combo, Gamemode mode)</div><div class="ttdoc">Traite les alignements et met à jour le score et le combo.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00197">game.cpp:197</a></div></div>
+<div class="ttc" id="agame_8h_html_aee7483c5715afce5b8d044329f2d9fdb"><div class="ttname"><a href="game_8h.html#aee7483c5715afce5b8d044329f2d9fdb">atLeastThreeInAColumn</a></div><div class="ttdeci">bool atLeastThreeInAColumn(const mat &amp;grid, maPosition &amp;pos, unsigned &amp;howMany)</div><div class="ttdoc">Vérifie s&#39;il y a au moins trois bonbons alignés verticalement.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00102">game.cpp:102</a></div></div>
+<div class="ttc" id="astructmaPosition_html"><div class="ttname"><a href="structmaPosition.html">maPosition</a></div><div class="ttdoc">Type représentant la grille.</div><div class="ttdef"><b>Definition</b> <a href="type_8h_source.html#l00027">type.h:27</a></div></div>
+<div class="ttc" id="atype_8h_html"><div class="ttname"><a href="type_8h.html">type.h</a></div></div>
+<div class="ttc" id="atype_8h_html_a1c76e2d1f523d33155289c2ea84dd20e"><div class="ttname"><a href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20e">Gamemode</a></div><div class="ttdeci">Gamemode</div><div class="ttdoc">Une position dans la grille.</div><div class="ttdef"><b>Definition</b> <a href="type_8h_source.html#l00036">type.h:36</a></div></div>
+<div class="ttc" id="atype_8h_html_aee710f500ed8d179390ae3862af69d24"><div class="ttname"><a href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a></div><div class="ttdeci">vector&lt; line &gt; mat</div><div class="ttdoc">Type représentant une ligne de la grille.</div><div class="ttdef"><b>Definition</b> <a href="type_8h_source.html#l00026">type.h:26</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_b310993d99a62c4e6da0db86d59823c0.html">ressources</a></li><li class="navelem"><a href="game_8h.html">game.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.0 </li>
+  </ul>
+</div>
+</body>
+</html>
