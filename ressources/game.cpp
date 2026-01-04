@@ -358,27 +358,6 @@ void afficherMode(Gamemode mode){
     }
 }
 
-
-
-// Débug : Fonction de test du jeu
-void testGame(){
-    mat grid;
-    size_t taille = 8;
-    maPosition pos ;
-    unsigned howMany;
-
-    cout << "Bienvenue dans Number Crush" << endl;
-    initGrid(grid, taille);
-
-    cout << "Grille initiale :" << endl;
-    displayGrid(grid, 0, 0, 120, MODE_1v1);
-    MakeAMove(grid, {3,3}, 'd');
-    cout << "Après le déplacement :" << endl;
-    //displayGridWithChanges(grid, {3,3}, {3,4});
-    displayGrid(grid, 0, 0, 120, MODE_1v1);
-}
-
-
 void game(){
     size_t taille;
     int choix;

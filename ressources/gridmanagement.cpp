@@ -98,9 +98,15 @@ void  displayGrid (const mat & grid, unsigned score, unsigned combo, int timeVal
     }
 
 
-    for (const line & i : grid) {
-        cout << "| ";
-        for (const unsigned & j : i) {
+    cout << "    ";
+    for (size_t k = 0; k < grid[0].size(); ++k) {
+        cout << k << " ";
+    }
+    cout << endl;
+
+    for (size_t i = 0; i < grid.size(); ++i) {
+        cout << i <<" | ";
+        for (const unsigned & j : grid[i]) {
             if(j >= 1 && j <= KCandies){
                 couleur_KNbCandies(j);
                 cout << j << " ";
@@ -185,30 +191,3 @@ void remplirGrid(mat& grid, Gamemode mode) {
         }
     }
 }
-
-// Débug : Affichage de la grille en coloriant les positions modifiées
-// void displayGridWithChanges (const mat & grid, const maPosition & PosStart, const maPosition & PosEnd)
-// {
-//     clearScreen();
-//     for (size_t row = 0; row < grid.size(); ++row) {
-//         for (size_t col = 0; col < grid[row].size(); ++col) {
-//             unsigned j = grid[row][col];
-//             // Colorie en Magenta les positions qui ont changé
-//             if ((row == PosStart.abs && col == PosStart.ord) || 
-//                 (row == PosEnd.abs && col == PosEnd.ord)) {
-//                 couleur(KMAgenta);
-//             } else {
-//                 couleur_KNbCandies(j);
-//             }
-            
-//             if(j >= 1 && j <= KCandies){
-//                 cout << j << " ";
-//             }
-//             else {
-//                 cout << ' ';
-//             }
-//         }
-//         cout << endl;
-//     }
-//     couleur(KReset);
-// }
