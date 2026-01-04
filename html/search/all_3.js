@@ -4,7 +4,7 @@ var searchData=
   ['game_2ecpp_1',['game.cpp',['../game_8cpp.html',1,'']]],
   ['game_2eh_2',['game.h',['../game_8h.html',1,'']]],
   ['gamemode_3',['Gamemode',['../type_8h.html#a1c76e2d1f523d33155289c2ea84dd20e',1,'type.h']]],
-  ['gettargetposition_4',['getTargetPosition',['../game_8cpp.html#a8669fff22fbca6892cb6c466a191f6d6',1,'game.cpp']]],
+  ['gettargetposition_4',['getTargetPosition',['../game_8cpp.html#a8669fff22fbca6892cb6c466a191f6d6',1,'getTargetPosition(const maPosition &amp;Pos, char Direction):&#160;game.cpp'],['../game_8h.html#a8669fff22fbca6892cb6c466a191f6d6',1,'getTargetPosition(const maPosition &amp;Pos, char Direction):&#160;game.cpp']]],
   ['gravité_5',['gravité',['../gridmanagement_8cpp.html#acd388a9c237b453e23866b221b913821',1,'gravité(mat &amp;grid):&#160;gridmanagement.cpp'],['../gridmanagement_8h.html#acd388a9c237b453e23866b221b913821',1,'gravité(mat &amp;grid):&#160;gridmanagement.cpp']]],
   ['gridmanagement_2ecpp_6',['gridmanagement.cpp',['../gridmanagement_8cpp.html',1,'']]],
   ['gridmanagement_2eh_7',['gridmanagement.h',['../gridmanagement_8h.html',1,'']]],

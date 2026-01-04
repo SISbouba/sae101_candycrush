@@ -1,8 +1,11 @@
-/*
-    *@file : game.cpp
-    *@author : DURAN Kelvin - SISE Aboubakar
-    *@brief : Fonctions de gestion du jeu.
-*/
+/**
+ * @file game.cpp
+ * @author DURAN Kalvin - SISE Aboubakar
+ * @brief Fonctions de gestion du jeu.
+ * @details 
+ * Ce fichier contient les définitions des fonctions utilisées pour gérer la logique du jeu, y compris les mouvements des  
+ * bonbons, la détection des alignements, et l'affichage des modes de jeu.
+ */
 
 #include <iostream>
 #include <vector>
@@ -18,11 +21,10 @@ using namespace std;
 using namespace std::chrono;
 
 
-// Effectue un déplacement dans la grille
+//! Effectue un déplacement dans la grille
 void MakeAMove (mat & grid, const maPosition & Pos, char Direction)
 {
     size_t Sgrid = grid.size();
-    // Touche du jouer 1
     switch (tolower(Direction)) {
     case 'z':
         if (Pos.ord > 0)
@@ -45,44 +47,58 @@ void MakeAMove (mat & grid, const maPosition & Pos, char Direction)
     }
 }
 
-// Vérifie si le mouvement est valide pour éviter les débordements
+//! Vérifie si le mouvement est valide pour éviter les débordements
 bool isValidMove(const mat& grid, const maPosition& Pos, char Direction) {
     size_t Sgrid = grid.size();
     switch (tolower(Direction)) {
         case 'z': 
-            return Pos.ord > 0; // Vérifie que la position au-dessus est valide
+            return Pos.ord > 0; //! Vérifie que la position au-dessus est valide
         case 'q': 
-            return Pos.abs > 0; // Vérifie que la position à gauche est valide
+            return Pos.abs > 0; //! Vérifie que la position à gauche est valide
         case 's': 
-            return Pos.ord + 1 < Sgrid; // Vérifie que la position en dessous est valide
+            return Pos.ord + 1 < Sgrid; //! Vérifie que la position en dessous est valide
         case 'd': 
-            return Pos.abs + 1 < Sgrid; // Vérifie que la position à droite est valide
+            return Pos.abs + 1 < Sgrid; //! Vérifie que la position à droite est valide
         default: 
             return false; // Touche invalide
     }
 }
-
-// Obtient la position cible en fonction de la direction
+ 
+/**
+ * @brief Obtient la position cible en fonction de la direction
+ * 
+ * @param Pos 
+ * @param Direction 
+ * @return maPosition  
+ */
 maPosition getTargetPosition(const maPosition& Pos, char Direction) {
     maPosition target = Pos;
     switch (tolower(Direction)) {
         case 'z': 
-            target.ord--; // Déplace vers le haut
+            target.ord--; //! Déplace vers le haut
             break;
         case 'q': 
-            target.abs--; // Déplace vers la gauche
+            target.abs--; //! Déplace vers la gauche
             break;
         case 's': 
-            target.ord++; // Déplace vers le bas
+            target.ord++; //! Déplace vers le bas
             break;
         case 'd': 
-            target.abs++; // Déplace vers la droite
+            target.abs++; //! Déplace vers la droite
             break;
     }
     return target;
 }
 
-// Vérifie s'il y a au moins trois bonbons alignés verticalement
+/**
+ * @brief Vérifie s'il y a au moins trois bonbons alignés verticalement
+ * 
+ * @param grid 
+ * @param pos 
+ * @param howMany 
+ * @return true 
+ * @return false 
+ */
 bool atLeastThreeInAColumn (const mat & grid, maPosition & pos, unsigned & howMany){
     size_t taille = grid.size();
 
@@ -100,7 +116,15 @@ bool atLeastThreeInAColumn (const mat & grid, maPosition & pos, unsigned & howMa
     return false;
 }
 
-// Vérifie s'il y a au moins trois bonbons alignés horizontalement
+/**
+ * @brief  Vérifie s'il y a au moins trois bonbons alignés horizontalement
+ * 
+ * @param grid 
+ * @param pos 
+ * @param howMany 
+ * @return true 
+ * @return false 
+ */
 bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany){
     size_t taille = grid.size();
 
@@ -118,7 +142,13 @@ bool atLeastThreeInARow (const mat & grid, maPosition & pos, unsigned & howMany)
     return false;
 }
 
-// Supprime les bonbons atLeastThreeInAColumn
+/**
+ * @brief Supprime les bonbons atLeastThreeInAColumn
+ * 
+ * @param grid 
+ * @param pos 
+ * @param howMany 
+ */
 void removalInColumn (mat & grid, const maPosition & pos, unsigned  howMany){
     size_t col = pos.abs;
     size_t row = pos.ord;
@@ -133,7 +163,13 @@ void removalInColumn (mat & grid, const maPosition & pos, unsigned  howMany){
     }
 }
 
-// Supprime les bonbons atLeastThreeInARow
+/**
+ * @brief Supprime les bonbons atLeastThreeInARow
+ * 
+ * @param grid 
+ * @param pos 
+ * @param howMany 
+ */
 void removalInRow (mat & grid, const maPosition & pos, unsigned  howMany){
     size_t col = pos.abs;
     size_t row = pos.ord;
@@ -148,34 +184,40 @@ void removalInRow (mat & grid, const maPosition & pos, unsigned  howMany){
     }
 }
 
-// Traite les alignements et met à jour le score et le combo
+/**
+ * @brief Traite les alignements et met à jour le score et le combo
+ * 
+ * @param grid 
+ * @param score 
+ * @param combo 
+ * @param mode 
+ * @return true 
+ * @return false 
+ */
 bool traitementDeAlignement(mat& grid, unsigned& score, unsigned& combo, Gamemode mode) {
     maPosition pos;
     unsigned howMany;
     bool foundMatch = false;
 
-    // Continue tant qu'il y a des alignements
+    //! Continue tant qu'il y a des alignements
     while (atLeastThreeInAColumn(grid, pos, howMany) || atLeastThreeInARow(grid, pos, howMany)) {
         foundMatch = true;
         
-        // Supprime les bonbons alignés
+        //! Supprime les bonbons alignés
         if (atLeastThreeInAColumn(grid, pos, howMany)) {
             removalInColumn(grid, pos, howMany);
         } else if (atLeastThreeInARow(grid, pos, howMany)) {
             removalInRow(grid, pos, howMany);
         }
         
-        // Met à jour le score et le combo
+        //! Met à jour le score et le combo
         score += howMany * KScorePerCandy * combo;
         combo++;
         
-        // Appliquer la gravité en mode CLEAR
+        //! Appliquer la gravité en mode CLEAR
         if (mode == MODE_CLEAR) {
             gravité(grid);
-        } //else if (mode == MODE_SCORE ) {
-            // Remplit la grille
-            //remplirGrid(grid, mode);
-        //}
+        }
         
         remplirGrid(grid, mode);
     }
@@ -183,7 +225,14 @@ bool traitementDeAlignement(mat& grid, unsigned& score, unsigned& combo, Gamemod
     return foundMatch;
 }
 
-// Fonction d'affichage du mode de jeu
+
+/**
+ * @brief Fonction d'affichage du mode de jeu
+ * 
+ * @param mode 
+ * @details
+ * Cette fonction est principale car elle permet d'afficher et joueur mode de jeu sélectioné avec chacun leur prope condition de victoire.
+ */
 void afficherMode(Gamemode mode){
     mat grid;
     size_t taille = 8;
@@ -194,7 +243,9 @@ void afficherMode(Gamemode mode){
     auto startTime = steady_clock::now(); // Démarre le chronomètre
     int tempsLimite = 120; // Durée du temps en secondes
 
+    //! Boucle principale du jeu selon le mode sélectionné
     switch (mode) {
+        //! Mode Score
         case MODE_SCORE:
             while(true){
                 auto tempsActuel = steady_clock::now();
@@ -274,7 +325,7 @@ void afficherMode(Gamemode mode){
                 }
             }
             break;
-
+        //! Mode Clear
         case MODE_CLEAR:
             while (true){
                 auto tempsActuel = steady_clock::now();
@@ -339,7 +390,7 @@ void afficherMode(Gamemode mode){
                 }
             }
             break;
-
+        //! Mode 1v1
         case MODE_1v1:
             couleur(KCyan);
             cout << "Mode de jeu 1v1 en cours de développement. Veuillez réessayer plus tard." << endl;
@@ -358,10 +409,15 @@ void afficherMode(Gamemode mode){
     cin.get();
 }
 
+/**
+ * @brief Fonction principale du jeu
+ * @details
+ * Cette fonction ou le menu principale du jeu avec la sélection des modes de jeu.
+ */
 void game(){
-    size_t taille;
     int choix;
 
+    //! Affiche le menu principal
     couleur(KCyan);
     cout << "Bienvenue dans Number Crush" << endl;
 
@@ -375,7 +431,7 @@ void game(){
     couleur(KReset);
     cin >> choix;
 
-    // Affiche la sélection choisie
+    //! Affiche la sélection choisie
     switch (choix) {
     case 1:
         afficherMode(MODE_SCORE);
@@ -386,7 +442,7 @@ void game(){
     case 3:
         afficherMode(MODE_1v1);
         break;
-    case 4: // Quitter le jeu
+    case 4: //! Quitter le jeu
         couleur(KCyan);
         cout << "Merci d'avoir joué ! Au revoir !" << endl;
         couleur(KReset);

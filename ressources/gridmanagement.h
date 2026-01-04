@@ -1,3 +1,12 @@
+/**
+ * @headerfile gridmanagement.h
+ * @author DURAN Kalvin - SISE Aboubakar
+ * @brief Déclaration des fonctions de gestion de la grille de jeu.
+ * @details 
+ * Ce fichier contient les déclarations des fonctions utilisées pour gérer la grille de jeu, y compris l'affichage,
+ * l'initialisation, la gravité, et le remplissage de la grille.
+ */
+
 #ifndef GRIDMANAGEMENT_H
 #define GRIDMANAGEMENT_H
 
@@ -12,6 +21,5 @@ unsigned compterBonbonRestants(const mat& grid);
 bool isGridEmpty(const mat& grid);
 void gravité(mat& grid);
 void remplirGrid(mat& grid, Gamemode mode);
-//void displayGridWithChanges (const mat & grid, const maPosition & PosStart, const maPosition & PosEnd);
 
 #endif // GRIDMANAGEMENT_H

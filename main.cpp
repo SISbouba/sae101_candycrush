@@ -1,8 +1,10 @@
-/*
-    *@file : main.cpp
-    *@author : DURAN Kelvin - SISE Aboubakar
-    *@brief : Point d'entrée principal du programme de jeu.
-*/
+/**
+ * @file main.cpp
+ * @author DURAN Kalvin - SISE Aboubakar
+ * @brief Point d'entrée principal du programme de jeu.
+ * @details 
+ * Ce fichier contient la fonction main qui initialise et lance le jeu en appelant la fonction game().
+ */
 
 #include <iostream>
 #include <cstdlib>
@@ -17,7 +19,7 @@ using namespace std;
 
 int main()
 {
-    //testGame();
+    //! Lancer le jeu
     game();
     return 0;
 }
