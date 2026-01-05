@@ -1,0 +1,16 @@
+<map id="couleur" name="couleur">
+<area shape="rect" id="Node000001" title="Déclaration des fonctions de gestion de la grille de jeu." alt="" coords="680,81,744,107"/>
+<area shape="rect" id="Node000002" href="$game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="207,107,304,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="667,99,304,119,304,114,666,94"/>
+<area shape="rect" id="Node000003" href="$game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="104,132,159,157"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="667,107,632,114,469,137,304,147,159,148,159,143,304,142,468,131,632,109,666,102"/>
+<area shape="rect" id="Node000005" href="$gridmanagement_8cpp.html#a1baee82490bb341c9636ed219229ea0e" title="Change la couleur en fonction du type de bonbon." alt="" coords="487,5,632,31"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="676,77,631,52,590,33,592,28,633,48,678,72"/>
+<area shape="rect" id="Node000006" href="$gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2" title="Affichage de la grille." alt="" coords="352,56,439,81"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="666,93,439,75,439,69,667,88"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="194,135,159,142,158,137,193,129"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,132,56,157"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="90,147,56,147,56,142,90,142"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="505,37,438,58,437,53,503,32"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="348,89,292,109,290,104,346,84"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="ressources/gridmanagement.h" name="ressources/gridmanagement.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="79,5,276,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html" title="Point d&#39;entrée principal du programme de jeu." alt="" coords="5,79,80,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,39,66,81,63,76,142,35"/>
+<area shape="rect" id="Node000003" href="$game_8cpp.html" title="Fonctions de gestion du jeu." alt="" coords="104,79,251,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,44,180,79,175,79,175,44"/>
+<area shape="rect" id="Node000004" href="$gridmanagement_8cpp.html" title="Fonctions de gestion de la grille de jeu." alt="" coords="275,79,485,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="223,33,348,76,346,81,222,38"/>
+</map>

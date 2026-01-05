@@ -1,0 +1,15 @@
+<map id="KRouge" name="KRouge">
+<area shape="rect" id="Node000001" title="Couleur rouge." alt="" coords="680,56,749,81"/>
+<area shape="rect" id="Node000002" href="$game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="207,56,304,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="666,71,304,71,304,66,666,66"/>
+<area shape="rect" id="Node000003" href="$game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="104,81,159,107"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="666,74,632,77,468,88,304,97,159,97,159,92,304,91,468,83,632,71,666,69"/>
+<area shape="rect" id="Node000005" href="$gridmanagement_8cpp.html#a1baee82490bb341c9636ed219229ea0e" title="Change la couleur en fonction du type de bonbon." alt="" coords="487,5,632,31"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="666,56,598,33,600,28,668,51"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="194,84,159,91,158,86,193,79"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,81,56,107"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="90,97,56,97,56,91,90,91"/>
+<area shape="rect" id="Node000006" href="$gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2" title="Affichage de la grille." alt="" coords="352,5,439,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="473,21,439,21,439,15,473,15"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="348,38,292,58,290,53,346,33"/>
+</map>

@@ -192,7 +192,8 @@ void removalInRow (mat & grid, const maPosition & pos, unsigned  howMany){
  * @param combo 
  * @param mode 
  * @return true 
- * @return false 
+ * @return false
+ * @callergraph 
  */
 bool traitementDeAlignement(mat& grid, unsigned& score, unsigned& combo, Gamemode mode) {
     maPosition pos;
@@ -232,6 +233,7 @@ bool traitementDeAlignement(mat& grid, unsigned& score, unsigned& combo, Gamemod
  * @param mode 
  * @details
  * Cette fonction est principale car elle permet d'afficher et joueur mode de jeu sélectioné avec chacun leur prope condition de victoire.
+ * @callgraph
  */
 void afficherMode(Gamemode mode){
     mat grid;

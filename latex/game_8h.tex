@@ -3,6 +3,20 @@
 {\ttfamily \+\#include "{}type.\+h"{}}\newline
 {\ttfamily \+\#include $<$cctype$>$}\newline
 {\ttfamily \+\#include $<$iostream$>$}\newline
+Graphe des dépendances par inclusion de game.\+h:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{game_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{game_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
@@ -56,183 +70,197 @@ Mode Clear
 
 Mode 1v1
 
-Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00236}{236}} du fichier \doxymbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00238}{238}} du fichier \doxymbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00237\ \ \ \ \ \doxymbox{\hyperlink{type_8h_aee710f500ed8d179390ae3862af69d24}{mat}}\ grid;}
-\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ taille\ =\ 8;}
-\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ score\ =\ 0;}
-\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ combo\ =\ 1;}
-\DoxyCodeLine{00241\ \ \ \ \ }
-\DoxyCodeLine{00242\ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a4bccf39627ad0e9ef02f761a348de1b6}{initGrid}}(grid,\ taille);}
-\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{auto}\ startTime\ =\ steady\_clock::now();\ \textcolor{comment}{//\ Démarre\ le\ chronomètre}}
-\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{int}\ tempsLimite\ =\ 120;\ \textcolor{comment}{//\ Durée\ du\ temps\ en\ secondes}}
-\DoxyCodeLine{00245\ }
-\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordflow}{switch}\ (mode)\ \{}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8}{MODE\_SCORE}}:}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
-\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ tempsActuel\ =\ steady\_clock::now();}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempsPasser\ =\ duration\_cast<seconds>(tempsActuel\ -\/\ startTime).count();}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempsRestant\ =\ tempsLimite\ -\/\ tempsPasser;}
-\DoxyCodeLine{00254\ }
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affiche\ le\ message\ de\ fin\ si\ le\ temps\ est\ écoulé}}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tempsRestant\ <=\ 0)\ \{}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Temps\ écoulé\ !"{}}\ <<\ endl;}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this\_thread::sleep\_for(milliseconds(1000));}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout<<\ \textcolor{stringliteral}{"{}Votre\ score\ final\ est\ :\ "{}}\ <<\ score\ <<\ endl;}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (score\ >=\ \doxymbox{\hyperlink{type_8h_a4c057195b415fb14abcbba4a9be17ecb}{KTargetScore}})\ \{}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a72260f87613d24d0cd1e7c8f646ca5f5}{KVert}});}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}VICTOIRE!\ Objectif\ atteint!"{}}\ <<\ endl;}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a87aab004c1c22814beb8db1ddaa9f628}{KRouge}});}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Dommage...\ Objectif\ non\ atteint."{}}\ <<\ endl;}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00271\ }
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affiche\ le\ message\ de\ victoire\ si\ l'objectif\ est\ atteint}}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (score\ >=\ \doxymbox{\hyperlink{type_8h_a4c057195b415fb14abcbba4a9be17ecb}{KTargetScore}})\ \{}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}();}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a72260f87613d24d0cd1e7c8f646ca5f5}{KVert}});}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}VICTOIRE!\ Objectif\ atteint!"{}}\ <<\ endl;}
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Score\ final:\ "{}}\ <<\ score\ <<\ endl;}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Temps\ restant:\ "{}}\ <<\ tempsRestant\ <<\ \textcolor{stringliteral}{"{}s"{}}\ <<\ endl;}
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00282\ }
-\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a8415cba8a293e69fe15c2e6ec604f1a2}{displayGrid}}(grid,\ score,\ combo,\ tempsRestant,\ mode);}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \doxymbox{\hyperlink{type_8h_aee710f500ed8d179390ae3862af69d24}{mat}}\ grid;}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ taille\ =\ 8;}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ score\ =\ 0;}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ combo\ =\ 1;}
+\DoxyCodeLine{00243\ \ \ \ \ }
+\DoxyCodeLine{00244\ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a4bccf39627ad0e9ef02f761a348de1b6}{initGrid}}(grid,\ taille);}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keyword}{auto}\ startTime\ =\ steady\_clock::now();\ \textcolor{comment}{//\ Démarre\ le\ chronomètre}}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{int}\ tempsLimite\ =\ 120;\ \textcolor{comment}{//\ Durée\ du\ temps\ en\ secondes}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordflow}{switch}\ (mode)\ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8}{MODE\_SCORE}}:}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ tempsActuel\ =\ steady\_clock::now();}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempsPasser\ =\ duration\_cast<seconds>(tempsActuel\ -\/\ startTime).count();}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempsRestant\ =\ tempsLimite\ -\/\ tempsPasser;}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affiche\ le\ message\ de\ fin\ si\ le\ temps\ est\ écoulé}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tempsRestant\ <=\ 0)\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Temps\ écoulé\ !"{}}\ <<\ endl;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this\_thread::sleep\_for(milliseconds(1000));}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout<<\ \textcolor{stringliteral}{"{}Votre\ score\ final\ est\ :\ "{}}\ <<\ score\ <<\ endl;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (score\ >=\ \doxymbox{\hyperlink{type_8h_a4c057195b415fb14abcbba4a9be17ecb}{KTargetScore}})\ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a72260f87613d24d0cd1e7c8f646ca5f5}{KVert}});}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}VICTOIRE!\ Objectif\ atteint!"{}}\ <<\ endl;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a87aab004c1c22814beb8db1ddaa9f628}{KRouge}});}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Dommage...\ Objectif\ non\ atteint."{}}\ <<\ endl;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affiche\ le\ message\ de\ victoire\ si\ l'objectif\ est\ atteint}}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (score\ >=\ \doxymbox{\hyperlink{type_8h_a4c057195b415fb14abcbba4a9be17ecb}{KTargetScore}})\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}();}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a72260f87613d24d0cd1e7c8f646ca5f5}{KVert}});}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}VICTOIRE!\ Objectif\ atteint!"{}}\ <<\ endl;}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Score\ final:\ "{}}\ <<\ score\ <<\ endl;}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Temps\ restant:\ "{}}\ <<\ tempsRestant\ <<\ \textcolor{stringliteral}{"{}s"{}}\ <<\ endl;}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00284\ }
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Entrez\ la\ position\ (ligne\ colonne)\ et\ la\ direction\ (z/q/s/d)\ ou\ 'x'\ pour\ quitter:"{}}\ <<\ endl;}
-\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Exemple:\ 3\ 4\ d"{}}\ <<\ endl;}
-\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ input;}
-\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getline(cin,\ input);}
-\DoxyCodeLine{00292\ }
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \textcolor{stringliteral}{"{}x"{}}\ ||\ input\ ==\ \textcolor{stringliteral}{"{}X"{}})\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ row,\ col;}
-\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ direction;}
-\DoxyCodeLine{00297\ }
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Analyse\ l'entrée\ utilisateur}}
-\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sscanf(input.c\_str(),\ \textcolor{stringliteral}{"{}\%u\ \%u\ \%c"{}},\ \&row,\ \&col,\ \&direction)\ ==\ 3)\ \{\ \textcolor{comment}{//\ Vérifie\ que\ trois\ valeurs\ ont\ été\ lues}}
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ <\ taille\ \&\&\ col\ <\ taille)\ \{\ \textcolor{comment}{//\ Vérifie\ que\ les\ indices\ sont\ dans\ les\ limites\ de\ la\ grille}}
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structmaPosition}{maPosition}}\ pos\ =\ \{row,\ col\};}
-\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_a79b6bb8e70fdd93bb802cf05062ea916}{isValidMove}}(grid,\ pos,\ direction))\ \{}
-\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structmaPosition}{maPosition}}\ target\ =\ \doxymbox{\hyperlink{game_8cpp_a8669fff22fbca6892cb6c466a191f6d6}{getTargetPosition}}(pos,\ direction);\ \textcolor{comment}{//\ Obtient\ la\ position\ cible}}
-\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8h_a61cffd07a54e944fdae77b6d61b22133}{gridSwap}}(grid,\ pos,\ target);}
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_ac4d2c94940df3370829dd22547c466d9}{traitementDeAlignement}}(grid,\ score,\ combo,\ mode))\ \{}
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a1b010b9694f3acc35b02b0a667d99094}{KJaune}});}
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Bon\ coup!\ Combo\ x"{}}\ <<\ combo\ <<\ endl;}
-\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8h_a61cffd07a54e944fdae77b6d61b22133}{gridSwap}}(grid,\ pos,\ target);}
-\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ combo\ =\ 1;}
-\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a87aab004c1c22814beb8db1ddaa9f628}{KRouge}});}
-\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Aucune\ combinaison\ trouvée.\ Mouvement\ annulé."{}}\ <<\ endl;}
-\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this\_thread::sleep\_for(milliseconds(1000));}
-\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Mouvement\ invalide."{}}\ <<\ endl;}
-\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this\_thread::sleep\_for(milliseconds(1000));}
-\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32}{MODE\_CLEAR}}:}
-\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\{}
-\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ tempsActuel\ =\ steady\_clock::now();}
-\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempsPasser\ =\ duration\_cast<seconds>(tempsActuel\ -\/\ startTime).count();}
-\DoxyCodeLine{00333\ }
-\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affiche\ le\ message\ de\ fin\ si\ le\ temps\ est\ écoulé}}
-\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{gridmanagement_8cpp_ae9fcaee43db1e7fec23f90a810bba50a}{isGridEmpty}}(grid)\ )\ \{}
-\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}();}
-\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a72260f87613d24d0cd1e7c8f646ca5f5}{KVert}});}
-\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}VICTOIRE!\ La\ grille\ est\ vide."{}}\ <<\ endl;}
-\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
-\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Temps\ écoulé:\ "{}}\ <<\ tempsPasser\ <<\ \textcolor{stringliteral}{"{}\ secondes"{}}\ <<\ endl;}
-\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Score\ final:\ "{}}\ <<\ score\ <<\ \textcolor{stringliteral}{"{}\ points"{}}\ <<\ endl;}
-\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Combo\ maximum:\ x"{}}\ <<\ combo\ <<\ endl;}
-\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00345\ }
-\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affiche\ l'interface\ du\ jeu\ et\ l'information\ de\ la\ partie\ en\ cours}}
-\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a8415cba8a293e69fe15c2e6ec604f1a2}{displayGrid}}(grid,\ score,\ combo,\ tempsPasser,\ mode);}
-\DoxyCodeLine{00348\ }
-\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
-\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Entrez\ la\ position\ (ligne\ colonne)\ et\ la\ direction\ (z/q/s/d)\ ou\ 'x'\ pour\ quitter:"{}}\ <<\ endl;}
-\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Exemple:\ 3\ 4\ d"{}}\ <<\ endl;}
-\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ input;}
-\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getline(cin,\ input);}
-\DoxyCodeLine{00356\ }
-\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sort\ de\ la\ boucle\ si\ l'utilisateur\ entre\ 'x'}}
-\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \textcolor{stringliteral}{"{}x"{}}\ ||\ input\ ==\ \textcolor{stringliteral}{"{}X"{}})\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ row,\ col;}
-\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ direction;}
-\DoxyCodeLine{00362\ }
-\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Analyse\ l'entrée\ utilisateur}}
-\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sscanf(input.c\_str(),\ \textcolor{stringliteral}{"{}\%u\ \%u\ \%c"{}},\ \&row,\ \&col,\ \&direction)\ ==\ 3)\ \{\ \textcolor{comment}{//\ Vérifie\ que\ trois\ valeurs\ ont\ été\ lues}}
-\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ <\ taille\ \&\&\ col\ <\ taille)\ \{}
-\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structmaPosition}{maPosition}}\ pos\ =\ \{row,\ col\};}
-\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_a79b6bb8e70fdd93bb802cf05062ea916}{isValidMove}}(grid,\ pos,\ direction))\ \{}
-\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structmaPosition}{maPosition}}\ target\ =\ \doxymbox{\hyperlink{game_8cpp_a8669fff22fbca6892cb6c466a191f6d6}{getTargetPosition}}(pos,\ direction);}
-\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8h_a61cffd07a54e944fdae77b6d61b22133}{gridSwap}}(grid,\ pos,\ target);}
-\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_ac4d2c94940df3370829dd22547c466d9}{traitementDeAlignement}}(grid,\ score,\ combo,\ mode))\ \{}
-\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a1b010b9694f3acc35b02b0a667d99094}{KJaune}});}
-\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Bon\ coup!\ Combo\ x"{}}\ <<\ combo\ <<\ endl;}
-\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8h_a61cffd07a54e944fdae77b6d61b22133}{gridSwap}}(grid,\ pos,\ target);}
-\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ combo\ =\ 1;}
-\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a87aab004c1c22814beb8db1ddaa9f628}{KRouge}});}
-\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Aucune\ combinaison\ trouvée.\ Mouvement\ annulé."{}}\ <<\ endl;}
-\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this\_thread::sleep\_for(milliseconds(1000));\ \textcolor{comment}{//\ Pause\ pour\ permettre\ au\ joueur\ de\ voir\ le\ résultat}}
-\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Mouvement\ invalide."{}}\ <<\ endl;}
-\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this\_thread::sleep\_for(milliseconds(1000));}
-\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731}{MODE\_1v1}}:}
-\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
-\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Mode\ de\ jeu\ 1v1\ en\ cours\ de\ développement.\ Veuillez\ réessayer\ plus\ tard."{}}\ <<\ endl;}
-\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});\ \ \ \ \ }
-\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00399\ }
-\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a87aab004c1c22814beb8db1ddaa9f628}{KRouge}});}
-\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Mode\ de\ jeu\ invalide,\ veuillez\ réessayer\ en\ appuyant\ sur\ Entrée."{}}\ <<\ endl;}
-\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00405\ \ \ \ \ \}}
-\DoxyCodeLine{00406\ \ \ \ \ }
-\DoxyCodeLine{00407\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nAppuyez\ sur\ Entrée\ pour\ continuer..."{}}\ <<\ endl;}
-\DoxyCodeLine{00408\ \ \ \ \ cin.ignore();}
-\DoxyCodeLine{00409\ \ \ \ \ cin.get();}
-\DoxyCodeLine{00410\ \}}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a8415cba8a293e69fe15c2e6ec604f1a2}{displayGrid}}(grid,\ score,\ combo,\ tempsRestant,\ mode);}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Entrez\ la\ position\ (ligne\ colonne)\ et\ la\ direction\ (z/q/s/d)\ ou\ 'x'\ pour\ quitter:"{}}\ <<\ endl;}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Exemple:\ 3\ 4\ d"{}}\ <<\ endl;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ input;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getline(cin,\ input);}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \textcolor{stringliteral}{"{}x"{}}\ ||\ input\ ==\ \textcolor{stringliteral}{"{}X"{}})\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ row,\ col;}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ direction;}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Analyse\ l'entrée\ utilisateur}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sscanf(input.c\_str(),\ \textcolor{stringliteral}{"{}\%u\ \%u\ \%c"{}},\ \&row,\ \&col,\ \&direction)\ ==\ 3)\ \{\ \textcolor{comment}{//\ Vérifie\ que\ trois\ valeurs\ ont\ été\ lues}}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ <\ taille\ \&\&\ col\ <\ taille)\ \{\ \textcolor{comment}{//\ Vérifie\ que\ les\ indices\ sont\ dans\ les\ limites\ de\ la\ grille}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structmaPosition}{maPosition}}\ pos\ =\ \{row,\ col\};}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_a79b6bb8e70fdd93bb802cf05062ea916}{isValidMove}}(grid,\ pos,\ direction))\ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structmaPosition}{maPosition}}\ target\ =\ \doxymbox{\hyperlink{game_8cpp_a8669fff22fbca6892cb6c466a191f6d6}{getTargetPosition}}(pos,\ direction);\ \textcolor{comment}{//\ Obtient\ la\ position\ cible}}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8h_a61cffd07a54e944fdae77b6d61b22133}{gridSwap}}(grid,\ pos,\ target);}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_ac4d2c94940df3370829dd22547c466d9}{traitementDeAlignement}}(grid,\ score,\ combo,\ mode))\ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a1b010b9694f3acc35b02b0a667d99094}{KJaune}});}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Bon\ coup!\ Combo\ x"{}}\ <<\ combo\ <<\ endl;}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8h_a61cffd07a54e944fdae77b6d61b22133}{gridSwap}}(grid,\ pos,\ target);}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ combo\ =\ 1;}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a87aab004c1c22814beb8db1ddaa9f628}{KRouge}});}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Aucune\ combinaison\ trouvée.\ Mouvement\ annulé."{}}\ <<\ endl;}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this\_thread::sleep\_for(milliseconds(1000));}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Mouvement\ invalide."{}}\ <<\ endl;}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this\_thread::sleep\_for(milliseconds(1000));}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32}{MODE\_CLEAR}}:}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ tempsActuel\ =\ steady\_clock::now();}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempsPasser\ =\ duration\_cast<seconds>(tempsActuel\ -\/\ startTime).count();}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affiche\ le\ message\ de\ fin\ si\ le\ temps\ est\ écoulé}}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{gridmanagement_8cpp_ae9fcaee43db1e7fec23f90a810bba50a}{isGridEmpty}}(grid)\ )\ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}();}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a72260f87613d24d0cd1e7c8f646ca5f5}{KVert}});}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}VICTOIRE!\ La\ grille\ est\ vide."{}}\ <<\ endl;}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Temps\ écoulé:\ "{}}\ <<\ tempsPasser\ <<\ \textcolor{stringliteral}{"{}\ secondes"{}}\ <<\ endl;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Score\ final:\ "{}}\ <<\ score\ <<\ \textcolor{stringliteral}{"{}\ points"{}}\ <<\ endl;}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Combo\ maximum:\ x"{}}\ <<\ combo\ <<\ endl;}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affiche\ l'interface\ du\ jeu\ et\ l'information\ de\ la\ partie\ en\ cours}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a8415cba8a293e69fe15c2e6ec604f1a2}{displayGrid}}(grid,\ score,\ combo,\ tempsPasser,\ mode);}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Entrez\ la\ position\ (ligne\ colonne)\ et\ la\ direction\ (z/q/s/d)\ ou\ 'x'\ pour\ quitter:"{}}\ <<\ endl;}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Exemple:\ 3\ 4\ d"{}}\ <<\ endl;}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ input;}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getline(cin,\ input);}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sort\ de\ la\ boucle\ si\ l'utilisateur\ entre\ 'x'}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \textcolor{stringliteral}{"{}x"{}}\ ||\ input\ ==\ \textcolor{stringliteral}{"{}X"{}})\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ row,\ col;}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ direction;}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Analyse\ l'entrée\ utilisateur}}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sscanf(input.c\_str(),\ \textcolor{stringliteral}{"{}\%u\ \%u\ \%c"{}},\ \&row,\ \&col,\ \&direction)\ ==\ 3)\ \{\ \textcolor{comment}{//\ Vérifie\ que\ trois\ valeurs\ ont\ été\ lues}}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ <\ taille\ \&\&\ col\ <\ taille)\ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structmaPosition}{maPosition}}\ pos\ =\ \{row,\ col\};}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_a79b6bb8e70fdd93bb802cf05062ea916}{isValidMove}}(grid,\ pos,\ direction))\ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structmaPosition}{maPosition}}\ target\ =\ \doxymbox{\hyperlink{game_8cpp_a8669fff22fbca6892cb6c466a191f6d6}{getTargetPosition}}(pos,\ direction);}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8h_a61cffd07a54e944fdae77b6d61b22133}{gridSwap}}(grid,\ pos,\ target);}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_ac4d2c94940df3370829dd22547c466d9}{traitementDeAlignement}}(grid,\ score,\ combo,\ mode))\ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a1b010b9694f3acc35b02b0a667d99094}{KJaune}});}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Bon\ coup!\ Combo\ x"{}}\ <<\ combo\ <<\ endl;}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8h_a61cffd07a54e944fdae77b6d61b22133}{gridSwap}}(grid,\ pos,\ target);}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ combo\ =\ 1;}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a87aab004c1c22814beb8db1ddaa9f628}{KRouge}});}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Aucune\ combinaison\ trouvée.\ Mouvement\ annulé."{}}\ <<\ endl;}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this\_thread::sleep\_for(milliseconds(1000));\ \textcolor{comment}{//\ Pause\ pour\ permettre\ au\ joueur\ de\ voir\ le\ résultat}}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Mouvement\ invalide."{}}\ <<\ endl;}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this\_thread::sleep\_for(milliseconds(1000));}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731}{MODE\_1v1}}:}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Mode\ de\ jeu\ 1v1\ en\ cours\ de\ développement.\ Veuillez\ réessayer\ plus\ tard."{}}\ <<\ endl;}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});\ \ \ \ \ }
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a87aab004c1c22814beb8db1ddaa9f628}{KRouge}});}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Mode\ de\ jeu\ invalide,\ veuillez\ réessayer\ en\ appuyant\ sur\ Entrée."{}}\ <<\ endl;}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00407\ \ \ \ \ \}}
+\DoxyCodeLine{00408\ \ \ \ \ }
+\DoxyCodeLine{00409\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nAppuyez\ sur\ Entrée\ pour\ continuer..."{}}\ <<\ endl;}
+\DoxyCodeLine{00410\ \ \ \ \ cin.ignore();}
+\DoxyCodeLine{00411\ \ \ \ \ cin.get();}
+\DoxyCodeLine{00412\ \}}
 
 \end{DoxyCode}
+Voici le graphe d\textquotesingle{}appel pour cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a182a58b52ccee7022e49c19d33f888dd_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{game_8h_a182a58b52ccee7022e49c19d33f888dd_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{game_8h_aee7483c5715afce5b8d044329f2d9fdb}\index{game.h@{game.h}!atLeastThreeInAColumn@{atLeastThreeInAColumn}}
 \index{atLeastThreeInAColumn@{atLeastThreeInAColumn}!game.h@{game.h}}
 \doxysubsubsection{\texorpdfstring{atLeastThreeInAColumn()}{atLeastThreeInAColumn()}}
@@ -281,6 +309,13 @@ Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00102}{102}} du f
 \DoxyCodeLine{00117\ \}}
 
 \end{DoxyCode}
+Voici le graphe des appelants de cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_aee7483c5715afce5b8d044329f2d9fdb_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{game_8h_a592d3742cedb5bd0462cc8ebe9e79131}\index{game.h@{game.h}!atLeastThreeInARow@{atLeastThreeInARow}}
 \index{atLeastThreeInARow@{atLeastThreeInARow}!game.h@{game.h}}
 \doxysubsubsection{\texorpdfstring{atLeastThreeInARow()}{atLeastThreeInARow()}}
@@ -329,6 +364,13 @@ Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00128}{128}} du f
 \DoxyCodeLine{00143\ \}}
 
 \end{DoxyCode}
+Voici le graphe des appelants de cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a592d3742cedb5bd0462cc8ebe9e79131_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{game_8h_a9f1c87c7296779c4c895ca2b13ad2e3e}\index{game.h@{game.h}!game@{game}}
 \index{game@{game}!game.h@{game.h}}
 \doxysubsubsection{\texorpdfstring{game()}{game()}}
@@ -345,52 +387,66 @@ Affiche la sélection choisie
 
 Quitter le jeu
 
-Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00417}{417}} du fichier \doxymbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00419}{419}} du fichier \doxymbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordtype}{int}\ choix;}
-\DoxyCodeLine{00419\ }
-\DoxyCodeLine{00421\ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
-\DoxyCodeLine{00422\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Bienvenue\ dans\ Number\ Crush"{}}\ <<\ endl;}
-\DoxyCodeLine{00423\ }
-\DoxyCodeLine{00424\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Veuillez\ choisir\ votre\ mode\ de\ jeu\ :"{}}\ <<\ endl;}
-\DoxyCodeLine{00425\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ Mode\ Score"{}}\ <<\ endl;}
-\DoxyCodeLine{00426\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ Mode\ Clear"{}}\ <<\ endl;}
-\DoxyCodeLine{00427\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ Mode\ 1v1"{}}\ <<\ endl;}
-\DoxyCodeLine{00428\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4.\ Quitter"{}}\ <<\ endl;}
-\DoxyCodeLine{00429\ }
-\DoxyCodeLine{00430\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Votre\ choix\ :\ "{}};}
-\DoxyCodeLine{00431\ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00432\ \ \ \ \ cin\ >>\ choix;}
-\DoxyCodeLine{00433\ }
-\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keywordflow}{switch}\ (choix)\ \{}
-\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
-\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8cpp_a182a58b52ccee7022e49c19d33f888dd}{afficherMode}}(\doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8}{MODE\_SCORE}});}
-\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
-\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8cpp_a182a58b52ccee7022e49c19d33f888dd}{afficherMode}}(\doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32}{MODE\_CLEAR}});}
-\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
-\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8cpp_a182a58b52ccee7022e49c19d33f888dd}{afficherMode}}(\doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731}{MODE\_1v1}});}
-\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordflow}{case}\ 4:\ }
-\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
-\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Merci\ d'avoir\ joué\ !\ Au\ revoir\ !"{}}\ <<\ endl;}
-\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ exit(0);}
-\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a87aab004c1c22814beb8db1ddaa9f628}{KRouge}});}
-\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Mode\ de\ jeu\ invalide,\ veuillez\ recommencer."{}}\ <<\ endl;}
-\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
-\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ cin.get();}
-\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00457\ \ \ \ \ \}}
-\DoxyCodeLine{00458\ \}}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordtype}{int}\ choix;}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00423\ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
+\DoxyCodeLine{00424\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Bienvenue\ dans\ Number\ Crush"{}}\ <<\ endl;}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Veuillez\ choisir\ votre\ mode\ de\ jeu\ :"{}}\ <<\ endl;}
+\DoxyCodeLine{00427\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ Mode\ Score"{}}\ <<\ endl;}
+\DoxyCodeLine{00428\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ Mode\ Clear"{}}\ <<\ endl;}
+\DoxyCodeLine{00429\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ Mode\ 1v1"{}}\ <<\ endl;}
+\DoxyCodeLine{00430\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4.\ Quitter"{}}\ <<\ endl;}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Votre\ choix\ :\ "{}};}
+\DoxyCodeLine{00433\ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00434\ \ \ \ \ cin\ >>\ choix;}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keywordflow}{switch}\ (choix)\ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8cpp_a182a58b52ccee7022e49c19d33f888dd}{afficherMode}}(\doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8}{MODE\_SCORE}});}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8cpp_a182a58b52ccee7022e49c19d33f888dd}{afficherMode}}(\doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32}{MODE\_CLEAR}});}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8cpp_a182a58b52ccee7022e49c19d33f888dd}{afficherMode}}(\doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731}{MODE\_1v1}});}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00447\ \ \ \ \ \textcolor{keywordflow}{case}\ 4:\ }
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_aed31d4db92c112edda1291acad69dd00}{KCyan}});}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Merci\ d'avoir\ joué\ !\ Au\ revoir\ !"{}}\ <<\ endl;}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ exit(0);}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a87aab004c1c22814beb8db1ddaa9f628}{KRouge}});}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Mode\ de\ jeu\ invalide,\ veuillez\ recommencer."{}}\ <<\ endl;}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_ae241cf89d39423f89bb8e65688e4c031}{couleur}}(\doxymbox{\hyperlink{type_8h_a63a18a31ab7815ab0d4eb5c133e5d1a5}{KReset}});}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ cin.get();}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00459\ \ \ \ \ \}}
+\DoxyCodeLine{00460\ \}}
 
 \end{DoxyCode}
+Voici le graphe d\textquotesingle{}appel pour cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a9f1c87c7296779c4c895ca2b13ad2e3e_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{game_8h_a9f1c87c7296779c4c895ca2b13ad2e3e_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{game_8h_a8669fff22fbca6892cb6c466a191f6d6}\index{game.h@{game.h}!getTargetPosition@{getTargetPosition}}
 \index{getTargetPosition@{getTargetPosition}!game.h@{game.h}}
 \doxysubsubsection{\texorpdfstring{getTargetPosition()}{getTargetPosition()}}
@@ -443,6 +499,13 @@ Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00074}{74}} du fi
 \DoxyCodeLine{00091\ \}}
 
 \end{DoxyCode}
+Voici le graphe des appelants de cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a8669fff22fbca6892cb6c466a191f6d6_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{game_8h_a61cffd07a54e944fdae77b6d61b22133}\index{game.h@{game.h}!gridSwap@{gridSwap}}
 \index{gridSwap@{gridSwap}!game.h@{game.h}}
 \doxysubsubsection{\texorpdfstring{gridSwap()}{gridSwap()}}
@@ -473,6 +536,13 @@ Définition à la ligne \doxymbox{\hyperlink{gridmanagement_8cpp_source_l00159}{
 \DoxyCodeLine{00162\ \}}
 
 \end{DoxyCode}
+Voici le graphe des appelants de cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a61cffd07a54e944fdae77b6d61b22133_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{game_8h_a79b6bb8e70fdd93bb802cf05062ea916}\index{game.h@{game.h}!isValidMove@{isValidMove}}
 \index{isValidMove@{isValidMove}!game.h@{game.h}}
 \doxysubsubsection{\texorpdfstring{isValidMove()}{isValidMove()}}
@@ -512,6 +582,13 @@ Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00051}{51}} du fi
 \DoxyCodeLine{00065\ \}}
 
 \end{DoxyCode}
+Voici le graphe des appelants de cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a79b6bb8e70fdd93bb802cf05062ea916_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{game_8h_ab9912a35fe0df6e2fe3c8be4e1f2a9d5}\index{game.h@{game.h}!MakeAMove@{MakeAMove}}
 \index{MakeAMove@{MakeAMove}!game.h@{game.h}}
 \doxysubsubsection{\texorpdfstring{MakeAMove()}{MakeAMove()}}
@@ -553,6 +630,13 @@ Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00025}{25}} du fi
 \DoxyCodeLine{00048\ \}}
 
 \end{DoxyCode}
+Voici le graphe d\textquotesingle{}appel pour cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{game_8h_ab9912a35fe0df6e2fe3c8be4e1f2a9d5_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{game_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f}\index{game.h@{game.h}!removalInColumn@{removalInColumn}}
 \index{removalInColumn@{removalInColumn}!game.h@{game.h}}
 \doxysubsubsection{\texorpdfstring{removalInColumn()}{removalInColumn()}}
@@ -593,6 +677,20 @@ Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00152}{152}} du f
 \DoxyCodeLine{00164\ \}}
 
 \end{DoxyCode}
+Voici le graphe d\textquotesingle{}appel pour cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{game_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{game_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d}\index{game.h@{game.h}!removalInRow@{removalInRow}}
 \index{removalInRow@{removalInRow}!game.h@{game.h}}
 \doxysubsubsection{\texorpdfstring{removalInRow()}{removalInRow()}}
@@ -633,6 +731,20 @@ Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00173}{173}} du f
 \DoxyCodeLine{00185\ \}}
 
 \end{DoxyCode}
+Voici le graphe d\textquotesingle{}appel pour cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{game_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{game_8h_ac4d2c94940df3370829dd22547c466d9}\index{game.h@{game.h}!traitementDeAlignement@{traitementDeAlignement}}
 \index{traitementDeAlignement@{traitementDeAlignement}!game.h@{game.h}}
 \doxysubsubsection{\texorpdfstring{traitementDeAlignement()}{traitementDeAlignement()}}
@@ -667,35 +779,49 @@ Met à jour le score et le combo
 
 Appliquer la gravité en mode CLEAR
 
-Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00197}{197}} du fichier \doxymbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+Définition à la ligne \doxymbox{\hyperlink{game_8cpp_source_l00198}{198}} du fichier \doxymbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00198\ \ \ \ \ \doxymbox{\hyperlink{structmaPosition}{maPosition}}\ pos;}
-\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ howMany;}
-\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{bool}\ foundMatch\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00201\ }
-\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{while}\ (\doxymbox{\hyperlink{game_8cpp_aee7483c5715afce5b8d044329f2d9fdb}{atLeastThreeInAColumn}}(grid,\ pos,\ howMany)\ ||\ \doxymbox{\hyperlink{game_8cpp_a592d3742cedb5bd0462cc8ebe9e79131}{atLeastThreeInARow}}(grid,\ pos,\ howMany))\ \{}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ foundMatch\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_aee7483c5715afce5b8d044329f2d9fdb}{atLeastThreeInAColumn}}(grid,\ pos,\ howMany))\ \{}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8cpp_a4ad87ec3a96e07ac5000e8e4e38ece6f}{removalInColumn}}(grid,\ pos,\ howMany);}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_a592d3742cedb5bd0462cc8ebe9e79131}{atLeastThreeInARow}}(grid,\ pos,\ howMany))\ \{}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8cpp_a4e37bf8b2ef1042c1631bf9d394ebd0d}{removalInRow}}(grid,\ pos,\ howMany);}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ score\ +=\ howMany\ *\ \doxymbox{\hyperlink{type_8h_ae0df0d456a1a5ea08c34f0334f742d60}{KScorePerCandy}}\ *\ combo;}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ combo++;}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mode\ ==\ \doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32}{MODE\_CLEAR}})\ \{}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_acd388a9c237b453e23866b221b913821}{gravité}}(grid);}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a7f23a63cf0475e8987be962828ca281f}{remplirGrid}}(grid,\ mode);}
-\DoxyCodeLine{00223\ \ \ \ \ \}}
-\DoxyCodeLine{00224\ \ \ \ \ }
-\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{return}\ foundMatch;}
-\DoxyCodeLine{00226\ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \doxymbox{\hyperlink{structmaPosition}{maPosition}}\ pos;}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ howMany;}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{bool}\ foundMatch\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{while}\ (\doxymbox{\hyperlink{game_8cpp_aee7483c5715afce5b8d044329f2d9fdb}{atLeastThreeInAColumn}}(grid,\ pos,\ howMany)\ ||\ \doxymbox{\hyperlink{game_8cpp_a592d3742cedb5bd0462cc8ebe9e79131}{atLeastThreeInARow}}(grid,\ pos,\ howMany))\ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ foundMatch\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_aee7483c5715afce5b8d044329f2d9fdb}{atLeastThreeInAColumn}}(grid,\ pos,\ howMany))\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8cpp_a4ad87ec3a96e07ac5000e8e4e38ece6f}{removalInColumn}}(grid,\ pos,\ howMany);}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{game_8cpp_a592d3742cedb5bd0462cc8ebe9e79131}{atLeastThreeInARow}}(grid,\ pos,\ howMany))\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{game_8cpp_a4e37bf8b2ef1042c1631bf9d394ebd0d}{removalInRow}}(grid,\ pos,\ howMany);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ score\ +=\ howMany\ *\ \doxymbox{\hyperlink{type_8h_ae0df0d456a1a5ea08c34f0334f742d60}{KScorePerCandy}}\ *\ combo;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ combo++;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mode\ ==\ \doxymbox{\hyperlink{type_8h_a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32}{MODE\_CLEAR}})\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_acd388a9c237b453e23866b221b913821}{gravité}}(grid);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{gridmanagement_8cpp_a7f23a63cf0475e8987be962828ca281f}{remplirGrid}}(grid,\ mode);}
+\DoxyCodeLine{00224\ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{return}\ foundMatch;}
+\DoxyCodeLine{00227\ \}}
 
 \end{DoxyCode}
+Voici le graphe d\textquotesingle{}appel pour cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_ac4d2c94940df3370829dd22547c466d9_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction :\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_ac4d2c94940df3370829dd22547c466d9_icgraph}
+\end{center}
+\end{figure}

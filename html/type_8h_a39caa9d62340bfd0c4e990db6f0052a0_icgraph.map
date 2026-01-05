@@ -1,0 +1,19 @@
+<map id="KCandies" name="KCandies">
+<area shape="rect" id="Node000001" title="Nombre total de types de bonbons." alt="" coords="696,56,775,81"/>
+<area shape="rect" id="Node000002" href="$gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2" title="Affichage de la grille." alt="" coords="390,5,477,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="682,55,647,46,556,32,476,24,477,18,557,26,649,41,684,49"/>
+<area shape="rect" id="Node000006" href="$gridmanagement_8cpp.html#a4bccf39627ad0e9ef02f761a348de1b6" title="Initialisation de la grille." alt="" coords="574,56,637,81"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="682,71,637,71,637,66,682,66"/>
+<area shape="rect" id="Node000007" href="$gridmanagement_8cpp.html#a7f23a63cf0475e8987be962828ca281f" title="Remplit les cases vides de la grille avec de nouveaux bonbons." alt="" coords="563,105,648,131"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="690,89,641,108,639,103,688,84"/>
+<area shape="rect" id="Node000003" href="$game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="207,56,304,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="377,37,301,59,300,53,376,31"/>
+<area shape="rect" id="Node000004" href="$game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="104,56,159,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="193,71,159,71,159,66,193,66"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,81"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="90,71,56,71,56,66,90,66"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="560,71,305,71,305,66,560,66"/>
+<area shape="rect" id="Node000008" href="$game_8cpp.html#ac4d2c94940df3370829dd22547c466d9" title="Traite les alignements et met à jour le score et le combo." alt="" coords="352,107,515,132"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="549,121,515,121,515,116,549,116"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="374,105,300,84,302,79,376,100"/>
+</map>

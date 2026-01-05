@@ -1,0 +1,22 @@
+<map id="traitementDeAlignement" name="traitementDeAlignement">
+<area shape="rect" id="Node000001" title="Traite les alignements et met à jour le score et le combo." alt="" coords="5,129,168,155"/>
+<area shape="rect" id="Node000002" href="$game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb" title="Vérifie s&#39;il y a au moins trois bonbons alignés verticalement." alt="" coords="216,5,379,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,127,148,85,180,61,215,40,230,33,232,38,217,44,183,65,151,89,103,131"/>
+<area shape="rect" id="Node000003" href="$game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131" title="Vérifie s&#39;il y a au moins trois bonbons alignés horizontalement." alt="" coords="225,55,370,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="117,127,215,89,237,82,239,87,217,94,119,132"/>
+<area shape="rect" id="Node000004" href="$gridmanagement_8cpp.html#acd388a9c237b453e23866b221b913821" title="Applique la gravité sur la grille." alt="" coords="267,104,328,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="168,130,253,119,253,125,169,135"/>
+<area shape="rect" id="Node000006" href="$game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f" title="Supprime les bonbons atLeastThreeInAColumn." alt="" coords="235,153,359,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="169,149,222,155,221,160,168,154"/>
+<area shape="rect" id="Node000007" href="$game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d" title="Supprime les bonbons atLeastThreeInARow." alt="" coords="244,203,351,228"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="121,152,217,187,242,196,240,201,215,193,120,157"/>
+<area shape="rect" id="Node000008" href="$gridmanagement_8cpp.html#a7f23a63cf0475e8987be962828ca281f" title="Remplit les cases vides de la grille avec de nouveaux bonbons." alt="" coords="255,252,340,277"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="103,153,151,194,217,237,243,248,241,253,215,242,148,198,100,157"/>
+<area shape="rect" id="Node000005" href="$type_8h.html#a18efe58b5b918621584c2029144b1756" title="Constantes pour la grille de jeu." alt="" coords="427,179,521,204"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="329,121,380,138,441,169,439,174,378,143,327,126"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="360,172,413,180,413,185,359,177"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="351,205,412,197,413,202,351,211"/>
+<area shape="poly" id="edge11_Node000008_Node000005" title=" " alt="" coords="339,250,378,237,437,208,440,213,380,242,341,255"/>
+<area shape="rect" id="Node000009" href="$type_8h.html#a39caa9d62340bfd0c4e990db6f0052a0" title="Nombre total de types de bonbons." alt="" coords="435,252,513,277"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="340,262,421,262,421,267,340,267"/>
+</map>

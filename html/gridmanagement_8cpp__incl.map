@@ -1,0 +1,14 @@
+<map id="ressources/gridmanagement.cpp" name="ressources/gridmanagement.cpp">
+<area shape="rect" id="Node000001" title="Fonctions de gestion de la grille de jeu." alt="" coords="61,5,272,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,77,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,33,75,74,72,69,145,28"/>
+<area shape="rect" id="Node000003" href="$gridmanagement_8h.html" title=" " alt="" coords="102,79,231,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,31,169,65,164,65,164,31"/>
+<area shape="rect" id="Node000004" href="$type_8h.html" title=" " alt="" coords="188,152,247,177"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="193,28,222,48,236,62,246,78,251,94,249,111,236,142,231,140,244,110,245,95,242,80,232,65,219,52,190,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="177,103,203,139,199,142,173,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="148,225,207,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="213,179,193,215,188,212,208,176"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="231,225,286,251"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="226,176,247,212,243,215,222,179"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="remplirGrid" name="remplirGrid">
+<area shape="rect" id="Node000001" title="Remplit les cases vides de la grille avec de nouveaux bonbons." alt="" coords="5,31,91,56"/>
+<area shape="rect" id="Node000002" href="$type_8h.html#a39caa9d62340bfd0c4e990db6f0052a0" title="Nombre total de types de bonbons." alt="" coords="147,5,225,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,33,132,25,133,30,91,38"/>
+<area shape="rect" id="Node000003" href="$type_8h.html#a18efe58b5b918621584c2029144b1756" title="Constantes pour la grille de jeu." alt="" coords="139,55,233,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="91,48,125,54,125,59,90,53"/>
+</map>

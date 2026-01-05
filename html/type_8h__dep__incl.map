@@ -1,0 +1,17 @@
+<map id="ressources/type.h" name="ressources/type.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="121,5,247,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html" title="Point d&#39;entrée principal du programme de jeu." alt="" coords="40,152,115,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,28,81,35,55,46,32,60,13,80,9,89,9,99,19,118,37,135,58,150,55,154,34,139,15,121,3,100,3,88,8,77,28,56,53,41,79,30,106,23"/>
+<area shape="rect" id="Node000003" href="$game_8h.html" title=" " alt="" coords="23,79,156,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,41,106,81,103,76,156,37"/>
+<area shape="rect" id="Node000005" href="$gridmanagement_8cpp.html" title="Fonctions de gestion de la grille de jeu." alt="" coords="309,152,520,177"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="262,21,295,28,330,39,363,55,391,77,404,95,412,115,417,151,412,152,407,117,399,97,387,81,360,59,328,44,294,33,261,27"/>
+<area shape="rect" id="Node000006" href="$gridmanagement_8h.html" title=" " alt="" coords="180,79,377,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="212,37,265,76,262,81,209,41"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="88,118,82,152,77,151,82,117"/>
+<area shape="rect" id="Node000004" href="$game_8cpp.html" title="Fonctions de gestion du jeu." alt="" coords="139,152,285,177"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="122,108,193,149,191,154,119,113"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="234,111,111,154,109,149,232,106"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="260,116,225,154,221,150,256,113"/>
+<area shape="poly" id="edge9_Node000006_Node000005" title=" " alt="" coords="314,108,394,149,391,154,311,113"/>
+</map>

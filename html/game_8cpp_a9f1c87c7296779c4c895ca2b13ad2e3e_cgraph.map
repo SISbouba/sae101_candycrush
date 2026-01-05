@@ -1,0 +1,74 @@
+<map id="game" name="game">
+<area shape="rect" id="Node000001" title="Fonction principale du jeu." alt="" coords="5,1039,60,1064"/>
+<area shape="rect" id="Node000002" href="$game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="108,635,205,660"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="35,1038,145,672,150,674,40,1039"/>
+<area shape="rect" id="Node000004" href="$gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="Change la couleur du texte dans la console." alt="" coords="694,711,758,736"/>
+<area shape="poly" id="edge42_Node000001_Node000004" title=" " alt="" coords="61,1055,125,1067,214,1077,315,1077,366,1071,415,1059,484,1036,535,1011,579,975,629,923,660,879,685,831,715,748,720,750,690,833,665,882,633,926,583,979,537,1015,486,1041,417,1065,367,1076,315,1082,213,1082,124,1072,60,1060"/>
+<area shape="rect" id="Node000011" href="$type_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="Couleur rouge." alt="" coords="691,937,761,963"/>
+<area shape="poly" id="edge45_Node000001_Node000011" title=" " alt="" coords="45,1062,71,1092,89,1107,109,1118,253,1171,316,1187,375,1194,434,1192,494,1180,559,1156,629,1118,648,1105,663,1089,689,1050,706,1010,716,975,722,977,711,1012,693,1053,668,1092,651,1109,632,1123,561,1161,496,1185,435,1198,375,1200,315,1192,252,1176,107,1123,86,1112,67,1096,41,1066"/>
+<area shape="rect" id="Node000014" href="$type_8h.html#aed31d4db92c112edda1291acad69dd00" title="Couleur cyan." alt="" coords="516,887,579,912"/>
+<area shape="poly" id="edge43_Node000001_Node000014" title=" " alt="" coords="61,1052,126,1057,216,1057,317,1046,367,1034,415,1017,449,997,480,972,527,921,531,925,484,976,452,1002,417,1022,369,1039,318,1051,216,1063,126,1063,60,1057"/>
+<area shape="rect" id="Node000015" href="$type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="Réinitialisation de la couleur." alt="" coords="514,787,581,812"/>
+<area shape="poly" id="edge44_Node000001_Node000015" title=" " alt="" coords="59,1038,211,970,415,872,512,817,515,821,417,876,214,975,61,1042"/>
+<area shape="rect" id="Node000003" href="$gridmanagement_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Efface l&#39;écran." alt="" coords="502,533,593,559"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="168,632,203,599,226,582,252,569,313,551,376,541,437,538,488,539,488,544,437,543,377,546,314,556,254,574,229,587,206,603,171,636"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="206,640,252,639,306,642,363,651,417,670,433,682,442,696,450,709,465,720,521,735,579,740,634,737,680,730,681,736,634,742,579,745,520,740,463,724,447,713,438,699,429,686,415,675,362,656,305,647,252,644,206,645"/>
+<area shape="rect" id="Node000005" href="$gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2" title="Affichage de la grille." alt="" coords="291,584,378,609"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="202,632,277,610,279,615,203,637"/>
+<area shape="rect" id="Node000010" href="$type_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="Couleur jaune." alt="" coords="693,432,759,457"/>
+<area shape="poly" id="edge26_Node000002_Node000010" title=" " alt="" coords="160,633,171,604,190,567,217,529,252,498,306,471,364,451,424,438,484,431,594,429,679,435,679,441,594,434,484,436,425,444,365,456,308,476,255,503,221,533,194,570,176,607,165,635"/>
+<area shape="poly" id="edge28_Node000002_Node000011" title=" " alt="" coords="161,660,164,711,176,782,188,820,204,857,226,891,255,919,305,949,361,968,419,979,478,983,536,981,590,976,677,960,678,965,591,981,536,987,478,988,419,984,359,973,303,953,252,923,222,894,200,860,183,822,171,783,158,711,155,661"/>
+<area shape="rect" id="Node000012" href="$type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="Couleur verte." alt="" coords="699,533,753,559"/>
+<area shape="poly" id="edge29_Node000002_Node000012" title=" " alt="" coords="163,633,196,584,221,557,252,536,309,513,370,500,431,495,492,497,603,511,686,531,685,536,602,517,492,502,431,501,370,506,311,518,255,540,225,561,200,587,167,636"/>
+<area shape="poly" id="edge25_Node000002_Node000014" title=" " alt="" coords="162,660,168,703,183,761,195,792,211,822,230,849,255,872,284,889,315,901,349,909,382,913,447,912,502,906,502,911,448,918,382,918,348,914,314,906,281,894,252,876,226,853,206,825,190,795,178,763,162,704,156,661"/>
+<area shape="poly" id="edge27_Node000002_Node000015" title=" " alt="" coords="173,658,208,689,255,720,301,737,367,756,501,787,500,792,366,761,300,742,252,724,205,693,169,662"/>
+<area shape="rect" id="Node000016" href="$game_8cpp.html#a8669fff22fbca6892cb6c466a191f6d6" title="Obtient la position cible en fonction de la direction." alt="" coords="273,787,396,812"/>
+<area shape="poly" id="edge18_Node000002_Node000016" title=" " alt="" coords="167,659,201,710,226,739,255,765,279,779,276,784,252,769,222,743,197,713,163,662"/>
+<area shape="rect" id="Node000017" href="$gridmanagement_8cpp.html#abc366c74b702ac1e1210ad3537da48b1" title="Déplacement des éléments de la grille." alt="" coords="297,836,373,861"/>
+<area shape="poly" id="edge19_Node000002_Node000017" title=" " alt="" coords="164,659,174,692,192,736,219,782,255,821,285,837,282,842,252,825,215,785,188,738,169,694,159,661"/>
+<area shape="rect" id="Node000018" href="$gridmanagement_8cpp.html#a4bccf39627ad0e9ef02f761a348de1b6" title="Initialisation de la grille." alt="" coords="303,356,366,381"/>
+<area shape="poly" id="edge20_Node000002_Node000018" title=" " alt="" coords="158,634,169,596,187,541,215,481,251,424,272,403,296,386,299,391,276,407,255,428,219,484,192,543,174,597,163,635"/>
+<area shape="rect" id="Node000019" href="$gridmanagement_8cpp.html#ae9fcaee43db1e7fec23f90a810bba50a" title="Vérifie si la grille est vide." alt="" coords="287,57,382,83"/>
+<area shape="poly" id="edge22_Node000002_Node000019" title=" " alt="" coords="156,634,160,561,174,444,186,376,202,305,224,235,251,167,277,125,307,91,311,95,282,129,256,170,229,236,207,306,191,377,179,445,165,562,161,635"/>
+<area shape="rect" id="Node000020" href="$game_8cpp.html#a79b6bb8e70fdd93bb802cf05062ea916" title="Vérifie si le mouvement est valide pour éviter les débordements." alt="" coords="289,685,381,711"/>
+<area shape="poly" id="edge24_Node000002_Node000020" title=" " alt="" coords="203,658,277,679,275,684,202,663"/>
+<area shape="rect" id="Node000021" href="$game_8cpp.html#ac4d2c94940df3370829dd22547c466d9" title="Traite les alignements et met à jour le score et le combo." alt="" coords="253,181,416,207"/>
+<area shape="poly" id="edge30_Node000002_Node000021" title=" " alt="" coords="159,634,191,513,219,428,251,342,284,273,316,217,321,220,289,276,256,344,224,430,197,514,164,635"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="378,584,488,557,489,562,379,589"/>
+<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="377,607,417,626,432,638,442,649,451,659,465,669,521,691,579,706,681,719,680,724,578,711,519,696,463,674,447,663,438,653,428,642,415,631,374,612"/>
+<area shape="rect" id="Node000006" href="$gridmanagement_8cpp.html#aadb64473f4ef04544a547fa4813f6aec" title="Compte le nombre de bonbons restants dans la grille." alt="" coords="464,381,631,407"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="347,582,521,414,525,418,351,586"/>
+<area shape="rect" id="Node000008" href="$gridmanagement_8cpp.html#a1baee82490bb341c9636ed219229ea0e" title="Change la couleur en fonction du type de bonbon." alt="" coords="475,635,620,660"/>
+<area shape="poly" id="edge9_Node000005_Node000008" title=" " alt="" coords="379,604,480,629,479,634,378,609"/>
+<area shape="rect" id="Node000013" href="$type_8h.html#a39caa9d62340bfd0c4e990db6f0052a0" title="Nombre total de types de bonbons." alt="" coords="687,331,765,356"/>
+<area shape="poly" id="edge15_Node000005_Node000013" title=" " alt="" coords="379,603,434,611,501,611,535,607,569,599,600,586,629,568,645,552,655,536,662,502,664,463,668,442,676,418,706,366,710,369,681,420,673,443,669,464,667,502,660,538,649,555,632,572,603,591,570,604,536,613,501,617,434,616,378,609"/>
+<area shape="poly" id="edge16_Node000005_Node000014" title=" " alt="" coords="356,608,388,635,418,671,436,712,442,748,448,782,466,822,491,852,518,876,515,880,487,856,462,825,443,784,437,749,431,714,414,674,384,638,353,612"/>
+<area shape="poly" id="edge17_Node000005_Node000015" title=" " alt="" coords="351,608,418,671,525,775,521,779,414,675,348,611"/>
+<area shape="rect" id="Node000007" href="$type_8h.html#a18efe58b5b918621584c2029144b1756" title="Constantes pour la grille de jeu." alt="" coords="679,108,773,133"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="564,379,596,351,629,315,657,271,681,224,713,145,718,147,686,226,661,273,633,318,600,355,567,383"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="584,658,632,677,687,702,685,707,630,682,582,663"/>
+<area shape="rect" id="Node000009" href="$type_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="Couleur blue." alt="" coords="697,635,755,660"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="620,645,684,645,684,650,620,650"/>
+<area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="597,632,629,613,647,592,657,571,664,547,676,519,707,468,712,470,681,522,669,549,662,572,652,594,632,617,600,637"/>
+<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="560,659,633,773,714,924,710,926,628,775,555,661"/>
+<area shape="poly" id="edge14_Node000008_Node000012" title=" " alt="" coords="586,632,629,613,666,590,698,565,701,570,669,594,632,618,589,637"/>
+<area shape="poly" id="edge21_Node000018_Node000013" title=" " alt="" coords="366,364,673,344,673,349,367,369"/>
+<area shape="poly" id="edge23_Node000019_Node000007" title=" " alt="" coords="359,55,410,33,479,11,517,5,556,3,595,7,632,18,657,33,680,53,712,95,708,98,676,57,654,38,630,23,594,12,556,8,518,10,480,17,412,38,361,60"/>
+<area shape="rect" id="Node000022" href="$game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb" title="Vérifie s&#39;il y a au moins trois bonbons alignés verticalement." alt="" coords="466,181,629,207"/>
+<area shape="poly" id="edge31_Node000021_Node000022" title=" " alt="" coords="417,191,453,191,453,197,417,197"/>
+<area shape="rect" id="Node000023" href="$game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131" title="Vérifie s&#39;il y a au moins trois bonbons alignés horizontalement." alt="" coords="475,231,620,256"/>
+<area shape="poly" id="edge32_Node000021_Node000023" title=" " alt="" coords="391,204,479,225,478,230,389,209"/>
+<area shape="rect" id="Node000024" href="$gridmanagement_8cpp.html#acd388a9c237b453e23866b221b913821" title="Applique la gravité sur la grille." alt="" coords="517,132,578,157"/>
+<area shape="poly" id="edge33_Node000021_Node000024" title=" " alt="" coords="389,179,502,152,504,157,391,184"/>
+<area shape="rect" id="Node000025" href="$game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f" title="Supprime les bonbons atLeastThreeInAColumn." alt="" coords="485,33,609,59"/>
+<area shape="poly" id="edge35_Node000021_Node000025" title=" " alt="" coords="344,179,391,126,425,94,463,68,475,61,478,66,465,72,428,99,395,129,348,183"/>
+<area shape="rect" id="Node000026" href="$game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d" title="Supprime les bonbons atLeastThreeInARow." alt="" coords="494,83,601,108"/>
+<area shape="poly" id="edge37_Node000021_Node000026" title=" " alt="" coords="353,179,402,148,463,117,482,110,483,115,465,122,404,153,356,183"/>
+<area shape="rect" id="Node000027" href="$gridmanagement_8cpp.html#a7f23a63cf0475e8987be962828ca281f" title="Remplit les cases vides de la grille avec de nouveaux bonbons." alt="" coords="505,280,590,305"/>
+<area shape="poly" id="edge39_Node000021_Node000027" title=" " alt="" coords="357,205,405,234,465,265,492,275,490,280,463,270,402,239,354,209"/>
+<area shape="poly" id="edge34_Node000024_Node000007" title=" " alt="" coords="578,138,665,126,665,131,578,143"/>
+<area shape="poly" id="edge36_Node000025_Node000007" title=" " alt="" coords="599,56,632,68,693,98,691,103,630,72,597,61"/>
+<area shape="poly" id="edge38_Node000026_Node000007" title=" " alt="" coords="601,100,665,109,665,115,601,105"/>
+<area shape="poly" id="edge41_Node000027_Node000007" title=" " alt="" coords="589,283,610,276,629,265,658,238,681,205,713,145,717,147,686,208,662,241,632,269,612,281,591,288"/>
+<area shape="poly" id="edge40_Node000027_Node000013" title=" " alt="" coords="591,302,674,326,673,331,590,307"/>
+</map>

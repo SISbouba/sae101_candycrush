@@ -1,0 +1,30 @@
+<map id="KImpossible" name="KImpossible">
+<area shape="rect" id="Node000001" title="Constantes pour la grille de jeu." alt="" coords="777,129,872,155"/>
+<area shape="rect" id="Node000002" href="$gridmanagement_8cpp.html#aadb64473f4ef04544a547fa4813f6aec" title="Compte le nombre de bonbons restants dans la grille." alt="" coords="563,5,729,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="805,120,772,81,728,44,704,33,707,28,731,40,775,77,809,116"/>
+<area shape="rect" id="Node000007" href="$gridmanagement_8cpp.html#acd388a9c237b453e23866b221b913821" title="Applique la gravité sur la grille." alt="" coords="615,55,677,80"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="790,125,728,94,676,77,678,72,730,89,792,120"/>
+<area shape="rect" id="Node000009" href="$gridmanagement_8cpp.html#ae9fcaee43db1e7fec23f90a810bba50a" title="Vérifie si la grille est vide." alt="" coords="386,204,481,229"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="811,168,778,209,756,228,730,243,696,254,660,260,587,259,520,247,468,232,469,227,521,242,587,254,659,255,695,249,728,238,753,224,774,205,807,164"/>
+<area shape="rect" id="Node000010" href="$game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f" title="Supprime les bonbons atLeastThreeInAColumn." alt="" coords="584,104,708,129"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="763,136,708,128,709,123,764,131"/>
+<area shape="rect" id="Node000011" href="$game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d" title="Supprime les bonbons atLeastThreeInARow." alt="" coords="593,153,699,179"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="764,153,700,162,699,156,763,147"/>
+<area shape="rect" id="Node000012" href="$gridmanagement_8cpp.html#a7f23a63cf0475e8987be962828ca281f" title="Remplit les cases vides de la grille avec de nouveaux bonbons." alt="" coords="603,203,689,228"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="790,164,730,192,690,207,688,202,728,188,788,159"/>
+<area shape="rect" id="Node000003" href="$gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2" title="Affichage de la grille." alt="" coords="390,31,477,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="549,32,477,41,477,36,548,27"/>
+<area shape="rect" id="Node000004" href="$game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="207,129,304,155"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="399,65,281,131,278,127,396,60"/>
+<area shape="rect" id="Node000005" href="$game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="104,129,159,155"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="193,145,159,145,159,139,193,139"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,129,56,155"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="90,145,56,145,56,139,90,139"/>
+<area shape="rect" id="Node000008" href="$game_8cpp.html#ac4d2c94940df3370829dd22547c466d9" title="Traite les alignements et met à jour le score et le combo." alt="" coords="352,129,515,155"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="603,82,564,94,466,132,464,127,562,89,601,76"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="338,145,304,145,304,139,338,139"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="388,201,285,157,287,152,390,196"/>
+<area shape="poly" id="edge12_Node000010_Node000008" title=" " alt="" coords="571,128,515,135,515,130,570,123"/>
+<area shape="poly" id="edge14_Node000011_Node000008" title=" " alt="" coords="578,161,515,154,515,149,579,156"/>
+<area shape="poly" id="edge16_Node000012_Node000008" title=" " alt="" coords="589,201,562,193,466,157,468,152,564,187,591,196"/>
+</map>
