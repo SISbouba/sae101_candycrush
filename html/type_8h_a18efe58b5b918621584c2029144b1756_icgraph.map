@@ -1,0 +1,33 @@
+<map id="KImpossible" name="KImpossible">
+<area shape="rect" id="Node000001" title="Constantes pour la grille de jeu." alt="" coords="829,129,924,155"/>
+<area shape="rect" id="Node000002" href="$gridmanagement_8cpp.html#aadb64473f4ef04544a547fa4813f6aec" title="Compte le nombre de bonbons restants dans la grille." alt="" coords="615,5,781,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="857,120,824,81,780,44,756,33,759,28,783,40,827,77,861,116"/>
+<area shape="rect" id="Node000008" href="$gridmanagement_8cpp.html#acd388a9c237b453e23866b221b913821" title="Applique la gravité sur la grille." alt="" coords="667,55,729,80"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="842,125,780,94,728,77,730,72,782,89,844,120"/>
+<area shape="rect" id="Node000010" href="$gridmanagement_8cpp.html#ae9fcaee43db1e7fec23f90a810bba50a" title="Vérifie si la grille est vide." alt="" coords="438,204,533,229"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="863,168,830,209,808,228,782,243,748,254,712,260,639,259,572,247,520,232,521,227,573,242,639,254,711,255,747,249,780,238,805,224,826,205,859,164"/>
+<area shape="rect" id="Node000011" href="$game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f" title="Supprime les bonbons atLeastThreeInAColumn." alt="" coords="636,104,760,129"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="815,136,760,128,761,123,816,131"/>
+<area shape="rect" id="Node000012" href="$game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d" title="Supprime les bonbons atLeastThreeInARow." alt="" coords="645,153,751,179"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="816,153,752,162,751,156,815,147"/>
+<area shape="rect" id="Node000013" href="$gridmanagement_8cpp.html#a7f23a63cf0475e8987be962828ca281f" title="Remplit les cases vides de la grille avec de nouveaux bonbons." alt="" coords="655,203,741,228"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="842,164,782,192,742,207,740,202,780,188,840,159"/>
+<area shape="rect" id="Node000003" href="$gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2" title="Affichage de la grille." alt="" coords="442,31,529,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="601,32,529,41,529,36,600,27"/>
+<area shape="rect" id="Node000004" href="$game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="259,129,356,155"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="451,65,333,131,330,127,448,60"/>
+<area shape="rect" id="Node000005" href="$game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="156,129,211,155"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="245,145,211,145,211,139,245,139"/>
+<area shape="rect" id="Node000006" href="$game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="5,129,108,155"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="142,153,108,154,108,148,142,148"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="31,179,82,204"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="144,160,83,184,81,179,142,155"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="122,130,156,132,156,137,122,136"/>
+<area shape="rect" id="Node000009" href="$game_8cpp.html#ac4d2c94940df3370829dd22547c466d9" title="Traite les alignements et met à jour le score et le combo." alt="" coords="404,129,567,155"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="655,82,616,94,518,132,516,127,614,89,653,76"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="390,145,356,145,356,139,390,139"/>
+<area shape="poly" id="edge12_Node000010_Node000004" title=" " alt="" coords="440,201,337,157,339,152,442,196"/>
+<area shape="poly" id="edge14_Node000011_Node000009" title=" " alt="" coords="623,128,567,135,567,130,622,123"/>
+<area shape="poly" id="edge16_Node000012_Node000009" title=" " alt="" coords="630,161,567,154,567,149,631,156"/>
+<area shape="poly" id="edge18_Node000013_Node000009" title=" " alt="" coords="641,201,614,193,518,157,520,152,616,187,643,196"/>
+</map>

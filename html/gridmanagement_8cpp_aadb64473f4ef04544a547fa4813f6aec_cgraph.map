@@ -1,0 +1,5 @@
+<map id="compterBonbonRestants" name="compterBonbonRestants">
+<area shape="rect" id="Node000001" title="Compte le nombre de bonbons restants dans la grille." alt="" coords="5,5,172,31"/>
+<area shape="rect" id="Node000002" href="$type_8h.html#a18efe58b5b918621584c2029144b1756" title="Constantes pour la grille de jeu." alt="" coords="220,5,315,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,15,206,15,206,21,172,21"/>
+</map>

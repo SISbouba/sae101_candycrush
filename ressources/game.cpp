@@ -13,6 +13,7 @@
 #include <cstdlib>
 #include <chrono>
 #include <thread>
+#include <fstream>
 
 #include "game.h"
 #include "gridmanagement.h"
@@ -192,7 +193,8 @@ void removalInRow (mat & grid, const maPosition & pos, unsigned  howMany){
  * @param combo 
  * @param mode 
  * @return true 
- * @return false 
+ * @return false
+ * @callergraph 
  */
 bool traitementDeAlignement(mat& grid, unsigned& score, unsigned& combo, Gamemode mode) {
     maPosition pos;
@@ -232,6 +234,7 @@ bool traitementDeAlignement(mat& grid, unsigned& score, unsigned& combo, Gamemod
  * @param mode 
  * @details
  * Cette fonction est principale car elle permet d'afficher et joueur mode de jeu sélectioné avec chacun leur prope condition de victoire.
+ * @callgraph
  */
 void afficherMode(Gamemode mode){
     mat grid;
@@ -408,6 +411,23 @@ void afficherMode(Gamemode mode){
     cin.ignore();
     cin.get();
 }
+/**
+ * @brief Affiche le manuel du jeu
+ * 
+ */
+void affiche_fichier(){
+    fstream fichier("ressources/manual.txt");
+    string ligne;
+    while(getline(fichier, ligne)){
+        cout << ligne << endl;
+    }
+    fichier.close();
+
+    cout << "\nAppuyez sur Entrée pour continuer..." << endl;
+    cin.ignore();
+    cin.get();
+    game();
+}
 
 /**
  * @brief Fonction principale du jeu
@@ -425,7 +445,8 @@ void game(){
     cout << "1. Mode Score" << endl;
     cout << "2. Mode Clear" << endl;
     cout << "3. Mode 1v1" << endl;
-    cout << "4. Quitter" << endl;
+    cout << "4. Manuel du Jeu" << endl;
+    cout << "5. Quitter" << endl;
 
     cout << "Votre choix : ";
     couleur(KReset);
@@ -442,12 +463,18 @@ void game(){
     case 3:
         afficherMode(MODE_1v1);
         break;
-    case 4: //! Quitter le jeu
+
+    case 4:
+        affiche_fichier();
+        return;
+
+    case 5: //! Quitter le jeu
         couleur(KCyan);
         cout << "Merci d'avoir joué ! Au revoir !" << endl;
         couleur(KReset);
         exit(0);
         break;
+
     default:
         couleur(KRouge);
         cout << "Mode de jeu invalide, veuillez recommencer." << endl;

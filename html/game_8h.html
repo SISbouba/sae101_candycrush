@@ -95,6 +95,36 @@ $(function(){initNavTree('game_8h.html','',''); });
 <div class="textblock"><code>#include &quot;<a class="el" href="type_8h_source.html">type.h</a>&quot;</code><br />
 <code>#include &lt;cctype&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de game.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h__incl.png" border="0" usemap="#aressources_2game_8h" loading="lazy" alt=""/></div>
+<map name="aressources_2game_8h" id="aressources_2game_8h">
+<area shape="rect" title=" " alt="" coords="92,5,225,31"/>
+<area shape="rect" href="type_8h.html" title=" " alt="" coords="45,79,104,104"/>
+<area shape="poly" title=" " alt="" coords="147,33,101,72,97,67,143,29"/>
+<area shape="rect" title=" " alt="" coords="128,79,189,104"/>
+<area shape="poly" title=" " alt="" coords="161,31,161,65,156,65,156,31"/>
+<area shape="rect" title=" " alt="" coords="213,79,285,104"/>
+<area shape="poly" title=" " alt="" coords="175,29,225,68,222,72,172,33"/>
+<area shape="rect" title=" " alt="" coords="5,152,64,177"/>
+<area shape="poly" title=" " alt="" coords="70,106,50,141,46,139,66,103"/>
+<area shape="rect" title=" " alt="" coords="89,152,143,177"/>
+<area shape="poly" title=" " alt="" coords="84,103,105,139,100,141,79,106"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h__dep__incl.png" border="0" usemap="#aressources_2game_8hdep" loading="lazy" alt=""/></div>
+<map name="aressources_2game_8hdep" id="aressources_2game_8hdep">
+<area shape="rect" title=" " alt="" coords="43,5,176,31"/>
+<area shape="rect" href="main_8cpp.html" title="Point d&#39;entrée principal du programme de jeu." alt="" coords="5,79,80,104"/>
+<area shape="poly" title=" " alt="" coords="91,43,55,80,52,77,87,39"/>
+<area shape="rect" href="game_8cpp.html" title="Fonctions de gestion du jeu." alt="" coords="104,79,251,104"/>
+<area shape="poly" title=" " alt="" coords="132,39,168,77,164,80,128,42"/>
+</map>
+</div>
 </div>
 <p><a href="game_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
@@ -152,181 +182,181 @@ Fonctions</h2></td></tr>
 <p>Mode Clear</p>
 <p>Mode 1v1</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00236">236</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  236</span>                                {</div>
-<div class="line"><span class="lineno">  237</span>    <a class="code hl_typedef" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a> grid;</div>
-<div class="line"><span class="lineno">  238</span>    <span class="keywordtype">size_t</span> taille = 8;</div>
-<div class="line"><span class="lineno">  239</span>    <span class="keywordtype">unsigned</span> score = 0;</div>
-<div class="line"><span class="lineno">  240</span>    <span class="keywordtype">unsigned</span> combo = 1;</div>
-<div class="line"><span class="lineno">  241</span>    </div>
-<div class="line"><span class="lineno">  242</span>    <a class="code hl_function" href="gridmanagement_8cpp.html#a4bccf39627ad0e9ef02f761a348de1b6">initGrid</a>(grid, taille);</div>
-<div class="line"><span class="lineno">  243</span>    <span class="keyword">auto</span> startTime = steady_clock::now(); <span class="comment">// Démarre le chronomètre</span></div>
-<div class="line"><span class="lineno">  244</span>    <span class="keywordtype">int</span> tempsLimite = 120; <span class="comment">// Durée du temps en secondes</span></div>
-<div class="line"><span class="lineno">  245</span></div>
-<div class="line"><span class="lineno">  247</span>    <span class="keywordflow">switch</span> (mode) {</div>
-<div class="line"><span class="lineno">  249</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8">MODE_SCORE</a>:</div>
-<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
-<div class="line"><span class="lineno">  251</span>                <span class="keyword">auto</span> tempsActuel = steady_clock::now();</div>
-<div class="line"><span class="lineno">  252</span>                <span class="keywordtype">int</span> tempsPasser = duration_cast&lt;seconds&gt;(tempsActuel - startTime).count();</div>
-<div class="line"><span class="lineno">  253</span>                <span class="keywordtype">int</span> tempsRestant = tempsLimite - tempsPasser;</div>
-<div class="line"><span class="lineno">  254</span> </div>
-<div class="line"><span class="lineno">  255</span>                <span class="comment">// Affiche le message de fin si le temps est écoulé</span></div>
-<div class="line"><span class="lineno">  256</span>                <span class="keywordflow">if</span> (tempsRestant &lt;= 0) {</div>
-<div class="line"><span class="lineno">  257</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
-<div class="line"><span class="lineno">  258</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Temps écoulé !&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  259</span>                    this_thread::sleep_for(milliseconds(1000));</div>
-<div class="line"><span class="lineno">  260</span>                    cout&lt;&lt; <span class="stringliteral">&quot;Votre score final est : &quot;</span> &lt;&lt; score &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  261</span>                    <span class="keywordflow">if</span> (score &gt;= <a class="code hl_variable" href="type_8h.html#a4c057195b415fb14abcbba4a9be17ecb">KTargetScore</a>) {</div>
-<div class="line"><span class="lineno">  262</span>                        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5">KVert</a>);</div>
-<div class="line"><span class="lineno">  263</span>                        cout &lt;&lt; <span class="stringliteral">&quot;VICTOIRE! Objectif atteint!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  264</span>                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  265</span>                        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a>);</div>
-<div class="line"><span class="lineno">  266</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Dommage... Objectif non atteint.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  267</span>                    }</div>
-<div class="line"><span class="lineno">  268</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  269</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  270</span>                }</div>
-<div class="line"><span class="lineno">  271</span> </div>
-<div class="line"><span class="lineno">  272</span>                <span class="comment">// Affiche le message de victoire si l&#39;objectif est atteint</span></div>
-<div class="line"><span class="lineno">  273</span>                <span class="keywordflow">if</span> (score &gt;= <a class="code hl_variable" href="type_8h.html#a4c057195b415fb14abcbba4a9be17ecb">KTargetScore</a>) {</div>
-<div class="line"><span class="lineno">  274</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a>();</div>
-<div class="line"><span class="lineno">  275</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5">KVert</a>);</div>
-<div class="line"><span class="lineno">  276</span>                    cout &lt;&lt; <span class="stringliteral">&quot;VICTOIRE! Objectif atteint!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  277</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  278</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Score final: &quot;</span> &lt;&lt; score &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  279</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Temps restant: &quot;</span> &lt;&lt; tempsRestant &lt;&lt; <span class="stringliteral">&quot;s&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  280</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  281</span>                }</div>
-<div class="line"><span class="lineno">  282</span> </div>
-<div class="line"><span class="lineno">  283</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2">displayGrid</a>(grid, score, combo, tempsRestant, mode);</div>
-<div class="line"><span class="lineno">  284</span> </div>
-<div class="line"><span class="lineno">  285</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
-<div class="line"><span class="lineno">  286</span>                cout &lt;&lt; <span class="stringliteral">&quot;Entrez la position (ligne colonne) et la direction (z/q/s/d) ou &#39;x&#39; pour quitter:&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  287</span>                cout &lt;&lt; <span class="stringliteral">&quot;Exemple: 3 4 d&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  288</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  289</span>                </div>
-<div class="line"><span class="lineno">  290</span>                <span class="keywordtype">string</span> input;</div>
-<div class="line"><span class="lineno">  291</span>                getline(cin, input);</div>
-<div class="line"><span class="lineno">  292</span> </div>
-<div class="line"><span class="lineno">  293</span>                <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;x&quot;</span> || input == <span class="stringliteral">&quot;X&quot;</span>) <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  294</span>                    </div>
-<div class="line"><span class="lineno">  295</span>                <span class="keywordtype">unsigned</span> row, col;</div>
-<div class="line"><span class="lineno">  296</span>                <span class="keywordtype">char</span> direction;</div>
-<div class="line"><span class="lineno">  297</span> </div>
-<div class="line"><span class="lineno">  298</span>                <span class="comment">// Analyse l&#39;entrée utilisateur</span></div>
-<div class="line"><span class="lineno">  299</span>                <span class="keywordflow">if</span> (sscanf(input.c_str(), <span class="stringliteral">&quot;%u %u %c&quot;</span>, &amp;row, &amp;col, &amp;direction) == 3) { <span class="comment">// Vérifie que trois valeurs ont été lues</span></div>
-<div class="line"><span class="lineno">  300</span>                    <span class="keywordflow">if</span> (row &lt; taille &amp;&amp; col &lt; taille) { <span class="comment">// Vérifie que les indices sont dans les limites de la grille</span></div>
-<div class="line"><span class="lineno">  301</span>                        <a class="code hl_struct" href="structmaPosition.html">maPosition</a> pos = {row, col};</div>
-<div class="line"><span class="lineno">  302</span>                        </div>
-<div class="line"><span class="lineno">  303</span>                        <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#a79b6bb8e70fdd93bb802cf05062ea916">isValidMove</a>(grid, pos, direction)) {</div>
-<div class="line"><span class="lineno">  304</span>                            <a class="code hl_struct" href="structmaPosition.html">maPosition</a> target = <a class="code hl_function" href="game_8cpp.html#a8669fff22fbca6892cb6c466a191f6d6">getTargetPosition</a>(pos, direction); <span class="comment">// Obtient la position cible</span></div>
-<div class="line"><span class="lineno">  305</span>                            <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, pos, target);</div>
-<div class="line"><span class="lineno">  306</span>                            </div>
-<div class="line"><span class="lineno">  307</span>                            <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9">traitementDeAlignement</a>(grid, score, combo, mode)) {</div>
-<div class="line"><span class="lineno">  308</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a1b010b9694f3acc35b02b0a667d99094">KJaune</a>);</div>
-<div class="line"><span class="lineno">  309</span>                                cout &lt;&lt; <span class="stringliteral">&quot;Bon coup! Combo x&quot;</span> &lt;&lt; combo &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  310</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  311</span>                            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  312</span>                                <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, pos, target);</div>
-<div class="line"><span class="lineno">  313</span>                                combo = 1;</div>
-<div class="line"><span class="lineno">  314</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a>);</div>
-<div class="line"><span class="lineno">  315</span>                                cout &lt;&lt; <span class="stringliteral">&quot;Aucune combinaison trouvée. Mouvement annulé.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  316</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  317</span>                            }</div>
-<div class="line"><span class="lineno">  318</span>                            </div>
-<div class="line"><span class="lineno">  319</span>                            this_thread::sleep_for(milliseconds(1000));</div>
-<div class="line"><span class="lineno">  320</span>                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  321</span>                            cout &lt;&lt; <span class="stringliteral">&quot;Mouvement invalide.&quot;</span> &lt;&lt; endl;</div>
+<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00239">239</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  239</span>                                {</div>
+<div class="line"><span class="lineno">  240</span>    <a class="code hl_typedef" href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a> grid;</div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordtype">size_t</span> taille = 8;</div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordtype">unsigned</span> score = 0;</div>
+<div class="line"><span class="lineno">  243</span>    <span class="keywordtype">unsigned</span> combo = 1;</div>
+<div class="line"><span class="lineno">  244</span>    </div>
+<div class="line"><span class="lineno">  245</span>    <a class="code hl_function" href="gridmanagement_8cpp.html#a4bccf39627ad0e9ef02f761a348de1b6">initGrid</a>(grid, taille);</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keyword">auto</span> startTime = steady_clock::now(); <span class="comment">// Démarre le chronomètre</span></div>
+<div class="line"><span class="lineno">  247</span>    <span class="keywordtype">int</span> tempsLimite = 120; <span class="comment">// Durée du temps en secondes</span></div>
+<div class="line"><span class="lineno">  248</span></div>
+<div class="line"><span class="lineno">  250</span>    <span class="keywordflow">switch</span> (mode) {</div>
+<div class="line"><span class="lineno">  252</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8">MODE_SCORE</a>:</div>
+<div class="line"><span class="lineno">  253</span>            <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><span class="lineno">  254</span>                <span class="keyword">auto</span> tempsActuel = steady_clock::now();</div>
+<div class="line"><span class="lineno">  255</span>                <span class="keywordtype">int</span> tempsPasser = duration_cast&lt;seconds&gt;(tempsActuel - startTime).count();</div>
+<div class="line"><span class="lineno">  256</span>                <span class="keywordtype">int</span> tempsRestant = tempsLimite - tempsPasser;</div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>                <span class="comment">// Affiche le message de fin si le temps est écoulé</span></div>
+<div class="line"><span class="lineno">  259</span>                <span class="keywordflow">if</span> (tempsRestant &lt;= 0) {</div>
+<div class="line"><span class="lineno">  260</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
+<div class="line"><span class="lineno">  261</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Temps écoulé !&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  262</span>                    this_thread::sleep_for(milliseconds(1000));</div>
+<div class="line"><span class="lineno">  263</span>                    cout&lt;&lt; <span class="stringliteral">&quot;Votre score final est : &quot;</span> &lt;&lt; score &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  264</span>                    <span class="keywordflow">if</span> (score &gt;= <a class="code hl_variable" href="type_8h.html#a4c057195b415fb14abcbba4a9be17ecb">KTargetScore</a>) {</div>
+<div class="line"><span class="lineno">  265</span>                        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5">KVert</a>);</div>
+<div class="line"><span class="lineno">  266</span>                        cout &lt;&lt; <span class="stringliteral">&quot;VICTOIRE! Objectif atteint!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  267</span>                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  268</span>                        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a>);</div>
+<div class="line"><span class="lineno">  269</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Dommage... Objectif non atteint.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  270</span>                    }</div>
+<div class="line"><span class="lineno">  271</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  272</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  273</span>                }</div>
+<div class="line"><span class="lineno">  274</span> </div>
+<div class="line"><span class="lineno">  275</span>                <span class="comment">// Affiche le message de victoire si l&#39;objectif est atteint</span></div>
+<div class="line"><span class="lineno">  276</span>                <span class="keywordflow">if</span> (score &gt;= <a class="code hl_variable" href="type_8h.html#a4c057195b415fb14abcbba4a9be17ecb">KTargetScore</a>) {</div>
+<div class="line"><span class="lineno">  277</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a>();</div>
+<div class="line"><span class="lineno">  278</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5">KVert</a>);</div>
+<div class="line"><span class="lineno">  279</span>                    cout &lt;&lt; <span class="stringliteral">&quot;VICTOIRE! Objectif atteint!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  280</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  281</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Score final: &quot;</span> &lt;&lt; score &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  282</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Temps restant: &quot;</span> &lt;&lt; tempsRestant &lt;&lt; <span class="stringliteral">&quot;s&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  283</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  284</span>                }</div>
+<div class="line"><span class="lineno">  285</span> </div>
+<div class="line"><span class="lineno">  286</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2">displayGrid</a>(grid, score, combo, tempsRestant, mode);</div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
+<div class="line"><span class="lineno">  289</span>                cout &lt;&lt; <span class="stringliteral">&quot;Entrez la position (ligne colonne) et la direction (z/q/s/d) ou &#39;x&#39; pour quitter:&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  290</span>                cout &lt;&lt; <span class="stringliteral">&quot;Exemple: 3 4 d&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  291</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  292</span>                </div>
+<div class="line"><span class="lineno">  293</span>                <span class="keywordtype">string</span> input;</div>
+<div class="line"><span class="lineno">  294</span>                getline(cin, input);</div>
+<div class="line"><span class="lineno">  295</span> </div>
+<div class="line"><span class="lineno">  296</span>                <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;x&quot;</span> || input == <span class="stringliteral">&quot;X&quot;</span>) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  297</span>                    </div>
+<div class="line"><span class="lineno">  298</span>                <span class="keywordtype">unsigned</span> row, col;</div>
+<div class="line"><span class="lineno">  299</span>                <span class="keywordtype">char</span> direction;</div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>                <span class="comment">// Analyse l&#39;entrée utilisateur</span></div>
+<div class="line"><span class="lineno">  302</span>                <span class="keywordflow">if</span> (sscanf(input.c_str(), <span class="stringliteral">&quot;%u %u %c&quot;</span>, &amp;row, &amp;col, &amp;direction) == 3) { <span class="comment">// Vérifie que trois valeurs ont été lues</span></div>
+<div class="line"><span class="lineno">  303</span>                    <span class="keywordflow">if</span> (row &lt; taille &amp;&amp; col &lt; taille) { <span class="comment">// Vérifie que les indices sont dans les limites de la grille</span></div>
+<div class="line"><span class="lineno">  304</span>                        <a class="code hl_struct" href="structmaPosition.html">maPosition</a> pos = {row, col};</div>
+<div class="line"><span class="lineno">  305</span>                        </div>
+<div class="line"><span class="lineno">  306</span>                        <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#a79b6bb8e70fdd93bb802cf05062ea916">isValidMove</a>(grid, pos, direction)) {</div>
+<div class="line"><span class="lineno">  307</span>                            <a class="code hl_struct" href="structmaPosition.html">maPosition</a> target = <a class="code hl_function" href="game_8cpp.html#a8669fff22fbca6892cb6c466a191f6d6">getTargetPosition</a>(pos, direction); <span class="comment">// Obtient la position cible</span></div>
+<div class="line"><span class="lineno">  308</span>                            <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, pos, target);</div>
+<div class="line"><span class="lineno">  309</span>                            </div>
+<div class="line"><span class="lineno">  310</span>                            <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9">traitementDeAlignement</a>(grid, score, combo, mode)) {</div>
+<div class="line"><span class="lineno">  311</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a1b010b9694f3acc35b02b0a667d99094">KJaune</a>);</div>
+<div class="line"><span class="lineno">  312</span>                                cout &lt;&lt; <span class="stringliteral">&quot;Bon coup! Combo x&quot;</span> &lt;&lt; combo &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  313</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  314</span>                            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  315</span>                                <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, pos, target);</div>
+<div class="line"><span class="lineno">  316</span>                                combo = 1;</div>
+<div class="line"><span class="lineno">  317</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a>);</div>
+<div class="line"><span class="lineno">  318</span>                                cout &lt;&lt; <span class="stringliteral">&quot;Aucune combinaison trouvée. Mouvement annulé.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  319</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  320</span>                            }</div>
+<div class="line"><span class="lineno">  321</span>                            </div>
 <div class="line"><span class="lineno">  322</span>                            this_thread::sleep_for(milliseconds(1000));</div>
-<div class="line"><span class="lineno">  323</span>                        }</div>
-<div class="line"><span class="lineno">  324</span>                    }</div>
-<div class="line"><span class="lineno">  325</span>                }</div>
-<div class="line"><span class="lineno">  326</span>            }</div>
-<div class="line"><span class="lineno">  327</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  329</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32">MODE_CLEAR</a>:</div>
-<div class="line"><span class="lineno">  330</span>            <span class="keywordflow">while</span> (<span class="keyword">true</span>){</div>
-<div class="line"><span class="lineno">  331</span>                <span class="keyword">auto</span> tempsActuel = steady_clock::now();</div>
-<div class="line"><span class="lineno">  332</span>                <span class="keywordtype">int</span> tempsPasser = duration_cast&lt;seconds&gt;(tempsActuel - startTime).count();</div>
-<div class="line"><span class="lineno">  333</span> </div>
-<div class="line"><span class="lineno">  334</span>                <span class="comment">// Affiche le message de fin si le temps est écoulé</span></div>
-<div class="line"><span class="lineno">  335</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="gridmanagement_8cpp.html#ae9fcaee43db1e7fec23f90a810bba50a">isGridEmpty</a>(grid) ) {</div>
-<div class="line"><span class="lineno">  336</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a>();</div>
-<div class="line"><span class="lineno">  337</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5">KVert</a>);</div>
-<div class="line"><span class="lineno">  338</span>                    cout &lt;&lt; <span class="stringliteral">&quot;VICTOIRE! La grille est vide.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  339</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
-<div class="line"><span class="lineno">  340</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Temps écoulé: &quot;</span> &lt;&lt; tempsPasser &lt;&lt; <span class="stringliteral">&quot; secondes&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  341</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Score final: &quot;</span> &lt;&lt; score &lt;&lt; <span class="stringliteral">&quot; points&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  342</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Combo maximum: x&quot;</span> &lt;&lt; combo &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  343</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  344</span>                }</div>
-<div class="line"><span class="lineno">  345</span> </div>
-<div class="line"><span class="lineno">  346</span>                <span class="comment">// Affiche l&#39;interface du jeu et l&#39;information de la partie en cours</span></div>
-<div class="line"><span class="lineno">  347</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2">displayGrid</a>(grid, score, combo, tempsPasser, mode);</div>
+<div class="line"><span class="lineno">  323</span>                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  324</span>                            cout &lt;&lt; <span class="stringliteral">&quot;Mouvement invalide.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  325</span>                            this_thread::sleep_for(milliseconds(1000));</div>
+<div class="line"><span class="lineno">  326</span>                        }</div>
+<div class="line"><span class="lineno">  327</span>                    }</div>
+<div class="line"><span class="lineno">  328</span>                }</div>
+<div class="line"><span class="lineno">  329</span>            }</div>
+<div class="line"><span class="lineno">  330</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  332</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32">MODE_CLEAR</a>:</div>
+<div class="line"><span class="lineno">  333</span>            <span class="keywordflow">while</span> (<span class="keyword">true</span>){</div>
+<div class="line"><span class="lineno">  334</span>                <span class="keyword">auto</span> tempsActuel = steady_clock::now();</div>
+<div class="line"><span class="lineno">  335</span>                <span class="keywordtype">int</span> tempsPasser = duration_cast&lt;seconds&gt;(tempsActuel - startTime).count();</div>
+<div class="line"><span class="lineno">  336</span> </div>
+<div class="line"><span class="lineno">  337</span>                <span class="comment">// Affiche le message de fin si le temps est écoulé</span></div>
+<div class="line"><span class="lineno">  338</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="gridmanagement_8cpp.html#ae9fcaee43db1e7fec23f90a810bba50a">isGridEmpty</a>(grid) ) {</div>
+<div class="line"><span class="lineno">  339</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f">clearScreen</a>();</div>
+<div class="line"><span class="lineno">  340</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5">KVert</a>);</div>
+<div class="line"><span class="lineno">  341</span>                    cout &lt;&lt; <span class="stringliteral">&quot;VICTOIRE! La grille est vide.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  342</span>                    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
+<div class="line"><span class="lineno">  343</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Temps écoulé: &quot;</span> &lt;&lt; tempsPasser &lt;&lt; <span class="stringliteral">&quot; secondes&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  344</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Score final: &quot;</span> &lt;&lt; score &lt;&lt; <span class="stringliteral">&quot; points&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  345</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Combo maximum: x&quot;</span> &lt;&lt; combo &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  346</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  347</span>                }</div>
 <div class="line"><span class="lineno">  348</span> </div>
-<div class="line"><span class="lineno">  349</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
-<div class="line"><span class="lineno">  350</span>                cout &lt;&lt; <span class="stringliteral">&quot;Entrez la position (ligne colonne) et la direction (z/q/s/d) ou &#39;x&#39; pour quitter:&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  351</span>                cout &lt;&lt; <span class="stringliteral">&quot;Exemple: 3 4 d&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  352</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  353</span>                </div>
-<div class="line"><span class="lineno">  354</span>                <span class="keywordtype">string</span> input;</div>
-<div class="line"><span class="lineno">  355</span>                getline(cin, input);</div>
-<div class="line"><span class="lineno">  356</span> </div>
-<div class="line"><span class="lineno">  357</span>                <span class="comment">// Sort de la boucle si l&#39;utilisateur entre &#39;x&#39;</span></div>
-<div class="line"><span class="lineno">  358</span>                <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;x&quot;</span> || input == <span class="stringliteral">&quot;X&quot;</span>) <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  359</span>                    </div>
-<div class="line"><span class="lineno">  360</span>                <span class="keywordtype">unsigned</span> row, col;</div>
-<div class="line"><span class="lineno">  361</span>                <span class="keywordtype">char</span> direction;</div>
-<div class="line"><span class="lineno">  362</span> </div>
-<div class="line"><span class="lineno">  363</span>                <span class="comment">// Analyse l&#39;entrée utilisateur</span></div>
-<div class="line"><span class="lineno">  364</span>                <span class="keywordflow">if</span> (sscanf(input.c_str(), <span class="stringliteral">&quot;%u %u %c&quot;</span>, &amp;row, &amp;col, &amp;direction) == 3) { <span class="comment">// Vérifie que trois valeurs ont été lues</span></div>
-<div class="line"><span class="lineno">  365</span>                    <span class="keywordflow">if</span> (row &lt; taille &amp;&amp; col &lt; taille) {</div>
-<div class="line"><span class="lineno">  366</span>                        <a class="code hl_struct" href="structmaPosition.html">maPosition</a> pos = {row, col};</div>
-<div class="line"><span class="lineno">  367</span>                        </div>
-<div class="line"><span class="lineno">  368</span>                        <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#a79b6bb8e70fdd93bb802cf05062ea916">isValidMove</a>(grid, pos, direction)) {</div>
-<div class="line"><span class="lineno">  369</span>                            <a class="code hl_struct" href="structmaPosition.html">maPosition</a> target = <a class="code hl_function" href="game_8cpp.html#a8669fff22fbca6892cb6c466a191f6d6">getTargetPosition</a>(pos, direction);</div>
-<div class="line"><span class="lineno">  370</span>                            <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, pos, target);</div>
-<div class="line"><span class="lineno">  371</span>                            </div>
-<div class="line"><span class="lineno">  372</span>                            <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9">traitementDeAlignement</a>(grid, score, combo, mode)) {</div>
-<div class="line"><span class="lineno">  373</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a1b010b9694f3acc35b02b0a667d99094">KJaune</a>);</div>
-<div class="line"><span class="lineno">  374</span>                                cout &lt;&lt; <span class="stringliteral">&quot;Bon coup! Combo x&quot;</span> &lt;&lt; combo &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  375</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  376</span>                            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  377</span>                                <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, pos, target);</div>
-<div class="line"><span class="lineno">  378</span>                                combo = 1;</div>
-<div class="line"><span class="lineno">  379</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a>);</div>
-<div class="line"><span class="lineno">  380</span>                                cout &lt;&lt; <span class="stringliteral">&quot;Aucune combinaison trouvée. Mouvement annulé.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  381</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  382</span>                            }</div>
-<div class="line"><span class="lineno">  383</span>                            </div>
-<div class="line"><span class="lineno">  384</span>                            this_thread::sleep_for(milliseconds(1000)); <span class="comment">// Pause pour permettre au joueur de voir le résultat</span></div>
-<div class="line"><span class="lineno">  385</span>                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  386</span>                            cout &lt;&lt; <span class="stringliteral">&quot;Mouvement invalide.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  387</span>                            this_thread::sleep_for(milliseconds(1000));</div>
-<div class="line"><span class="lineno">  388</span>                        }</div>
-<div class="line"><span class="lineno">  389</span>                    }</div>
-<div class="line"><span class="lineno">  390</span>                }</div>
-<div class="line"><span class="lineno">  391</span>            }</div>
-<div class="line"><span class="lineno">  392</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  394</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731">MODE_1v1</a>:</div>
-<div class="line"><span class="lineno">  395</span>            <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
-<div class="line"><span class="lineno">  396</span>            cout &lt;&lt; <span class="stringliteral">&quot;Mode de jeu 1v1 en cours de développement. Veuillez réessayer plus tard.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  397</span>            <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);     </div>
-<div class="line"><span class="lineno">  398</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  399</span> </div>
-<div class="line"><span class="lineno">  400</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  401</span>            <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a>);</div>
-<div class="line"><span class="lineno">  402</span>            cout &lt;&lt; <span class="stringliteral">&quot;Mode de jeu invalide, veuillez réessayer en appuyant sur Entrée.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  403</span>            <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  404</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  405</span>    }</div>
-<div class="line"><span class="lineno">  406</span>    </div>
-<div class="line"><span class="lineno">  407</span>    cout &lt;&lt; <span class="stringliteral">&quot;\nAppuyez sur Entrée pour continuer...&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  408</span>    cin.ignore();</div>
-<div class="line"><span class="lineno">  409</span>    cin.get();</div>
-<div class="line"><span class="lineno">  410</span>}</div>
-<div class="ttc" id="agame_8cpp_html_a79b6bb8e70fdd93bb802cf05062ea916"><div class="ttname"><a href="game_8cpp.html#a79b6bb8e70fdd93bb802cf05062ea916">isValidMove</a></div><div class="ttdeci">bool isValidMove(const mat &amp;grid, const maPosition &amp;Pos, char Direction)</div><div class="ttdoc">Vérifie si le mouvement est valide pour éviter les débordements.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00051">game.cpp:51</a></div></div>
-<div class="ttc" id="agame_8cpp_html_a8669fff22fbca6892cb6c466a191f6d6"><div class="ttname"><a href="game_8cpp.html#a8669fff22fbca6892cb6c466a191f6d6">getTargetPosition</a></div><div class="ttdeci">maPosition getTargetPosition(const maPosition &amp;Pos, char Direction)</div><div class="ttdoc">Obtient la position cible en fonction de la direction.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00074">game.cpp:74</a></div></div>
-<div class="ttc" id="agame_8cpp_html_ac4d2c94940df3370829dd22547c466d9"><div class="ttname"><a href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9">traitementDeAlignement</a></div><div class="ttdeci">bool traitementDeAlignement(mat &amp;grid, unsigned &amp;score, unsigned &amp;combo, Gamemode mode)</div><div class="ttdoc">Traite les alignements et met à jour le score et le combo.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00197">game.cpp:197</a></div></div>
+<div class="line"><span class="lineno">  349</span>                <span class="comment">// Affiche l&#39;interface du jeu et l&#39;information de la partie en cours</span></div>
+<div class="line"><span class="lineno">  350</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2">displayGrid</a>(grid, score, combo, tempsPasser, mode);</div>
+<div class="line"><span class="lineno">  351</span> </div>
+<div class="line"><span class="lineno">  352</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
+<div class="line"><span class="lineno">  353</span>                cout &lt;&lt; <span class="stringliteral">&quot;Entrez la position (ligne colonne) et la direction (z/q/s/d) ou &#39;x&#39; pour quitter:&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  354</span>                cout &lt;&lt; <span class="stringliteral">&quot;Exemple: 3 4 d&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  355</span>                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  356</span>                </div>
+<div class="line"><span class="lineno">  357</span>                <span class="keywordtype">string</span> input;</div>
+<div class="line"><span class="lineno">  358</span>                getline(cin, input);</div>
+<div class="line"><span class="lineno">  359</span> </div>
+<div class="line"><span class="lineno">  360</span>                <span class="comment">// Sort de la boucle si l&#39;utilisateur entre &#39;x&#39;</span></div>
+<div class="line"><span class="lineno">  361</span>                <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;x&quot;</span> || input == <span class="stringliteral">&quot;X&quot;</span>) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  362</span>                    </div>
+<div class="line"><span class="lineno">  363</span>                <span class="keywordtype">unsigned</span> row, col;</div>
+<div class="line"><span class="lineno">  364</span>                <span class="keywordtype">char</span> direction;</div>
+<div class="line"><span class="lineno">  365</span> </div>
+<div class="line"><span class="lineno">  366</span>                <span class="comment">// Analyse l&#39;entrée utilisateur</span></div>
+<div class="line"><span class="lineno">  367</span>                <span class="keywordflow">if</span> (sscanf(input.c_str(), <span class="stringliteral">&quot;%u %u %c&quot;</span>, &amp;row, &amp;col, &amp;direction) == 3) { <span class="comment">// Vérifie que trois valeurs ont été lues</span></div>
+<div class="line"><span class="lineno">  368</span>                    <span class="keywordflow">if</span> (row &lt; taille &amp;&amp; col &lt; taille) {</div>
+<div class="line"><span class="lineno">  369</span>                        <a class="code hl_struct" href="structmaPosition.html">maPosition</a> pos = {row, col};</div>
+<div class="line"><span class="lineno">  370</span>                        </div>
+<div class="line"><span class="lineno">  371</span>                        <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#a79b6bb8e70fdd93bb802cf05062ea916">isValidMove</a>(grid, pos, direction)) {</div>
+<div class="line"><span class="lineno">  372</span>                            <a class="code hl_struct" href="structmaPosition.html">maPosition</a> target = <a class="code hl_function" href="game_8cpp.html#a8669fff22fbca6892cb6c466a191f6d6">getTargetPosition</a>(pos, direction);</div>
+<div class="line"><span class="lineno">  373</span>                            <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, pos, target);</div>
+<div class="line"><span class="lineno">  374</span>                            </div>
+<div class="line"><span class="lineno">  375</span>                            <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9">traitementDeAlignement</a>(grid, score, combo, mode)) {</div>
+<div class="line"><span class="lineno">  376</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a1b010b9694f3acc35b02b0a667d99094">KJaune</a>);</div>
+<div class="line"><span class="lineno">  377</span>                                cout &lt;&lt; <span class="stringliteral">&quot;Bon coup! Combo x&quot;</span> &lt;&lt; combo &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  378</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  379</span>                            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  380</span>                                <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, pos, target);</div>
+<div class="line"><span class="lineno">  381</span>                                combo = 1;</div>
+<div class="line"><span class="lineno">  382</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a>);</div>
+<div class="line"><span class="lineno">  383</span>                                cout &lt;&lt; <span class="stringliteral">&quot;Aucune combinaison trouvée. Mouvement annulé.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  384</span>                                <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  385</span>                            }</div>
+<div class="line"><span class="lineno">  386</span>                            </div>
+<div class="line"><span class="lineno">  387</span>                            this_thread::sleep_for(milliseconds(1000)); <span class="comment">// Pause pour permettre au joueur de voir le résultat</span></div>
+<div class="line"><span class="lineno">  388</span>                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  389</span>                            cout &lt;&lt; <span class="stringliteral">&quot;Mouvement invalide.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  390</span>                            this_thread::sleep_for(milliseconds(1000));</div>
+<div class="line"><span class="lineno">  391</span>                        }</div>
+<div class="line"><span class="lineno">  392</span>                    }</div>
+<div class="line"><span class="lineno">  393</span>                }</div>
+<div class="line"><span class="lineno">  394</span>            }</div>
+<div class="line"><span class="lineno">  395</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  397</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731">MODE_1v1</a>:</div>
+<div class="line"><span class="lineno">  398</span>            <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
+<div class="line"><span class="lineno">  399</span>            cout &lt;&lt; <span class="stringliteral">&quot;Mode de jeu 1v1 en cours de développement. Veuillez réessayer plus tard.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  400</span>            <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);     </div>
+<div class="line"><span class="lineno">  401</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  402</span> </div>
+<div class="line"><span class="lineno">  403</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  404</span>            <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a>);</div>
+<div class="line"><span class="lineno">  405</span>            cout &lt;&lt; <span class="stringliteral">&quot;Mode de jeu invalide, veuillez réessayer en appuyant sur Entrée.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  406</span>            <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  407</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  408</span>    }</div>
+<div class="line"><span class="lineno">  409</span>    </div>
+<div class="line"><span class="lineno">  410</span>    cout &lt;&lt; <span class="stringliteral">&quot;\nAppuyez sur Entrée pour continuer...&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  411</span>    cin.ignore();</div>
+<div class="line"><span class="lineno">  412</span>    cin.get();</div>
+<div class="line"><span class="lineno">  413</span>}</div>
+<div class="ttc" id="agame_8cpp_html_a79b6bb8e70fdd93bb802cf05062ea916"><div class="ttname"><a href="game_8cpp.html#a79b6bb8e70fdd93bb802cf05062ea916">isValidMove</a></div><div class="ttdeci">bool isValidMove(const mat &amp;grid, const maPosition &amp;Pos, char Direction)</div><div class="ttdoc">Vérifie si le mouvement est valide pour éviter les débordements.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00052">game.cpp:52</a></div></div>
+<div class="ttc" id="agame_8cpp_html_a8669fff22fbca6892cb6c466a191f6d6"><div class="ttname"><a href="game_8cpp.html#a8669fff22fbca6892cb6c466a191f6d6">getTargetPosition</a></div><div class="ttdeci">maPosition getTargetPosition(const maPosition &amp;Pos, char Direction)</div><div class="ttdoc">Obtient la position cible en fonction de la direction.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00075">game.cpp:75</a></div></div>
+<div class="ttc" id="agame_8cpp_html_ac4d2c94940df3370829dd22547c466d9"><div class="ttname"><a href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9">traitementDeAlignement</a></div><div class="ttdeci">bool traitementDeAlignement(mat &amp;grid, unsigned &amp;score, unsigned &amp;combo, Gamemode mode)</div><div class="ttdoc">Traite les alignements et met à jour le score et le combo.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00199">game.cpp:199</a></div></div>
 <div class="ttc" id="agame_8h_html_a61cffd07a54e944fdae77b6d61b22133"><div class="ttname"><a href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a></div><div class="ttdeci">void gridSwap(mat &amp;grid, const maPosition &amp;pos1, const maPosition &amp;pos2)</div><div class="ttdoc">Déplacement des éléments de la grille.</div><div class="ttdef"><b>Definition</b> <a href="gridmanagement_8cpp_source.html#l00159">gridmanagement.cpp:159</a></div></div>
 <div class="ttc" id="agridmanagement_8cpp_html_a4bccf39627ad0e9ef02f761a348de1b6"><div class="ttname"><a href="gridmanagement_8cpp.html#a4bccf39627ad0e9ef02f761a348de1b6">initGrid</a></div><div class="ttdeci">void initGrid(mat &amp;grid, const size_t &amp;size)</div><div class="ttdoc">Initialisation de la grille.</div><div class="ttdef"><b>Definition</b> <a href="gridmanagement_8cpp_source.html#l00053">gridmanagement.cpp:53</a></div></div>
 <div class="ttc" id="agridmanagement_8cpp_html_a8415cba8a293e69fe15c2e6ec604f1a2"><div class="ttname"><a href="gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2">displayGrid</a></div><div class="ttdeci">void displayGrid(const mat &amp;grid, unsigned score, unsigned combo, int timeValue, Gamemode mode)</div><div class="ttdoc">Affichage de la grille.</div><div class="ttdef"><b>Definition</b> <a href="gridmanagement_8cpp_source.html#l00095">gridmanagement.cpp:95</a></div></div>
@@ -344,7 +374,95 @@ Fonctions</h2></td></tr>
 <div class="ttc" id="atype_8h_html_a87aab004c1c22814beb8db1ddaa9f628"><div class="ttname"><a href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a></div><div class="ttdeci">const unsigned KRouge(31)</div><div class="ttdoc">Couleur rouge.</div></div>
 <div class="ttc" id="atype_8h_html_aed31d4db92c112edda1291acad69dd00"><div class="ttname"><a href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a></div><div class="ttdeci">const unsigned KCyan(36)</div><div class="ttdoc">Couleur cyan.</div></div>
 <div class="ttc" id="atype_8h_html_aee710f500ed8d179390ae3862af69d24"><div class="ttname"><a href="type_8h.html#aee710f500ed8d179390ae3862af69d24">mat</a></div><div class="ttdeci">vector&lt; line &gt; mat</div><div class="ttdoc">Type représentant une ligne de la grille.</div><div class="ttdef"><b>Definition</b> <a href="type_8h_source.html#l00026">type.h:26</a></div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a182a58b52ccee7022e49c19d33f888dd_cgraph.png" border="0" usemap="#agame_8h_a182a58b52ccee7022e49c19d33f888dd_cgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a182a58b52ccee7022e49c19d33f888dd_cgraph" id="agame_8h_a182a58b52ccee7022e49c19d33f888dd_cgraph">
+<area shape="rect" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="5,483,103,508"/>
+<area shape="rect" href="gridmanagement_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Efface l&#39;écran." alt="" coords="399,257,490,283"/>
+<area shape="poly" title=" " alt="" coords="60,481,93,427,119,395,149,368,208,333,271,307,332,289,385,277,386,282,333,294,273,312,210,338,152,372,122,399,97,430,64,484"/>
+<area shape="rect" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="Change la couleur du texte dans la console." alt="" coords="591,207,655,232"/>
+<area shape="poly" title=" " alt="" coords="56,482,66,448,85,403,112,355,149,313,200,278,256,252,316,233,376,221,435,214,490,211,578,213,578,218,490,216,436,219,377,226,317,238,258,257,203,283,152,317,116,358,90,405,71,450,61,483"/>
+<area shape="rect" href="gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2" title="Affichage de la grille." alt="" coords="189,383,275,408"/>
+<area shape="poly" title=" " alt="" coords="77,480,195,413,198,417,79,485"/>
+<area shape="rect" href="type_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="Couleur jaune." alt="" coords="590,5,657,31"/>
+<area shape="poly" title=" " alt="" coords="52,483,52,420,62,325,73,272,91,220,116,170,149,126,196,85,250,55,309,34,370,20,429,12,486,9,576,11,576,16,486,14,430,17,371,25,311,39,253,60,199,90,153,129,120,173,96,222,79,274,67,326,57,420,57,483"/>
+<area shape="rect" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="Couleur rouge." alt="" coords="589,56,658,81"/>
+<area shape="poly" title=" " alt="" coords="53,482,57,429,70,352,82,309,99,266,121,226,149,189,196,149,250,118,309,96,369,80,428,70,484,65,574,63,575,69,484,70,429,75,370,85,310,101,253,123,199,154,153,193,125,228,104,268,87,310,75,353,62,430,58,483"/>
+<area shape="rect" href="type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="Couleur verte." alt="" coords="596,107,651,132"/>
+<area shape="poly" title=" " alt="" coords="55,482,64,441,81,382,109,317,127,286,149,258,197,210,243,181,294,161,361,141,420,127,480,119,582,115,582,121,481,124,421,132,362,146,296,166,245,185,201,214,153,261,131,289,113,319,86,384,69,442,60,483"/>
+<area shape="rect" href="type_8h.html#aed31d4db92c112edda1291acad69dd00" title="Couleur cyan." alt="" coords="413,459,476,484"/>
+<area shape="poly" title=" " alt="" coords="103,490,399,471,400,477,103,495"/>
+<area shape="rect" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="Réinitialisation de la couleur." alt="" coords="411,508,478,533"/>
+<area shape="poly" title=" " alt="" coords="103,496,398,515,398,520,103,501"/>
+<area shape="rect" href="game_8cpp.html#a8669fff22fbca6892cb6c466a191f6d6" title="Obtient la position cible en fonction de la direction." alt="" coords="171,732,293,757"/>
+<area shape="poly" title=" " alt="" coords="60,508,67,549,83,605,111,666,130,694,152,719,160,724,156,729,149,723,126,698,106,669,78,607,62,550,54,509"/>
+<area shape="rect" href="gridmanagement_8cpp.html#abc366c74b702ac1e1210ad3537da48b1" title="Déplacement des éléments de la grille." alt="" coords="194,781,270,807"/>
+<area shape="poly" title=" " alt="" coords="59,508,63,557,77,627,89,665,106,702,126,737,152,768,166,778,182,784,180,789,164,782,149,772,122,741,101,705,84,667,72,628,58,558,53,509"/>
+<area shape="rect" href="gridmanagement_8cpp.html#a4bccf39627ad0e9ef02f761a348de1b6" title="Initialisation de la grille." alt="" coords="201,559,263,584"/>
+<area shape="poly" title=" " alt="" coords="83,506,152,537,189,552,187,557,150,542,81,510"/>
+<area shape="rect" href="gridmanagement_8cpp.html#ae9fcaee43db1e7fec23f90a810bba50a" title="Vérifie si la grille est vide." alt="" coords="185,683,279,708"/>
+<area shape="poly" title=" " alt="" coords="61,507,71,540,90,584,116,630,152,669,173,681,170,686,149,673,112,633,85,586,66,542,56,509"/>
+<area shape="rect" href="game_8cpp.html#a79b6bb8e70fdd93bb802cf05062ea916" title="Vérifie si le mouvement est valide pour éviter les débordements." alt="" coords="186,831,278,856"/>
+<area shape="poly" title=" " alt="" coords="58,509,60,565,72,648,83,693,100,738,123,780,152,817,174,831,171,836,149,821,118,783,95,741,78,695,66,649,55,565,52,509"/>
+<area shape="rect" href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9" title="Traite les alignements et met à jour le score et le combo." alt="" coords="151,633,313,659"/>
+<area shape="poly" title=" " alt="" coords="68,506,103,548,152,595,196,624,193,629,149,599,99,551,64,510"/>
+<area shape="poly" title=" " alt="" coords="247,380,295,342,360,300,391,285,393,290,363,304,299,346,250,385"/>
+<area shape="poly" title=" " alt="" coords="271,380,527,292,565,266,597,239,601,243,568,271,529,296,273,385"/>
+<area shape="rect" href="gridmanagement_8cpp.html#aadb64473f4ef04544a547fa4813f6aec" title="Compte le nombre de bonbons restants dans la grille." alt="" coords="361,409,528,435"/>
+<area shape="poly" title=" " alt="" coords="276,398,348,407,347,412,275,403"/>
+<area shape="rect" href="gridmanagement_8cpp.html#a1baee82490bb341c9636ed219229ea0e" title="Change la couleur en fonction du type de bonbon." alt="" coords="372,156,517,181"/>
+<area shape="poly" title=" " alt="" coords="241,381,291,320,359,243,416,189,420,192,363,247,295,323,246,384"/>
+<area shape="rect" href="type_8h.html#a39caa9d62340bfd0c4e990db6f0052a0" title="Nombre total de types de bonbons." alt="" coords="584,559,663,584"/>
+<area shape="poly" title=" " alt="" coords="275,380,329,369,395,364,430,365,464,370,498,379,529,394,549,409,565,426,591,467,609,509,619,544,614,546,604,510,587,469,561,430,545,413,527,399,496,384,463,375,429,370,395,369,330,375,276,386"/>
+<area shape="poly" title=" " alt="" coords="265,406,362,443,401,456,399,461,360,449,263,411"/>
+<area shape="poly" title=" " alt="" coords="248,406,296,449,328,473,363,494,399,508,397,513,360,499,325,478,292,453,244,410"/>
+<area shape="rect" href="type_8h.html#a18efe58b5b918621584c2029144b1756" title="Constantes pour la grille de jeu." alt="" coords="576,757,671,783"/>
+<area shape="poly" title=" " alt="" coords="514,433,530,444,546,486,571,570,618,743,613,745,566,572,541,487,526,448,511,437"/>
+<area shape="poly" title=" " alt="" coords="491,179,579,204,577,209,490,184"/>
+<area shape="rect" href="type_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="Couleur blue." alt="" coords="595,156,652,181"/>
+<area shape="poly" title=" " alt="" coords="518,166,581,166,581,171,518,171"/>
+<area shape="poly" title=" " alt="" coords="455,154,505,102,574,41,582,36,585,40,578,45,508,106,459,158"/>
+<area shape="poly" title=" " alt="" coords="467,154,575,92,585,86,588,90,577,96,469,158"/>
+<area shape="poly" title=" " alt="" coords="491,153,582,128,584,133,492,159"/>
+<area shape="poly" title=" " alt="" coords="264,569,570,569,570,574,264,574"/>
+<area shape="poly" title=" " alt="" coords="281,699,299,707,315,719,331,741,338,765,337,811,335,833,337,854,346,874,363,892,404,915,423,920,442,921,481,912,527,892,555,872,578,847,609,794,614,797,582,850,558,876,529,896,483,917,442,926,422,925,402,920,360,896,341,876,332,855,330,833,332,811,333,766,326,744,311,723,296,711,279,704"/>
+<area shape="rect" href="game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb" title="Vérifie s&#39;il y a au moins trois bonbons alignés verticalement." alt="" coords="363,659,526,684"/>
+<area shape="poly" title=" " alt="" coords="314,653,350,657,350,663,314,658"/>
+<area shape="rect" href="game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131" title="Vérifie s&#39;il y a au moins trois bonbons alignés horizontalement." alt="" coords="372,757,517,783"/>
+<area shape="poly" title=" " alt="" coords="292,656,315,669,332,688,340,708,347,726,363,744,371,749,368,753,360,748,343,729,335,710,327,691,312,673,290,661"/>
+<area shape="rect" href="gridmanagement_8cpp.html#acd388a9c237b453e23866b221b913821" title="Applique la gravité sur la grille." alt="" coords="414,807,475,832"/>
+<area shape="poly" title=" " alt="" coords="296,657,315,669,328,685,335,701,340,733,344,764,351,779,363,793,381,805,401,812,399,817,378,810,360,797,346,782,339,766,335,734,330,703,324,688,312,673,293,661"/>
+<area shape="rect" href="game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f" title="Supprime les bonbons atLeastThreeInAColumn." alt="" coords="383,856,507,881"/>
+<area shape="poly" title=" " alt="" coords="298,657,315,669,331,692,339,714,340,758,341,801,348,822,363,843,372,850,369,854,359,847,343,824,335,802,334,758,334,715,327,694,311,673,294,661"/>
+<area shape="rect" href="game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d" title="Supprime les bonbons atLeastThreeInARow." alt="" coords="391,708,498,733"/>
+<area shape="poly" title=" " alt="" coords="279,656,314,669,362,694,382,701,380,706,360,699,312,674,277,661"/>
+<area shape="rect" href="gridmanagement_8cpp.html#a7f23a63cf0475e8987be962828ca281f" title="Remplit les cases vides de la grille avec de nouveaux bonbons." alt="" coords="402,609,487,635"/>
+<area shape="poly" title=" " alt="" coords="314,634,388,626,388,631,314,639"/>
+<area shape="poly" title=" " alt="" coords="475,809,563,784,564,789,476,814"/>
+<area shape="poly" title=" " alt="" coords="500,853,527,842,565,817,597,790,601,794,568,822,529,847,502,858"/>
+<area shape="poly" title=" " alt="" coords="492,731,564,751,562,756,491,736"/>
+<area shape="poly" title=" " alt="" coords="488,627,509,634,530,645,556,668,579,694,612,744,607,747,575,697,552,671,526,650,507,639,487,632"/>
+<area shape="poly" title=" " alt="" coords="487,607,570,584,571,589,488,613"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a182a58b52ccee7022e49c19d33f888dd_icgraph.png" border="0" usemap="#agame_8h_a182a58b52ccee7022e49c19d33f888dd_icgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a182a58b52ccee7022e49c19d33f888dd_icgraph" id="agame_8h_a182a58b52ccee7022e49c19d33f888dd_icgraph">
+<area shape="rect" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="259,5,356,31"/>
+<area shape="rect" href="game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="156,5,211,31"/>
+<area shape="poly" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
+<area shape="rect" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="5,5,108,31"/>
+<area shape="poly" title=" " alt="" coords="142,29,108,30,108,24,142,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="31,55,82,80"/>
+<area shape="poly" title=" " alt="" coords="144,36,83,60,81,55,142,31"/>
+<area shape="poly" title=" " alt="" coords="122,6,156,8,156,13,122,12"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="aee7483c5715afce5b8d044329f2d9fdb" name="aee7483c5715afce5b8d044329f2d9fdb"></a>
@@ -384,26 +502,45 @@ Fonctions</h2></td></tr>
 <dd>
 false </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00102">102</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  102</span>                                                                                   {</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordtype">size_t</span> taille = grid.size();</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> col = 0; col &lt; taille; ++col) {</div>
-<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> row = 0; row &lt; taille - 2; ++row) {</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">if</span> (grid[row][col] == grid[row+1][col] &amp;&amp; grid[row][col] == grid[row+2][col]) {</div>
-<div class="line"><span class="lineno">  109</span>                pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> = row;</div>
-<div class="line"><span class="lineno">  110</span>                pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> = col;</div>
-<div class="line"><span class="lineno">  111</span>                howMany = 3;</div>
-<div class="line"><span class="lineno">  112</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  113</span>            }</div>
-<div class="line"><span class="lineno">  114</span>        }</div>
-<div class="line"><span class="lineno">  115</span>    }</div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  117</span>}</div>
+<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00103">103</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>                                                                                   {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordtype">size_t</span> taille = grid.size();</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> col = 0; col &lt; taille; ++col) {</div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> row = 0; row &lt; taille - 2; ++row) {</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">if</span> (grid[row][col] == grid[row+1][col] &amp;&amp; grid[row][col] == grid[row+2][col]) {</div>
+<div class="line"><span class="lineno">  110</span>                pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> = row;</div>
+<div class="line"><span class="lineno">  111</span>                pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> = col;</div>
+<div class="line"><span class="lineno">  112</span>                howMany = 3;</div>
+<div class="line"><span class="lineno">  113</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  114</span>            }</div>
+<div class="line"><span class="lineno">  115</span>        }</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  118</span>}</div>
 <div class="ttc" id="astructmaPosition_html_aaad1e041af6f40c349fe42b854ae28d8"><div class="ttname"><a href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">maPosition::ord</a></div><div class="ttdeci">unsigned ord</div><div class="ttdef"><b>Definition</b> <a href="type_8h_source.html#l00029">type.h:29</a></div></div>
 <div class="ttc" id="astructmaPosition_html_ac4b111f78b8dec96d06bab1de1d6e03b"><div class="ttname"><a href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">maPosition::abs</a></div><div class="ttdeci">unsigned abs</div><div class="ttdef"><b>Definition</b> <a href="type_8h_source.html#l00028">type.h:28</a></div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_aee7483c5715afce5b8d044329f2d9fdb_icgraph.png" border="0" usemap="#agame_8h_aee7483c5715afce5b8d044329f2d9fdb_icgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_aee7483c5715afce5b8d044329f2d9fdb_icgraph" id="agame_8h_aee7483c5715afce5b8d044329f2d9fdb_icgraph">
+<area shape="rect" title="Vérifie s&#39;il y a au moins trois bonbons alignés verticalement." alt="" coords="615,5,777,31"/>
+<area shape="rect" href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9" title="Traite les alignements et met à jour le score et le combo." alt="" coords="404,5,567,31"/>
+<area shape="poly" title=" " alt="" coords="601,21,567,21,567,15,601,15"/>
+<area shape="rect" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="259,5,356,31"/>
+<area shape="poly" title=" " alt="" coords="390,21,356,21,356,15,390,15"/>
+<area shape="rect" href="game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="156,5,211,31"/>
+<area shape="poly" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
+<area shape="rect" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="5,5,108,31"/>
+<area shape="poly" title=" " alt="" coords="142,29,108,30,108,24,142,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="31,55,82,80"/>
+<area shape="poly" title=" " alt="" coords="144,36,83,60,81,55,142,31"/>
+<area shape="poly" title=" " alt="" coords="122,6,156,8,156,13,122,12"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a592d3742cedb5bd0462cc8ebe9e79131" name="a592d3742cedb5bd0462cc8ebe9e79131"></a>
@@ -443,24 +580,43 @@ false </dd></dl>
 <dd>
 false </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00128">128</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>                                                                                {</div>
-<div class="line"><span class="lineno">  129</span>    <span class="keywordtype">size_t</span> taille = grid.size();</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> row = 0; row &lt; taille; ++row) {</div>
-<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> col = 0; col &lt; taille - 2; ++col) {</div>
-<div class="line"><span class="lineno">  133</span> </div>
-<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">if</span> (grid[row][col] == grid[row][col+1] &amp;&amp; grid[row][col] == grid[row][col+2]) {</div>
-<div class="line"><span class="lineno">  135</span>                pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> = row;</div>
-<div class="line"><span class="lineno">  136</span>                pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> = col;</div>
-<div class="line"><span class="lineno">  137</span>                howMany = 3;</div>
-<div class="line"><span class="lineno">  138</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  139</span>            }</div>
-<div class="line"><span class="lineno">  140</span>        }</div>
-<div class="line"><span class="lineno">  141</span>    }</div>
-<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  143</span>}</div>
-</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00129">129</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>                                                                                {</div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordtype">size_t</span> taille = grid.size();</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> row = 0; row &lt; taille; ++row) {</div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> col = 0; col &lt; taille - 2; ++col) {</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>            <span class="keywordflow">if</span> (grid[row][col] == grid[row][col+1] &amp;&amp; grid[row][col] == grid[row][col+2]) {</div>
+<div class="line"><span class="lineno">  136</span>                pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> = row;</div>
+<div class="line"><span class="lineno">  137</span>                pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> = col;</div>
+<div class="line"><span class="lineno">  138</span>                howMany = 3;</div>
+<div class="line"><span class="lineno">  139</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  140</span>            }</div>
+<div class="line"><span class="lineno">  141</span>        }</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  144</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a592d3742cedb5bd0462cc8ebe9e79131_icgraph.png" border="0" usemap="#agame_8h_a592d3742cedb5bd0462cc8ebe9e79131_icgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a592d3742cedb5bd0462cc8ebe9e79131_icgraph" id="agame_8h_a592d3742cedb5bd0462cc8ebe9e79131_icgraph">
+<area shape="rect" title="Vérifie s&#39;il y a au moins trois bonbons alignés horizontalement." alt="" coords="615,5,760,31"/>
+<area shape="rect" href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9" title="Traite les alignements et met à jour le score et le combo." alt="" coords="404,5,567,31"/>
+<area shape="poly" title=" " alt="" coords="601,21,567,21,567,15,601,15"/>
+<area shape="rect" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="259,5,356,31"/>
+<area shape="poly" title=" " alt="" coords="390,21,356,21,356,15,390,15"/>
+<area shape="rect" href="game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="156,5,211,31"/>
+<area shape="poly" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
+<area shape="rect" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="5,5,108,31"/>
+<area shape="poly" title=" " alt="" coords="142,29,108,30,108,24,142,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="31,55,82,80"/>
+<area shape="poly" title=" " alt="" coords="144,36,83,60,81,55,142,31"/>
+<area shape="poly" title=" " alt="" coords="122,6,156,8,156,13,122,12"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a9f1c87c7296779c4c895ca2b13ad2e3e" name="a9f1c87c7296779c4c895ca2b13ad2e3e"></a>
@@ -484,49 +640,152 @@ false </dd></dl>
 <p>Affiche la sélection choisie</p>
 <p>Quitter le jeu</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00417">417</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  417</span>           {</div>
-<div class="line"><span class="lineno">  418</span>    <span class="keywordtype">int</span> choix;</div>
-<div class="line"><span class="lineno">  419</span></div>
-<div class="line"><span class="lineno">  421</span>    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
-<div class="line"><span class="lineno">  422</span>    cout &lt;&lt; <span class="stringliteral">&quot;Bienvenue dans Number Crush&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  423</span> </div>
-<div class="line"><span class="lineno">  424</span>    cout &lt;&lt; <span class="stringliteral">&quot;Veuillez choisir votre mode de jeu :&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  425</span>    cout &lt;&lt; <span class="stringliteral">&quot;1. Mode Score&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  426</span>    cout &lt;&lt; <span class="stringliteral">&quot;2. Mode Clear&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  427</span>    cout &lt;&lt; <span class="stringliteral">&quot;3. Mode 1v1&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  428</span>    cout &lt;&lt; <span class="stringliteral">&quot;4. Quitter&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  429</span> </div>
-<div class="line"><span class="lineno">  430</span>    cout &lt;&lt; <span class="stringliteral">&quot;Votre choix : &quot;</span>;</div>
-<div class="line"><span class="lineno">  431</span>    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  432</span>    cin &gt;&gt; choix;</div>
-<div class="line"><span class="lineno">  433</span></div>
-<div class="line"><span class="lineno">  435</span>    <span class="keywordflow">switch</span> (choix) {</div>
-<div class="line"><span class="lineno">  436</span>    <span class="keywordflow">case</span> 1:</div>
-<div class="line"><span class="lineno">  437</span>        <a class="code hl_function" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd">afficherMode</a>(<a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8">MODE_SCORE</a>);</div>
-<div class="line"><span class="lineno">  438</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  439</span>    <span class="keywordflow">case</span> 2:</div>
-<div class="line"><span class="lineno">  440</span>        <a class="code hl_function" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd">afficherMode</a>(<a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32">MODE_CLEAR</a>);</div>
-<div class="line"><span class="lineno">  441</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  442</span>    <span class="keywordflow">case</span> 3:</div>
-<div class="line"><span class="lineno">  443</span>        <a class="code hl_function" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd">afficherMode</a>(<a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731">MODE_1v1</a>);</div>
-<div class="line"><span class="lineno">  444</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  445</span>    <span class="keywordflow">case</span> 4: </div>
-<div class="line"><span class="lineno">  446</span>        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
-<div class="line"><span class="lineno">  447</span>        cout &lt;&lt; <span class="stringliteral">&quot;Merci d&#39;avoir joué ! Au revoir !&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  448</span>        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  449</span>        exit(0);</div>
-<div class="line"><span class="lineno">  450</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  451</span>    <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  452</span>        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a>);</div>
-<div class="line"><span class="lineno">  453</span>        cout &lt;&lt; <span class="stringliteral">&quot;Mode de jeu invalide, veuillez recommencer.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  454</span>        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
-<div class="line"><span class="lineno">  455</span>        cin.get();</div>
-<div class="line"><span class="lineno">  456</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  457</span>    }</div>
-<div class="line"><span class="lineno">  458</span>}</div>
-<div class="ttc" id="agame_8cpp_html_a182a58b52ccee7022e49c19d33f888dd"><div class="ttname"><a href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd">afficherMode</a></div><div class="ttdeci">void afficherMode(Gamemode mode)</div><div class="ttdoc">Fonction d&#39;affichage du mode de jeu.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00236">game.cpp:236</a></div></div>
-</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00437">437</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  437</span>           {</div>
+<div class="line"><span class="lineno">  438</span>    <span class="keywordtype">int</span> choix;</div>
+<div class="line"><span class="lineno">  439</span></div>
+<div class="line"><span class="lineno">  441</span>    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
+<div class="line"><span class="lineno">  442</span>    cout &lt;&lt; <span class="stringliteral">&quot;Bienvenue dans Number Crush&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  443</span> </div>
+<div class="line"><span class="lineno">  444</span>    cout &lt;&lt; <span class="stringliteral">&quot;Veuillez choisir votre mode de jeu :&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  445</span>    cout &lt;&lt; <span class="stringliteral">&quot;1. Mode Score&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  446</span>    cout &lt;&lt; <span class="stringliteral">&quot;2. Mode Clear&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  447</span>    cout &lt;&lt; <span class="stringliteral">&quot;3. Mode 1v1&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  448</span>    cout &lt;&lt; <span class="stringliteral">&quot;4. Manuel du Jeu&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  449</span>    cout &lt;&lt; <span class="stringliteral">&quot;5. Quitter&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  450</span> </div>
+<div class="line"><span class="lineno">  451</span>    cout &lt;&lt; <span class="stringliteral">&quot;Votre choix : &quot;</span>;</div>
+<div class="line"><span class="lineno">  452</span>    <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  453</span>    cin &gt;&gt; choix;</div>
+<div class="line"><span class="lineno">  454</span></div>
+<div class="line"><span class="lineno">  456</span>    <span class="keywordflow">switch</span> (choix) {</div>
+<div class="line"><span class="lineno">  457</span>    <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">  458</span>        <a class="code hl_function" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd">afficherMode</a>(<a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea02f453395b0a04d25cb33b4e686523b8">MODE_SCORE</a>);</div>
+<div class="line"><span class="lineno">  459</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  460</span>    <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">  461</span>        <a class="code hl_function" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd">afficherMode</a>(<a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32">MODE_CLEAR</a>);</div>
+<div class="line"><span class="lineno">  462</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  463</span>    <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">  464</span>        <a class="code hl_function" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd">afficherMode</a>(<a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea1608926419e45502d88a0ad4c09e2731">MODE_1v1</a>);</div>
+<div class="line"><span class="lineno">  465</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  466</span> </div>
+<div class="line"><span class="lineno">  467</span>    <span class="keywordflow">case</span> 4:</div>
+<div class="line"><span class="lineno">  468</span>        <a class="code hl_function" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b">affiche_fichier</a>();</div>
+<div class="line"><span class="lineno">  469</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  470</span> </div>
+<div class="line"><span class="lineno">  471</span>    <span class="keywordflow">case</span> 5: </div>
+<div class="line"><span class="lineno">  472</span>        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#aed31d4db92c112edda1291acad69dd00">KCyan</a>);</div>
+<div class="line"><span class="lineno">  473</span>        cout &lt;&lt; <span class="stringliteral">&quot;Merci d&#39;avoir joué ! Au revoir !&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  474</span>        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  475</span>        exit(0);</div>
+<div class="line"><span class="lineno">  476</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  477</span> </div>
+<div class="line"><span class="lineno">  478</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  479</span>        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628">KRouge</a>);</div>
+<div class="line"><span class="lineno">  480</span>        cout &lt;&lt; <span class="stringliteral">&quot;Mode de jeu invalide, veuillez recommencer.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  481</span>        <a class="code hl_function" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031">couleur</a>(<a class="code hl_function" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5">KReset</a>);</div>
+<div class="line"><span class="lineno">  482</span>        cin.get();</div>
+<div class="line"><span class="lineno">  483</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  484</span>    }</div>
+<div class="line"><span class="lineno">  485</span>}</div>
+<div class="ttc" id="agame_8cpp_html_a182a58b52ccee7022e49c19d33f888dd"><div class="ttname"><a href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd">afficherMode</a></div><div class="ttdeci">void afficherMode(Gamemode mode)</div><div class="ttdoc">Fonction d&#39;affichage du mode de jeu.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00239">game.cpp:239</a></div></div>
+<div class="ttc" id="agame_8cpp_html_a4f74e28ee73285c48f79a2ff947dfb3b"><div class="ttname"><a href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b">affiche_fichier</a></div><div class="ttdeci">void affiche_fichier()</div><div class="ttdoc">Affiche le manuel du jeu.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00418">game.cpp:418</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a9f1c87c7296779c4c895ca2b13ad2e3e_cgraph.png" border="0" usemap="#agame_8h_a9f1c87c7296779c4c895ca2b13ad2e3e_cgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a9f1c87c7296779c4c895ca2b13ad2e3e_cgraph" id="agame_8h_a9f1c87c7296779c4c895ca2b13ad2e3e_cgraph">
+<area shape="rect" title="Fonction principale du jeu." alt="" coords="5,988,60,1013"/>
+<area shape="rect" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="108,636,211,661"/>
+<area shape="poly" title=" " alt="" coords="33,987,57,834,79,745,91,709,106,683,130,665,133,669,110,686,96,711,84,746,62,835,39,988"/>
+<area shape="rect" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="111,685,208,711"/>
+<area shape="poly" title=" " alt="" coords="37,987,145,723,150,725,42,989"/>
+<area shape="rect" href="gridmanagement_8cpp.html#ae241cf89d39423f89bb8e65688e4c031" title="Change la couleur du texte dans la console." alt="" coords="699,711,763,736"/>
+<area shape="poly" title=" " alt="" coords="52,1011,78,1028,109,1041,195,1062,264,1070,334,1064,421,1045,488,1025,539,1003,584,972,634,923,666,880,691,832,709,786,721,749,726,750,714,788,696,834,671,882,638,926,588,976,542,1008,490,1030,422,1050,335,1070,264,1076,194,1068,107,1046,75,1032,49,1016"/>
+<area shape="rect" href="type_8h.html#a87aab004c1c22814beb8db1ddaa9f628" title="Couleur rouge." alt="" coords="697,937,766,963"/>
+<area shape="poly" title=" " alt="" coords="40,1013,48,1037,62,1067,82,1096,109,1118,182,1156,249,1183,312,1200,373,1206,434,1201,496,1185,563,1157,635,1118,653,1105,669,1089,694,1050,711,1010,722,975,727,977,716,1012,699,1053,673,1092,656,1109,637,1123,565,1162,498,1190,435,1206,373,1211,311,1205,248,1188,180,1161,107,1123,78,1099,58,1069,43,1039,35,1014"/>
+<area shape="rect" href="type_8h.html#aed31d4db92c112edda1291acad69dd00" title="Couleur cyan." alt="" coords="521,887,584,912"/>
+<area shape="poly" title=" " alt="" coords="61,1006,126,1023,217,1037,268,1040,320,1039,371,1031,420,1017,455,998,487,973,533,921,537,925,490,977,458,1002,422,1022,372,1037,320,1044,268,1046,217,1043,125,1028,59,1012"/>
+<area shape="rect" href="type_8h.html#a63a18a31ab7815ab0d4eb5c133e5d1a5" title="Réinitialisation de la couleur." alt="" coords="519,787,586,812"/>
+<area shape="poly" title=" " alt="" coords="59,992,214,947,318,913,420,872,473,845,519,817,522,822,476,849,422,876,319,918,216,952,61,997"/>
+<area shape="poly" title=" " alt="" coords="110,663,96,687,84,722,63,810,48,902,39,974,34,974,43,902,58,809,79,720,91,685,105,660"/>
+<area shape="rect" href="gridmanagement_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f" title="Efface l&#39;écran." alt="" coords="507,533,598,559"/>
+<area shape="poly" title=" " alt="" coords="192,683,209,671,219,658,225,645,230,619,236,593,244,581,257,569,285,553,315,542,378,529,440,528,494,533,494,538,440,533,379,535,317,547,287,558,260,573,248,584,241,595,235,620,230,647,223,661,213,675,195,687"/>
+<area shape="poly" title=" " alt="" coords="200,683,258,670,342,656,378,657,423,670,439,682,448,696,456,709,470,720,526,735,584,740,639,737,685,730,686,736,640,742,584,745,525,740,468,724,452,713,443,699,435,686,420,675,377,662,342,661,259,675,201,688"/>
+<area shape="rect" href="gridmanagement_8cpp.html#a8415cba8a293e69fe15c2e6ec604f1a2" title="Affichage de la grille." alt="" coords="297,584,383,609"/>
+<area shape="poly" title=" " alt="" coords="188,683,209,671,233,648,257,626,285,612,287,617,260,631,236,652,212,675,191,687"/>
+<area shape="rect" href="type_8h.html#a1b010b9694f3acc35b02b0a667d99094" title="Couleur jaune." alt="" coords="698,432,765,457"/>
+<area shape="poly" title=" " alt="" coords="194,683,209,671,223,647,229,624,228,577,226,554,229,531,238,508,257,487,290,469,336,456,393,447,455,441,582,438,684,440,684,445,582,443,456,447,393,452,337,461,292,474,260,491,243,511,234,532,232,554,233,576,234,624,228,649,213,674,197,687"/>
+<area shape="poly" title=" " alt="" coords="165,710,171,752,187,809,200,839,216,868,236,894,260,916,312,944,368,963,427,974,486,978,543,977,597,973,683,959,684,964,597,978,544,983,486,984,426,979,367,968,310,949,257,920,232,898,211,871,195,842,182,811,166,753,159,711"/>
+<area shape="rect" href="type_8h.html#a72260f87613d24d0cd1e7c8f646ca5f5" title="Couleur verte." alt="" coords="704,533,759,559"/>
+<area shape="poly" title=" " alt="" coords="193,683,209,671,221,653,226,635,229,599,233,564,241,546,257,531,283,514,310,500,368,483,429,477,491,479,550,488,605,500,691,528,690,533,604,505,549,493,490,485,430,482,369,489,312,505,285,518,260,535,245,550,238,565,234,599,232,636,225,655,213,674,197,687"/>
+<area shape="poly" title=" " alt="" coords="166,710,176,744,194,789,222,835,239,855,260,872,290,888,322,899,389,910,454,910,507,905,508,910,454,916,389,915,321,904,288,892,257,876,236,859,217,838,189,792,171,746,161,712"/>
+<area shape="poly" title=" " alt="" coords="209,708,507,785,505,790,208,713"/>
+<area shape="rect" href="game_8cpp.html#a8669fff22fbca6892cb6c466a191f6d6" title="Obtient la position cible en fonction de la direction." alt="" coords="279,787,401,812"/>
+<area shape="poly" title=" " alt="" coords="178,709,215,736,260,765,290,779,288,784,257,770,212,741,175,713"/>
+<area shape="rect" href="gridmanagement_8cpp.html#abc366c74b702ac1e1210ad3537da48b1" title="Déplacement des éléments de la grille." alt="" coords="302,836,378,861"/>
+<area shape="poly" title=" " alt="" coords="169,709,204,763,230,794,260,821,290,836,288,840,257,826,226,798,199,767,165,712"/>
+<area shape="rect" href="gridmanagement_8cpp.html#a4bccf39627ad0e9ef02f761a348de1b6" title="Initialisation de la grille." alt="" coords="309,356,371,381"/>
+<area shape="poly" title=" " alt="" coords="194,683,209,671,227,639,235,609,237,580,235,551,232,522,233,491,240,459,256,424,275,403,298,386,301,391,279,407,261,427,245,461,238,492,237,522,240,551,242,580,241,610,232,641,213,674,198,687"/>
+<area shape="rect" href="gridmanagement_8cpp.html#ae9fcaee43db1e7fec23f90a810bba50a" title="Vérifie si la grille est vide." alt="" coords="293,57,387,83"/>
+<area shape="poly" title=" " alt="" coords="195,683,209,671,219,652,227,628,236,569,240,500,240,425,239,278,244,216,256,168,282,125,312,90,316,94,286,128,261,170,250,217,245,278,245,425,245,500,242,570,232,629,224,654,213,674,199,687"/>
+<area shape="rect" href="game_8cpp.html#a79b6bb8e70fdd93bb802cf05062ea916" title="Vérifie si le mouvement est valide pour éviter les débordements." alt="" coords="294,685,386,711"/>
+<area shape="poly" title=" " alt="" coords="208,695,280,695,280,701,208,701"/>
+<area shape="rect" href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9" title="Traite les alignements et met à jour le score et le combo." alt="" coords="259,181,421,207"/>
+<area shape="poly" title=" " alt="" coords="195,683,209,671,233,629,245,590,249,553,247,516,241,437,244,392,256,342,287,273,320,217,325,219,292,275,261,344,249,393,246,437,252,515,254,553,251,591,238,631,213,674,198,687"/>
+<area shape="poly" title=" " alt="" coords="383,584,493,557,494,562,384,589"/>
+<area shape="poly" title=" " alt="" coords="382,607,423,626,437,638,447,649,456,659,471,669,526,691,584,706,686,719,685,724,583,711,524,696,468,674,453,663,443,653,434,642,420,631,380,612"/>
+<area shape="rect" href="gridmanagement_8cpp.html#aadb64473f4ef04544a547fa4813f6aec" title="Compte le nombre de bonbons restants dans la grille." alt="" coords="469,381,636,407"/>
+<area shape="poly" title=" " alt="" coords="353,582,526,414,530,418,356,586"/>
+<area shape="rect" href="gridmanagement_8cpp.html#a1baee82490bb341c9636ed219229ea0e" title="Change la couleur en fonction du type de bonbon." alt="" coords="480,635,625,660"/>
+<area shape="poly" title=" " alt="" coords="384,604,486,629,485,634,383,609"/>
+<area shape="rect" href="type_8h.html#a39caa9d62340bfd0c4e990db6f0052a0" title="Nombre total de types de bonbons." alt="" coords="692,331,771,356"/>
+<area shape="poly" title=" " alt="" coords="384,603,439,611,506,611,540,607,574,599,606,586,634,568,651,552,660,536,667,502,669,463,673,442,682,418,711,366,716,369,686,420,678,443,675,464,672,502,665,538,655,555,638,572,608,591,576,604,541,613,506,617,439,616,383,609"/>
+<area shape="poly" title=" " alt="" coords="362,608,393,635,424,671,442,712,448,748,454,782,472,822,496,852,524,876,520,880,492,856,467,825,449,784,443,749,437,714,419,674,389,638,358,612"/>
+<area shape="poly" title=" " alt="" coords="357,608,423,671,530,775,527,779,419,675,353,611"/>
+<area shape="rect" href="type_8h.html#a18efe58b5b918621584c2029144b1756" title="Constantes pour la grille de jeu." alt="" coords="684,108,779,133"/>
+<area shape="poly" title=" " alt="" coords="569,379,601,351,634,315,662,271,686,224,719,145,724,147,691,226,667,273,638,318,605,355,573,383"/>
+<area shape="poly" title=" " alt="" coords="589,658,637,677,693,702,691,707,635,682,587,663"/>
+<area shape="rect" href="type_8h.html#a587a099b5228e39c74a525cb4ac5d786" title="Couleur blue." alt="" coords="703,635,760,660"/>
+<area shape="poly" title=" " alt="" coords="626,645,689,645,689,650,626,650"/>
+<area shape="poly" title=" " alt="" coords="602,632,634,613,653,592,662,571,669,547,682,519,712,468,717,470,686,522,674,549,667,572,657,594,638,617,605,637"/>
+<area shape="poly" title=" " alt="" coords="565,659,638,773,720,924,715,926,634,775,561,661"/>
+<area shape="poly" title=" " alt="" coords="592,632,635,613,671,590,703,565,706,570,674,594,637,618,594,637"/>
+<area shape="poly" title=" " alt="" coords="372,364,678,344,678,349,372,369"/>
+<area shape="poly" title=" " alt="" coords="364,55,415,33,484,11,522,5,561,3,600,7,637,18,663,33,685,53,718,95,713,98,681,57,660,38,635,23,599,12,561,8,523,10,485,17,417,38,366,60"/>
+<area shape="rect" href="game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb" title="Vérifie s&#39;il y a au moins trois bonbons alignés verticalement." alt="" coords="471,181,634,207"/>
+<area shape="poly" title=" " alt="" coords="422,191,458,191,458,197,422,197"/>
+<area shape="rect" href="game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131" title="Vérifie s&#39;il y a au moins trois bonbons alignés horizontalement." alt="" coords="480,231,625,256"/>
+<area shape="poly" title=" " alt="" coords="396,204,484,225,483,230,395,209"/>
+<area shape="rect" href="gridmanagement_8cpp.html#acd388a9c237b453e23866b221b913821" title="Applique la gravité sur la grille." alt="" coords="522,132,583,157"/>
+<area shape="poly" title=" " alt="" coords="395,179,508,152,509,157,396,184"/>
+<area shape="rect" href="game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f" title="Supprime les bonbons atLeastThreeInAColumn." alt="" coords="491,33,615,59"/>
+<area shape="poly" title=" " alt="" coords="349,179,396,126,430,94,468,68,481,61,483,66,471,72,433,99,400,129,353,183"/>
+<area shape="rect" href="game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d" title="Supprime les bonbons atLeastThreeInARow." alt="" coords="499,83,606,108"/>
+<area shape="poly" title=" " alt="" coords="359,179,407,148,468,117,487,110,489,115,470,122,410,153,361,183"/>
+<area shape="rect" href="gridmanagement_8cpp.html#a7f23a63cf0475e8987be962828ca281f" title="Remplit les cases vides de la grille avec de nouveaux bonbons." alt="" coords="510,280,595,305"/>
+<area shape="poly" title=" " alt="" coords="362,205,410,234,470,265,497,275,496,280,468,270,408,239,359,209"/>
+<area shape="poly" title=" " alt="" coords="583,138,670,126,671,131,584,143"/>
+<area shape="poly" title=" " alt="" coords="604,56,637,68,699,98,696,103,635,72,603,61"/>
+<area shape="poly" title=" " alt="" coords="607,100,671,109,670,115,606,105"/>
+<area shape="poly" title=" " alt="" coords="595,283,615,276,634,265,663,238,687,205,718,145,723,147,691,208,667,241,638,269,618,281,596,288"/>
+<area shape="poly" title=" " alt="" coords="596,302,679,326,678,331,595,307"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a9f1c87c7296779c4c895ca2b13ad2e3e_icgraph.png" border="0" usemap="#agame_8h_a9f1c87c7296779c4c895ca2b13ad2e3e_icgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a9f1c87c7296779c4c895ca2b13ad2e3e_icgraph" id="agame_8h_a9f1c87c7296779c4c895ca2b13ad2e3e_icgraph">
+<area shape="rect" title="Fonction principale du jeu." alt="" coords="156,5,211,31"/>
+<area shape="rect" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="5,5,108,31"/>
+<area shape="poly" title=" " alt="" coords="142,29,108,30,108,24,142,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="31,55,82,80"/>
+<area shape="poly" title=" " alt="" coords="144,36,83,60,81,55,142,31"/>
+<area shape="poly" title=" " alt="" coords="122,6,156,8,156,13,122,12"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a8669fff22fbca6892cb6c466a191f6d6" name="a8669fff22fbca6892cb6c466a191f6d6"></a>
@@ -562,26 +821,43 @@ false </dd></dl>
 <p>Déplace vers le bas</p>
 <p>Déplace vers la droite</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00074">74</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>                                                                    {</div>
-<div class="line"><span class="lineno">   75</span>    <a class="code hl_struct" href="structmaPosition.html">maPosition</a> target = Pos;</div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">switch</span> (tolower(Direction)) {</div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;z&#39;</span>: </div>
-<div class="line"><span class="lineno">   78</span>            target.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>--; </div>
-<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>: </div>
-<div class="line"><span class="lineno">   81</span>            target.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a>--; </div>
-<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>: </div>
-<div class="line"><span class="lineno">   84</span>            target.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>++; </div>
-<div class="line"><span class="lineno">   85</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>: </div>
-<div class="line"><span class="lineno">   87</span>            target.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a>++; </div>
-<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">return</span> target;</div>
-<div class="line"><span class="lineno">   91</span>}</div>
-</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00075">75</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>                                                                    {</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_struct" href="structmaPosition.html">maPosition</a> target = Pos;</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">switch</span> (tolower(Direction)) {</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;z&#39;</span>: </div>
+<div class="line"><span class="lineno">   79</span>            target.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>--; </div>
+<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>: </div>
+<div class="line"><span class="lineno">   82</span>            target.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a>--; </div>
+<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>: </div>
+<div class="line"><span class="lineno">   85</span>            target.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>++; </div>
+<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>: </div>
+<div class="line"><span class="lineno">   88</span>            target.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a>++; </div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> target;</div>
+<div class="line"><span class="lineno">   92</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a8669fff22fbca6892cb6c466a191f6d6_icgraph.png" border="0" usemap="#agame_8h_a8669fff22fbca6892cb6c466a191f6d6_icgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a8669fff22fbca6892cb6c466a191f6d6_icgraph" id="agame_8h_a8669fff22fbca6892cb6c466a191f6d6_icgraph">
+<area shape="rect" title="Obtient la position cible en fonction de la direction." alt="" coords="404,5,527,31"/>
+<area shape="rect" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="259,5,356,31"/>
+<area shape="poly" title=" " alt="" coords="390,21,356,21,356,15,390,15"/>
+<area shape="rect" href="game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="156,5,211,31"/>
+<area shape="poly" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
+<area shape="rect" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="5,5,108,31"/>
+<area shape="poly" title=" " alt="" coords="142,29,108,30,108,24,142,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="31,55,82,80"/>
+<area shape="poly" title=" " alt="" coords="144,36,83,60,81,55,142,31"/>
+<area shape="poly" title=" " alt="" coords="122,6,156,8,156,13,122,12"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a61cffd07a54e944fdae77b6d61b22133" name="a61cffd07a54e944fdae77b6d61b22133"></a>
@@ -623,7 +899,26 @@ false </dd></dl>
 <div class="fragment"><div class="line"><span class="lineno">  160</span>{</div>
 <div class="line"><span class="lineno">  161</span>    swap(Grid[PosStart.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a>][PosStart.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>], Grid[PosEnd.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a>][PosEnd.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>]);</div>
 <div class="line"><span class="lineno">  162</span>}</div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a61cffd07a54e944fdae77b6d61b22133_icgraph.png" border="0" usemap="#agame_8h_a61cffd07a54e944fdae77b6d61b22133_icgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a61cffd07a54e944fdae77b6d61b22133_icgraph" id="agame_8h_a61cffd07a54e944fdae77b6d61b22133_icgraph">
+<area shape="rect" title="Déplacement des éléments de la grille." alt="" coords="404,31,480,56"/>
+<area shape="rect" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="259,5,356,31"/>
+<area shape="poly" title=" " alt="" coords="390,36,356,30,357,24,391,31"/>
+<area shape="rect" href="game_8cpp.html#ae77a00fe5542348250017d3f6b0c4089" title="Effectue un déplacement dans la grille." alt="" coords="260,55,355,80"/>
+<area shape="poly" title=" " alt="" coords="391,55,356,62,355,56,390,50"/>
+<area shape="rect" href="game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="156,5,211,31"/>
+<area shape="poly" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
+<area shape="rect" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="5,5,108,31"/>
+<area shape="poly" title=" " alt="" coords="142,29,108,30,108,24,142,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="31,55,82,80"/>
+<area shape="poly" title=" " alt="" coords="144,36,83,60,81,55,142,31"/>
+<area shape="poly" title=" " alt="" coords="122,6,156,8,156,13,122,12"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a79b6bb8e70fdd93bb802cf05062ea916" name="a79b6bb8e70fdd93bb802cf05062ea916"></a>
@@ -656,23 +951,40 @@ false </dd></dl>
 <p>Vérifie que la position en dessous est valide</p>
 <p>Vérifie que la position à droite est valide</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00051">51</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>                                                                         {</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordtype">size_t</span> Sgrid = grid.size();</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">switch</span> (tolower(Direction)) {</div>
-<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;z&#39;</span>: </div>
-<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">return</span> Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> &gt; 0; </div>
-<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>: </div>
-<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">return</span> Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> &gt; 0; </div>
-<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>: </div>
-<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">return</span> Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> + 1 &lt; Sgrid; </div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>: </div>
-<div class="line"><span class="lineno">   61</span>            <span class="keywordflow">return</span> Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> + 1 &lt; Sgrid; </div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">default</span>: </div>
-<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// Touche invalide</span></div>
-<div class="line"><span class="lineno">   64</span>    }</div>
-<div class="line"><span class="lineno">   65</span>}</div>
-</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00052">52</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>                                                                         {</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordtype">size_t</span> Sgrid = grid.size();</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">switch</span> (tolower(Direction)) {</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;z&#39;</span>: </div>
+<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">return</span> Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> &gt; 0; </div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>: </div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">return</span> Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> &gt; 0; </div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>: </div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">return</span> Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> + 1 &lt; Sgrid; </div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>: </div>
+<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">return</span> Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> + 1 &lt; Sgrid; </div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">default</span>: </div>
+<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// Touche invalide</span></div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   66</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a79b6bb8e70fdd93bb802cf05062ea916_icgraph.png" border="0" usemap="#agame_8h_a79b6bb8e70fdd93bb802cf05062ea916_icgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a79b6bb8e70fdd93bb802cf05062ea916_icgraph" id="agame_8h_a79b6bb8e70fdd93bb802cf05062ea916_icgraph">
+<area shape="rect" title="Vérifie si le mouvement est valide pour éviter les débordements." alt="" coords="404,5,496,31"/>
+<area shape="rect" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="259,5,356,31"/>
+<area shape="poly" title=" " alt="" coords="390,21,356,21,356,15,390,15"/>
+<area shape="rect" href="game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="156,5,211,31"/>
+<area shape="poly" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
+<area shape="rect" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="5,5,108,31"/>
+<area shape="poly" title=" " alt="" coords="142,29,108,30,108,24,142,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="31,55,82,80"/>
+<area shape="poly" title=" " alt="" coords="144,36,83,60,81,55,142,31"/>
+<area shape="poly" title=" " alt="" coords="122,6,156,8,156,13,122,12"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ab9912a35fe0df6e2fe3c8be4e1f2a9d5" name="ab9912a35fe0df6e2fe3c8be4e1f2a9d5"></a>
@@ -702,31 +1014,41 @@ false </dd></dl>
 <p>Déclaration des fonctions de gestion du jeu. </p>
 <p>Déclaration des fonctions de gestion du jeu. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00025">25</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordtype">size_t</span> Sgrid = grid.size();</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">switch</span> (tolower(Direction)) {</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;z&#39;</span>:</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> (Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> &gt; 0)</div>
-<div class="line"><span class="lineno">   31</span>            <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, Pos, { Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> - 1, Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> });</div>
-<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
-<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">if</span> (Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> &gt; 0)</div>
-<div class="line"><span class="lineno">   35</span>        <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, Pos, { Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>, Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> - 1 });</div>
-<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
-<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> + 1 &lt; Sgrid)</div>
-<div class="line"><span class="lineno">   39</span>        <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, Pos, { Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> + 1, Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> });</div>
-<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:</div>
-<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span> (Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> + 1 &lt; Sgrid)</div>
-<div class="line"><span class="lineno">   43</span>            <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, Pos, { Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>, Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> + 1 });</div>
-<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   45</span>    default :</div>
-<div class="line"><span class="lineno">   46</span>        cout &lt;&lt; <span class="stringliteral">&quot;Erreur : rentre une touche valide&quot;</span>;</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
-<div class="line"><span class="lineno">   48</span>}</div>
-</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00026">26</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">size_t</span> Sgrid = grid.size();</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">switch</span> (tolower(Direction)) {</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;z&#39;</span>:</div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">if</span> (Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> &gt; 0)</div>
+<div class="line"><span class="lineno">   32</span>            <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, Pos, { Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> - 1, Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> });</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span> (Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> &gt; 0)</div>
+<div class="line"><span class="lineno">   36</span>        <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, Pos, { Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>, Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> - 1 });</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
+<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">if</span> (Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> + 1 &lt; Sgrid)</div>
+<div class="line"><span class="lineno">   40</span>        <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, Pos, { Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a> + 1, Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> });</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span> (Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> + 1 &lt; Sgrid)</div>
+<div class="line"><span class="lineno">   44</span>            <a class="code hl_function" href="#a61cffd07a54e944fdae77b6d61b22133">gridSwap</a>(grid, Pos, { Pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>, Pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a> + 1 });</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   46</span>    default :</div>
+<div class="line"><span class="lineno">   47</span>        cout &lt;&lt; <span class="stringliteral">&quot;Erreur : rentre une touche valide&quot;</span>;</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_ab9912a35fe0df6e2fe3c8be4e1f2a9d5_cgraph.png" border="0" usemap="#agame_8h_ab9912a35fe0df6e2fe3c8be4e1f2a9d5_cgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_ab9912a35fe0df6e2fe3c8be4e1f2a9d5_cgraph" id="agame_8h_ab9912a35fe0df6e2fe3c8be4e1f2a9d5_cgraph">
+<area shape="rect" title="Déclaration des fonctions de gestion du jeu." alt="" coords="5,5,100,31"/>
+<area shape="rect" href="gridmanagement_8cpp.html#abc366c74b702ac1e1210ad3537da48b1" title="Déplacement des éléments de la grille." alt="" coords="148,5,224,31"/>
+<area shape="poly" title=" " alt="" coords="100,15,134,15,134,21,100,21"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a4ad87ec3a96e07ac5000e8e4e38ece6f" name="a4ad87ec3a96e07ac5000e8e4e38ece6f"></a>
@@ -763,22 +1085,51 @@ false </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00152">152</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>                                                                            {</div>
-<div class="line"><span class="lineno">  153</span>    <span class="keywordtype">size_t</span> col = pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a>;</div>
-<div class="line"><span class="lineno">  154</span>    <span class="keywordtype">size_t</span> row = pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>;</div>
-<div class="line"><span class="lineno">  155</span>    <span class="keywordtype">size_t</span> taille = grid.size();</div>
-<div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = row; i + howMany &lt; taille; ++i) {</div>
-<div class="line"><span class="lineno">  158</span>        grid[i][col] = grid[i + howMany][col];</div>
-<div class="line"><span class="lineno">  159</span>    }</div>
-<div class="line"><span class="lineno">  160</span> </div>
-<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = taille - howMany; i &lt; taille; ++i) {</div>
-<div class="line"><span class="lineno">  162</span>        grid[i][col] = <a class="code hl_function" href="type_8h.html#a18efe58b5b918621584c2029144b1756">KImpossible</a>;</div>
-<div class="line"><span class="lineno">  163</span>    }</div>
-<div class="line"><span class="lineno">  164</span>}</div>
+<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00153">153</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>                                                                            {</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordtype">size_t</span> col = pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a>;</div>
+<div class="line"><span class="lineno">  155</span>    <span class="keywordtype">size_t</span> row = pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>;</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordtype">size_t</span> taille = grid.size();</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = row; i + howMany &lt; taille; ++i) {</div>
+<div class="line"><span class="lineno">  159</span>        grid[i][col] = grid[i + howMany][col];</div>
+<div class="line"><span class="lineno">  160</span>    }</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = taille - howMany; i &lt; taille; ++i) {</div>
+<div class="line"><span class="lineno">  163</span>        grid[i][col] = <a class="code hl_function" href="type_8h.html#a18efe58b5b918621584c2029144b1756">KImpossible</a>;</div>
+<div class="line"><span class="lineno">  164</span>    }</div>
+<div class="line"><span class="lineno">  165</span>}</div>
 <div class="ttc" id="atype_8h_html_a18efe58b5b918621584c2029144b1756"><div class="ttname"><a href="type_8h.html#a18efe58b5b918621584c2029144b1756">KImpossible</a></div><div class="ttdeci">const unsigned KImpossible(0)</div><div class="ttdoc">Constantes pour la grille de jeu.</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_cgraph.png" border="0" usemap="#agame_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_cgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_cgraph" id="agame_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_cgraph">
+<area shape="rect" title="Supprime les bonbons atLeastThreeInAColumn." alt="" coords="5,5,129,31"/>
+<area shape="rect" href="type_8h.html#a18efe58b5b918621584c2029144b1756" title="Constantes pour la grille de jeu." alt="" coords="177,5,272,31"/>
+<area shape="poly" title=" " alt="" coords="129,15,164,15,164,21,129,21"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_icgraph.png" border="0" usemap="#agame_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_icgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_icgraph" id="agame_8h_a4ad87ec3a96e07ac5000e8e4e38ece6f_icgraph">
+<area shape="rect" title="Supprime les bonbons atLeastThreeInAColumn." alt="" coords="615,5,739,31"/>
+<area shape="rect" href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9" title="Traite les alignements et met à jour le score et le combo." alt="" coords="404,5,567,31"/>
+<area shape="poly" title=" " alt="" coords="601,21,567,21,567,15,601,15"/>
+<area shape="rect" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="259,5,356,31"/>
+<area shape="poly" title=" " alt="" coords="390,21,356,21,356,15,390,15"/>
+<area shape="rect" href="game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="156,5,211,31"/>
+<area shape="poly" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
+<area shape="rect" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="5,5,108,31"/>
+<area shape="poly" title=" " alt="" coords="142,29,108,30,108,24,142,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="31,55,82,80"/>
+<area shape="poly" title=" " alt="" coords="144,36,83,60,81,55,142,31"/>
+<area shape="poly" title=" " alt="" coords="122,6,156,8,156,13,122,12"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a4e37bf8b2ef1042c1631bf9d394ebd0d" name="a4e37bf8b2ef1042c1631bf9d394ebd0d"></a>
@@ -815,21 +1166,50 @@ false </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00173">173</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  173</span>                                                                         {</div>
-<div class="line"><span class="lineno">  174</span>    <span class="keywordtype">size_t</span> col = pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a>;</div>
-<div class="line"><span class="lineno">  175</span>    <span class="keywordtype">size_t</span> row = pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>;</div>
-<div class="line"><span class="lineno">  176</span>    <span class="keywordtype">size_t</span> taille = grid.size();</div>
-<div class="line"><span class="lineno">  177</span> </div>
-<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = col; i + howMany &lt; taille; ++i) {</div>
-<div class="line"><span class="lineno">  179</span>        grid[row][i] = grid[row][i + howMany];</div>
-<div class="line"><span class="lineno">  180</span>    }</div>
-<div class="line"><span class="lineno">  181</span> </div>
-<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = taille - howMany; i &lt; taille; ++i) {</div>
-<div class="line"><span class="lineno">  183</span>        grid[row][i] = <a class="code hl_function" href="type_8h.html#a18efe58b5b918621584c2029144b1756">KImpossible</a>;</div>
-<div class="line"><span class="lineno">  184</span>    }</div>
-<div class="line"><span class="lineno">  185</span>}</div>
-</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00174">174</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>                                                                         {</div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordtype">size_t</span> col = pos.<a class="code hl_variable" href="structmaPosition.html#ac4b111f78b8dec96d06bab1de1d6e03b">abs</a>;</div>
+<div class="line"><span class="lineno">  176</span>    <span class="keywordtype">size_t</span> row = pos.<a class="code hl_variable" href="structmaPosition.html#aaad1e041af6f40c349fe42b854ae28d8">ord</a>;</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordtype">size_t</span> taille = grid.size();</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = col; i + howMany &lt; taille; ++i) {</div>
+<div class="line"><span class="lineno">  180</span>        grid[row][i] = grid[row][i + howMany];</div>
+<div class="line"><span class="lineno">  181</span>    }</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = taille - howMany; i &lt; taille; ++i) {</div>
+<div class="line"><span class="lineno">  184</span>        grid[row][i] = <a class="code hl_function" href="type_8h.html#a18efe58b5b918621584c2029144b1756">KImpossible</a>;</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+<div class="line"><span class="lineno">  186</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_cgraph.png" border="0" usemap="#agame_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_cgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_cgraph" id="agame_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_cgraph">
+<area shape="rect" title="Supprime les bonbons atLeastThreeInARow." alt="" coords="5,5,112,31"/>
+<area shape="rect" href="type_8h.html#a18efe58b5b918621584c2029144b1756" title="Constantes pour la grille de jeu." alt="" coords="160,5,255,31"/>
+<area shape="poly" title=" " alt="" coords="112,15,146,15,146,21,112,21"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_icgraph.png" border="0" usemap="#agame_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_icgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_icgraph" id="agame_8h_a4e37bf8b2ef1042c1631bf9d394ebd0d_icgraph">
+<area shape="rect" title="Supprime les bonbons atLeastThreeInARow." alt="" coords="615,5,721,31"/>
+<area shape="rect" href="game_8cpp.html#ac4d2c94940df3370829dd22547c466d9" title="Traite les alignements et met à jour le score et le combo." alt="" coords="404,5,567,31"/>
+<area shape="poly" title=" " alt="" coords="601,21,567,21,567,15,601,15"/>
+<area shape="rect" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="259,5,356,31"/>
+<area shape="poly" title=" " alt="" coords="390,21,356,21,356,15,390,15"/>
+<area shape="rect" href="game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="156,5,211,31"/>
+<area shape="poly" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
+<area shape="rect" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="5,5,108,31"/>
+<area shape="poly" title=" " alt="" coords="142,29,108,30,108,24,142,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="31,55,82,80"/>
+<area shape="poly" title=" " alt="" coords="144,36,83,60,81,55,142,31"/>
+<area shape="poly" title=" " alt="" coords="122,6,156,8,156,13,122,12"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ac4d2c94940df3370829dd22547c466d9" name="ac4d2c94940df3370829dd22547c466d9"></a>
@@ -879,41 +1259,85 @@ false </dd></dl>
 <p>Met à jour le score et le combo</p>
 <p>Appliquer la gravité en mode CLEAR</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00197">197</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  197</span>                                                                                        {</div>
-<div class="line"><span class="lineno">  198</span>    <a class="code hl_struct" href="structmaPosition.html">maPosition</a> pos;</div>
-<div class="line"><span class="lineno">  199</span>    <span class="keywordtype">unsigned</span> howMany;</div>
-<div class="line"><span class="lineno">  200</span>    <span class="keywordtype">bool</span> foundMatch = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  201</span></div>
-<div class="line"><span class="lineno">  203</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb">atLeastThreeInAColumn</a>(grid, pos, howMany) || <a class="code hl_function" href="game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131">atLeastThreeInARow</a>(grid, pos, howMany)) {</div>
-<div class="line"><span class="lineno">  204</span>        foundMatch = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  205</span>        </div>
-<div class="line"><span class="lineno">  207</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb">atLeastThreeInAColumn</a>(grid, pos, howMany)) {</div>
-<div class="line"><span class="lineno">  208</span>            <a class="code hl_function" href="game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f">removalInColumn</a>(grid, pos, howMany);</div>
-<div class="line"><span class="lineno">  209</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131">atLeastThreeInARow</a>(grid, pos, howMany)) {</div>
-<div class="line"><span class="lineno">  210</span>            <a class="code hl_function" href="game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d">removalInRow</a>(grid, pos, howMany);</div>
-<div class="line"><span class="lineno">  211</span>        }</div>
-<div class="line"><span class="lineno">  212</span>        </div>
-<div class="line"><span class="lineno">  214</span>        score += howMany * <a class="code hl_variable" href="type_8h.html#ae0df0d456a1a5ea08c34f0334f742d60">KScorePerCandy</a> * combo;</div>
-<div class="line"><span class="lineno">  215</span>        combo++;</div>
-<div class="line"><span class="lineno">  216</span>        </div>
-<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">if</span> (mode == <a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32">MODE_CLEAR</a>) {</div>
-<div class="line"><span class="lineno">  219</span>            <a class="code hl_function" href="gridmanagement_8cpp.html#acd388a9c237b453e23866b221b913821">gravité</a>(grid);</div>
-<div class="line"><span class="lineno">  220</span>        }</div>
-<div class="line"><span class="lineno">  221</span>        </div>
-<div class="line"><span class="lineno">  222</span>        <a class="code hl_function" href="gridmanagement_8cpp.html#a7f23a63cf0475e8987be962828ca281f">remplirGrid</a>(grid, mode);</div>
-<div class="line"><span class="lineno">  223</span>    }</div>
-<div class="line"><span class="lineno">  224</span>    </div>
-<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">return</span> foundMatch;</div>
-<div class="line"><span class="lineno">  226</span>}</div>
-<div class="ttc" id="agame_8cpp_html_a4ad87ec3a96e07ac5000e8e4e38ece6f"><div class="ttname"><a href="game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f">removalInColumn</a></div><div class="ttdeci">void removalInColumn(mat &amp;grid, const maPosition &amp;pos, unsigned howMany)</div><div class="ttdoc">Supprime les bonbons atLeastThreeInAColumn.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00152">game.cpp:152</a></div></div>
-<div class="ttc" id="agame_8cpp_html_a4e37bf8b2ef1042c1631bf9d394ebd0d"><div class="ttname"><a href="game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d">removalInRow</a></div><div class="ttdeci">void removalInRow(mat &amp;grid, const maPosition &amp;pos, unsigned howMany)</div><div class="ttdoc">Supprime les bonbons atLeastThreeInARow.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00173">game.cpp:173</a></div></div>
-<div class="ttc" id="agame_8cpp_html_a592d3742cedb5bd0462cc8ebe9e79131"><div class="ttname"><a href="game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131">atLeastThreeInARow</a></div><div class="ttdeci">bool atLeastThreeInARow(const mat &amp;grid, maPosition &amp;pos, unsigned &amp;howMany)</div><div class="ttdoc">Vérifie s&#39;il y a au moins trois bonbons alignés horizontalement.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00128">game.cpp:128</a></div></div>
-<div class="ttc" id="agame_8cpp_html_aee7483c5715afce5b8d044329f2d9fdb"><div class="ttname"><a href="game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb">atLeastThreeInAColumn</a></div><div class="ttdeci">bool atLeastThreeInAColumn(const mat &amp;grid, maPosition &amp;pos, unsigned &amp;howMany)</div><div class="ttdoc">Vérifie s&#39;il y a au moins trois bonbons alignés verticalement.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00102">game.cpp:102</a></div></div>
+<p class="definition">Définition à la ligne <a class="el" href="game_8cpp_source.html#l00199">199</a> du fichier <a class="el" href="game_8cpp_source.html">game.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>                                                                                        {</div>
+<div class="line"><span class="lineno">  200</span>    <a class="code hl_struct" href="structmaPosition.html">maPosition</a> pos;</div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordtype">unsigned</span> howMany;</div>
+<div class="line"><span class="lineno">  202</span>    <span class="keywordtype">bool</span> foundMatch = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  203</span></div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb">atLeastThreeInAColumn</a>(grid, pos, howMany) || <a class="code hl_function" href="game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131">atLeastThreeInARow</a>(grid, pos, howMany)) {</div>
+<div class="line"><span class="lineno">  206</span>        foundMatch = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  207</span>        </div>
+<div class="line"><span class="lineno">  209</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb">atLeastThreeInAColumn</a>(grid, pos, howMany)) {</div>
+<div class="line"><span class="lineno">  210</span>            <a class="code hl_function" href="game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f">removalInColumn</a>(grid, pos, howMany);</div>
+<div class="line"><span class="lineno">  211</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131">atLeastThreeInARow</a>(grid, pos, howMany)) {</div>
+<div class="line"><span class="lineno">  212</span>            <a class="code hl_function" href="game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d">removalInRow</a>(grid, pos, howMany);</div>
+<div class="line"><span class="lineno">  213</span>        }</div>
+<div class="line"><span class="lineno">  214</span>        </div>
+<div class="line"><span class="lineno">  216</span>        score += howMany * <a class="code hl_variable" href="type_8h.html#ae0df0d456a1a5ea08c34f0334f742d60">KScorePerCandy</a> * combo;</div>
+<div class="line"><span class="lineno">  217</span>        combo++;</div>
+<div class="line"><span class="lineno">  218</span>        </div>
+<div class="line"><span class="lineno">  220</span>        <span class="keywordflow">if</span> (mode == <a class="code hl_enumvalue" href="type_8h.html#a1c76e2d1f523d33155289c2ea84dd20ea709e319ba349832f1f295142df2a8f32">MODE_CLEAR</a>) {</div>
+<div class="line"><span class="lineno">  221</span>            <a class="code hl_function" href="gridmanagement_8cpp.html#acd388a9c237b453e23866b221b913821">gravité</a>(grid);</div>
+<div class="line"><span class="lineno">  222</span>        }</div>
+<div class="line"><span class="lineno">  223</span>        </div>
+<div class="line"><span class="lineno">  224</span>        <a class="code hl_function" href="gridmanagement_8cpp.html#a7f23a63cf0475e8987be962828ca281f">remplirGrid</a>(grid, mode);</div>
+<div class="line"><span class="lineno">  225</span>    }</div>
+<div class="line"><span class="lineno">  226</span>    </div>
+<div class="line"><span class="lineno">  227</span>    <span class="keywordflow">return</span> foundMatch;</div>
+<div class="line"><span class="lineno">  228</span>}</div>
+<div class="ttc" id="agame_8cpp_html_a4ad87ec3a96e07ac5000e8e4e38ece6f"><div class="ttname"><a href="game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f">removalInColumn</a></div><div class="ttdeci">void removalInColumn(mat &amp;grid, const maPosition &amp;pos, unsigned howMany)</div><div class="ttdoc">Supprime les bonbons atLeastThreeInAColumn.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00153">game.cpp:153</a></div></div>
+<div class="ttc" id="agame_8cpp_html_a4e37bf8b2ef1042c1631bf9d394ebd0d"><div class="ttname"><a href="game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d">removalInRow</a></div><div class="ttdeci">void removalInRow(mat &amp;grid, const maPosition &amp;pos, unsigned howMany)</div><div class="ttdoc">Supprime les bonbons atLeastThreeInARow.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00174">game.cpp:174</a></div></div>
+<div class="ttc" id="agame_8cpp_html_a592d3742cedb5bd0462cc8ebe9e79131"><div class="ttname"><a href="game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131">atLeastThreeInARow</a></div><div class="ttdeci">bool atLeastThreeInARow(const mat &amp;grid, maPosition &amp;pos, unsigned &amp;howMany)</div><div class="ttdoc">Vérifie s&#39;il y a au moins trois bonbons alignés horizontalement.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00129">game.cpp:129</a></div></div>
+<div class="ttc" id="agame_8cpp_html_aee7483c5715afce5b8d044329f2d9fdb"><div class="ttname"><a href="game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb">atLeastThreeInAColumn</a></div><div class="ttdeci">bool atLeastThreeInAColumn(const mat &amp;grid, maPosition &amp;pos, unsigned &amp;howMany)</div><div class="ttdoc">Vérifie s&#39;il y a au moins trois bonbons alignés verticalement.</div><div class="ttdef"><b>Definition</b> <a href="game_8cpp_source.html#l00103">game.cpp:103</a></div></div>
 <div class="ttc" id="agridmanagement_8cpp_html_a7f23a63cf0475e8987be962828ca281f"><div class="ttname"><a href="gridmanagement_8cpp.html#a7f23a63cf0475e8987be962828ca281f">remplirGrid</a></div><div class="ttdeci">void remplirGrid(mat &amp;grid, Gamemode mode)</div><div class="ttdoc">Remplit les cases vides de la grille avec de nouveaux bonbons.</div><div class="ttdef"><b>Definition</b> <a href="gridmanagement_8cpp_source.html#l00238">gridmanagement.cpp:238</a></div></div>
 <div class="ttc" id="agridmanagement_8cpp_html_acd388a9c237b453e23866b221b913821"><div class="ttname"><a href="gridmanagement_8cpp.html#acd388a9c237b453e23866b221b913821">gravité</a></div><div class="ttdeci">void gravité(mat &amp;grid)</div><div class="ttdoc">Applique la gravité sur la grille.</div><div class="ttdef"><b>Definition</b> <a href="gridmanagement_8cpp_source.html#l00209">gridmanagement.cpp:209</a></div></div>
 <div class="ttc" id="atype_8h_html_ae0df0d456a1a5ea08c34f0334f742d60"><div class="ttname"><a href="type_8h.html#ae0df0d456a1a5ea08c34f0334f742d60">KScorePerCandy</a></div><div class="ttdeci">const unsigned KScorePerCandy</div><div class="ttdoc">Constantes pour le score.</div><div class="ttdef"><b>Definition</b> <a href="type_8h_source.html#l00071">type.h:71</a></div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_ac4d2c94940df3370829dd22547c466d9_cgraph.png" border="0" usemap="#agame_8h_ac4d2c94940df3370829dd22547c466d9_cgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_ac4d2c94940df3370829dd22547c466d9_cgraph" id="agame_8h_ac4d2c94940df3370829dd22547c466d9_cgraph">
+<area shape="rect" title="Traite les alignements et met à jour le score et le combo." alt="" coords="5,129,168,155"/>
+<area shape="rect" href="game_8cpp.html#aee7483c5715afce5b8d044329f2d9fdb" title="Vérifie s&#39;il y a au moins trois bonbons alignés verticalement." alt="" coords="216,5,379,31"/>
+<area shape="poly" title=" " alt="" coords="99,127,148,85,180,61,215,40,230,33,232,38,217,44,183,65,151,89,103,131"/>
+<area shape="rect" href="game_8cpp.html#a592d3742cedb5bd0462cc8ebe9e79131" title="Vérifie s&#39;il y a au moins trois bonbons alignés horizontalement." alt="" coords="225,55,370,80"/>
+<area shape="poly" title=" " alt="" coords="117,127,215,89,237,82,239,87,217,94,119,132"/>
+<area shape="rect" href="gridmanagement_8cpp.html#acd388a9c237b453e23866b221b913821" title="Applique la gravité sur la grille." alt="" coords="267,104,328,129"/>
+<area shape="poly" title=" " alt="" coords="168,130,253,119,253,125,169,135"/>
+<area shape="rect" href="game_8cpp.html#a4ad87ec3a96e07ac5000e8e4e38ece6f" title="Supprime les bonbons atLeastThreeInAColumn." alt="" coords="235,153,359,179"/>
+<area shape="poly" title=" " alt="" coords="169,149,222,155,221,160,168,154"/>
+<area shape="rect" href="game_8cpp.html#a4e37bf8b2ef1042c1631bf9d394ebd0d" title="Supprime les bonbons atLeastThreeInARow." alt="" coords="244,203,351,228"/>
+<area shape="poly" title=" " alt="" coords="121,152,217,187,242,196,240,201,215,193,120,157"/>
+<area shape="rect" href="gridmanagement_8cpp.html#a7f23a63cf0475e8987be962828ca281f" title="Remplit les cases vides de la grille avec de nouveaux bonbons." alt="" coords="255,252,340,277"/>
+<area shape="poly" title=" " alt="" coords="103,153,151,194,217,237,243,248,241,253,215,242,148,198,100,157"/>
+<area shape="rect" href="type_8h.html#a18efe58b5b918621584c2029144b1756" title="Constantes pour la grille de jeu." alt="" coords="427,179,521,204"/>
+<area shape="poly" title=" " alt="" coords="329,121,380,138,441,169,439,174,378,143,327,126"/>
+<area shape="poly" title=" " alt="" coords="360,172,413,180,413,185,359,177"/>
+<area shape="poly" title=" " alt="" coords="351,205,412,197,413,202,351,211"/>
+<area shape="poly" title=" " alt="" coords="339,250,378,237,437,208,440,213,380,242,341,255"/>
+<area shape="rect" href="type_8h.html#a39caa9d62340bfd0c4e990db6f0052a0" title="Nombre total de types de bonbons." alt="" coords="435,252,513,277"/>
+<area shape="poly" title=" " alt="" coords="340,262,421,262,421,267,340,267"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_ac4d2c94940df3370829dd22547c466d9_icgraph.png" border="0" usemap="#agame_8h_ac4d2c94940df3370829dd22547c466d9_icgraph" loading="lazy" alt=""/></div>
+<map name="agame_8h_ac4d2c94940df3370829dd22547c466d9_icgraph" id="agame_8h_ac4d2c94940df3370829dd22547c466d9_icgraph">
+<area shape="rect" title="Traite les alignements et met à jour le score et le combo." alt="" coords="404,5,567,31"/>
+<area shape="rect" href="game_8cpp.html#a182a58b52ccee7022e49c19d33f888dd" title="Fonction d&#39;affichage du mode de jeu." alt="" coords="259,5,356,31"/>
+<area shape="poly" title=" " alt="" coords="390,21,356,21,356,15,390,15"/>
+<area shape="rect" href="game_8cpp.html#a9f1c87c7296779c4c895ca2b13ad2e3e" title="Fonction principale du jeu." alt="" coords="156,5,211,31"/>
+<area shape="poly" title=" " alt="" coords="245,21,211,21,211,15,245,15"/>
+<area shape="rect" href="game_8cpp.html#a4f74e28ee73285c48f79a2ff947dfb3b" title="Affiche le manuel du jeu." alt="" coords="5,5,108,31"/>
+<area shape="poly" title=" " alt="" coords="142,29,108,30,108,24,142,24"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="31,55,82,80"/>
+<area shape="poly" title=" " alt="" coords="144,36,83,60,81,55,142,31"/>
+<area shape="poly" title=" " alt="" coords="122,6,156,8,156,13,122,12"/>
+</map>
+</div>
+
 </div>
 </div>
 </div><!-- contents -->

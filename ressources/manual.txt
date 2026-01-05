@@ -1,0 +1,17 @@
+// Déplacements
+z - haut
+s - bas
+q - gauche
+d - droite
+
+// Comment Jouer
+- Entrer la position (ligne colonne) de la grille.
+- Entrer la direction (z/q/s/d) dans laquelle le bonbon doit ce déplacer.
+- Appuyez sur Entrée.
+- Si vous voulez quitté la partie, entrer 'x'.
+- Exemple: 1 2 s
+
+// Mode de jeu
+- MODE_SCORE : Le but du jeu est d'atteindre 1000 points en 2 minutes
+- MODE_CLEAR : Le but est de vider la grille le plus vite possible
+- MODE_1V1 : Deux joueurs s'affrontent en tour par tour, celui qui a le plus de points gagne.

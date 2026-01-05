@@ -1,0 +1,5 @@
+<map id="initGrid" name="initGrid">
+<area shape="rect" id="Node000001" title="Initialisation de la grille." alt="" coords="5,5,68,31"/>
+<area shape="rect" id="Node000002" href="$type_8h.html#a39caa9d62340bfd0c4e990db6f0052a0" title="Nombre total de types de bonbons." alt="" coords="116,5,195,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,15,102,15,102,21,68,21"/>
+</map>

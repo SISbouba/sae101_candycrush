@@ -1,0 +1,5 @@
+<map id="isGridEmpty" name="isGridEmpty">
+<area shape="rect" id="Node000001" title="Vérifie si la grille est vide." alt="" coords="5,5,100,31"/>
+<area shape="rect" id="Node000002" href="$type_8h.html#a18efe58b5b918621584c2029144b1756" title="Constantes pour la grille de jeu." alt="" coords="148,5,243,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,15,134,15,134,21,100,21"/>
+</map>
